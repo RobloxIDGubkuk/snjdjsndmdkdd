@@ -17,7 +17,7 @@ elseif game.PlaceId == 9224601490 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/VanciSonic/SonicScript/main/FB"))()
 else
     game.StarterGui:SetCore("SendNotification", {
-    Title = "Form SonicTuru";
+    Title = "Form  Gui";
     Text = "Script Not Found !!";
     Duration = 5;
     })
