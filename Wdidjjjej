@@ -2,7 +2,7 @@
 local pandacore = loadstring(game:HttpGet("https://pandatechnology.xyz/service_api/PandaAuthCore.lua", true))() -- Library of Key System
 local service_name  = "sonic" -- Given by SkieHacker
 
-function ScriptSonicList()
+function SonicScript()
 if game.PlaceId == 4580204640 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/VanciSonic/SonicScript/main/STK"))()
 elseif game.PlaceId == 537413528 then
@@ -17,7 +17,7 @@ elseif game.PlaceId == 9224601490 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/VanciSonic/SonicScript/main/FB"))()
 else
     game.StarterGui:SetCore("SendNotification", {
-    Title = "Form  Gui";
+    Title = "Form SonicTuru";
     Text = "Script Not Found !!";
     Duration = 5;
     })
@@ -255,7 +255,7 @@ if (ValidateKey(service_name, key)) then
         })
         wait(0.1)
         script.Parent.Parent.Parent.Parent:Destroy()
-        ScriptSonicList()
+        SonicScript()
     else
         game.StarterGui:SetCore("SendNotification", {
         Title = "Key System";
@@ -321,7 +321,7 @@ if isfile("SonicHubTodayKey.txt") then
         Duration = 5;
         })
         wait(0.1)
-        ScriptSonicList()
+        SonicScript()
     else
         game.StarterGui:SetCore("SendNotification", {
         Title = "Check Key";
