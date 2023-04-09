@@ -222,14 +222,14 @@ local function PGUI_fake_script() -- Enter.LocalScript
 if (ValidateKey(service_name, key)) then
         writefile("SonicHubTodayKey.txt", key)
         game.StarterGui:SetCore("SendNotification", {
-        Title = "Check Key";
+        Title = "---[KEY SYSTEM]---";
         Text = ""..key.."";
         Duration = 5;
         })
         wait(2)
         game.StarterGui:SetCore("SendNotification", {
-        Title = "Key System";
-        Text = "Enjoy The Script";
+        Title = "---[KEY SYSTEM]---";
+        Text = "Key Work [✅️]";
         Duration = 5;
         })
         wait(0.1)
@@ -237,18 +237,10 @@ if (ValidateKey(service_name, key)) then
         loadstring(game:HttpGet("https://pastebin.com/raw/Aup9kvhp"))()
     else
         game.StarterGui:SetCore("SendNotification", {
-        Title = "Key System";
-        Text = "Your key is wrong";
+        Title = "---[KEY SYSTEM]---";
+        Text = "Key Not Work [❌]";
         Duration = 5;
         })
-        wait(0.1)
-        game.StarterGui:SetCore("SendNotification", {
-        Title = "Key System";
-        Text = "Copied Get Key Link";
-        Duration = 5;
-        })
-        wait(0.1)
-        setclipboard(GetLink(service_name))
     end
         -- 
 	end)
@@ -289,28 +281,28 @@ if isfile("SonicHubTodayKey.txt") then
     local key = readfile("SonicHubTodayKey.txt")
     if (ValidateKey(service_name, key)) then
         game.StarterGui:SetCore("SendNotification", {
-        Title = "Check Key";
+        Title = "---[KEY SYSTEM]---";
         Text = ""..key.."";
         Duration = 5;
         })
         wait(2)
         game.StarterGui:SetCore("SendNotification", {
-        Title = "Key System";
-        Text = "Enjoy The Script";
+        Title = "---[KEY SYSTEM]---";
+        Text = "Key Work [✅️]";
         Duration = 5;
         })
         wait(0.1)
         loadstring(game:HttpGet("https://pastebin.com/raw/Aup9kvhp"))()
     else
         game.StarterGui:SetCore("SendNotification", {
-        Title = "Check Key";
+        Title = "---[KEY SYSTEM]---";
         Text = ""..key.."";
         Duration = 5;
         })
         wait(2)
         game.StarterGui:SetCore("SendNotification", {
-        Title = "Key System";
-        Text = "Expired Key";
+        Title = "---[KEY SYSTEM]---";
+        Text = "Key Not Work [❌]";
         Duration = 5;
         })
         wait(0.1)
