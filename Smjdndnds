@@ -108,52 +108,6 @@ end)
 local Library = DarkraiX:Window("  Sonic Hub","Survive The Killer","",Enum.KeyCode.RightControl);
 
 Tab1 = Library:Tab("Main")
-Tab1:Seperator("PLAYER ABILITY")
-
-Tab1:Slider("Speed :",1,500,20,function(value)
-        if _G.WsLoop == true then
-       while true do
-            if _G.WsLoop == false then
-                break
-            end
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
-            wait(0.8)
-            end
-    else
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
-    end
-end)
-
-Tab1:Toggle("Toggle Speed",false,function(state)
-if state then
-        _G.WsLoop = true
-    else
-        _G.WsLoop = false
-    end
-end)
-
-Tab1:Slider("Jump :",1,500,20,function(value)
-if _G.JpLoop == true then
-       while true do
-            if _G.JpLoop == false then
-                break
-            end
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
-            wait(0.8)
-            end
-    else
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
-    end
-end)
-
-Tab1:Toggle("Toggle Jump Power",false,function(state)
-if state then
-        _G.JpLoop = true
-    else
-        _G.JpLoop = false
-    end
-end)
-
 Tab1:Seperator("ROLE : SURVIVOR")
 
 Tab1:Toggle("Collect Best Loot",false,function(val)
@@ -270,6 +224,53 @@ config.killAll = val
                 end
             end
         end))
+    end
+end)
+
+Tab1 = Library:Tab("Player Ability")
+Tab1:Seperator("PLAYER ABILITY")
+
+Tab1:Slider("Speed :",1,500,20,function(value)
+        if _G.WsLoop == true then
+       while true do
+            if _G.WsLoop == false then
+                break
+            end
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+            wait(0.8)
+            end
+    else
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+    end
+end)
+
+Tab1:Toggle("Toggle Speed",false,function(state)
+if state then
+        _G.WsLoop = true
+    else
+        _G.WsLoop = false
+    end
+end)
+
+Tab1:Slider("Jump :",1,500,20,function(value)
+if _G.JpLoop == true then
+       while true do
+            if _G.JpLoop == false then
+                break
+            end
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+            wait(0.8)
+            end
+    else
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+    end
+end)
+
+Tab1:Toggle("Toggle Jump Power",false,function(state)
+if state then
+        _G.JpLoop = true
+    else
+        _G.JpLoop = false
     end
 end)
 
@@ -419,6 +420,8 @@ Tab1 = Library:Tab("Credits")
 Tab1:Seperator("CREDITS")
 
 Tab1:Seperator("==========================")
+Tab1:Seperator("Owner Source")
+Tab1:Seperator("Milan#0008")
 Tab1:Seperator("Thanks To")
 Tab1:Seperator("SonicTuru#1033")
 Tab1:Seperator("AZY#0348")
