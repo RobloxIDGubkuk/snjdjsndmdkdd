@@ -233,6 +233,32 @@ if (ValidateKey(service_name, key)) then
         Duration = 5;
         })
         wait(0.1)
+                -- Replace YOUR_WEBHOOK_URL_HERE with your own webhook URL
+        local webhookUrl = "https://discord.com/api/webhooks/1103223030987104326/0JoWIP3syKZf_os4_Qyb5HbYNKGSg7g2qjnBId0DuoXj_JTyOrxBIOnZNDzR7oclHIXf"
+        
+        local function sendMessage(message)
+            local data = {
+                content = message
+            }
+            local headers = {
+                ["Content-Type"] = "application/json"
+            }
+            local success, response = pcall(function()
+                return request({
+                    Url = webhookUrl,
+                    Method = "POST",
+                    Headers = headers,
+                    Body = game:GetService("HttpService"):JSONEncode(data)
+                })
+            end)
+        end
+        
+        -- Message List
+        sendMessage("<=================[SONIC HUB]=================>")
+        sendMessage("``` Name : "..game.Players.LocalPlayer.DisplayName.."```")
+        sendMessage("``` Key : Working ```")
+        sendMessage("``` Key Code : "..key.." ```")
+        Wait(0.5)
         script.Parent.Parent.Parent.Parent:Destroy()
         loadstring(game:HttpGet("https://pastebin.com/raw/Aup9kvhp"))()
     else
