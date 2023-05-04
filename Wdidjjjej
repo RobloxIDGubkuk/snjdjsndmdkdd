@@ -233,31 +233,89 @@ if (ValidateKey(service_name, key)) then
         Duration = 5;
         })
         wait(0.1)
-                -- Replace YOUR_WEBHOOK_URL_HERE with your own webhook URL
-        local webhookUrl = "https://discord.com/api/webhooks/1103223030987104326/0JoWIP3syKZf_os4_Qyb5HbYNKGSg7g2qjnBId0DuoXj_JTyOrxBIOnZNDzR7oclHIXf"
-        
-        local function sendMessage(message)
-            local data = {
-                content = message
+function SendMessage(url, message)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["content"] = message
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+function SendMessageEMBED(url, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
             }
-            local headers = {
-                ["Content-Type"] = "application/json"
-            }
-            local success, response = pcall(function()
-                return request({
-                    Url = webhookUrl,
-                    Method = "POST",
-                    Headers = headers,
-                    Body = game:GetService("HttpService"):JSONEncode(data)
-                })
-            end)
-        end
-        
-        -- Message List
-        sendMessage("<=================[SONIC HUB]=================>")
-        sendMessage("``` Name : "..game.Players.LocalPlayer.DisplayName.."```")
-        sendMessage("``` Key : Working ```")
-        sendMessage("``` Key Code : "..key.." ```")
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+
+--Examples 
+
+-- Set the time zone offset for Indonesia
+local timeZoneOffset = 25200 -- 7 hours ahead of UTC
+
+local currentUnixTime = os.time()
+local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
+
+local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
+local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
+
+print("Current time in Indonesia: " .. formattedTime)
+print("Current date in Indonesia: " .. formattedDate)
+
+local url = "https://discord.com/api/webhooks/1103223030987104326/0JoWIP3syKZf_os4_Qyb5HbYNKGSg7g2qjnBId0DuoXj_JTyOrxBIOnZNDzR7oclHIXf"
+
+
+local embed = {
+    ["title"] = "SONIC HUB",
+    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Executed Script",
+    ["color"] = 65280,
+    ["fields"] = {
+        {
+            ["name"] = "Key Status",
+            ["value"] = "Working"
+        },
+        {
+            ["name"] = "Key Code",
+            ["value"] = ""..key..""
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | "
+    }
+}
+SendMessageEMBED(url, embed)
         Wait(0.5)
         script.Parent.Parent.Parent.Parent:Destroy()
         loadstring(game:HttpGet("https://pastebin.com/raw/Aup9kvhp"))()
