@@ -304,15 +304,15 @@ local embed = {
     ["fields"] = {
         {
             ["name"] = "Key Status",
-            ["value"] = "Working"
+            ["value"] = "`` Working ``"
         },
         {
             ["name"] = "Key Code",
-            ["value"] = ""..key..""
+            ["value"] = "``"..key.."``"
         }
     },
     ["footer"] = {
-        ["text"] = " | "..formattedDate.." | "
+        ["text"] = ""..formattedDate..""
     }
 }
 SendMessageEMBED(url, embed)
