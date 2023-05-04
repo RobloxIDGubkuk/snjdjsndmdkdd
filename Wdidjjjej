@@ -299,7 +299,7 @@ local url = "https://discord.com/api/webhooks/1103223030987104326/0JoWIP3syKZf_o
 
 local embed = {
     ["title"] = "SONIC HUB",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Executed Script",
+    ["description"] = "```"..game.Players.LocalPlayer.DisplayName.."```",
     ["color"] = 65280,
     ["fields"] = {
         {
