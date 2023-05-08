@@ -212,7 +212,7 @@ if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChil
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
     ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
+    ["color"] = 15844367,
     ["fields"] = {
         {
             ["name"] = "Mirrage Status",
@@ -236,7 +236,7 @@ if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=
 local embed = {
     ["title"] = "FULL MOON FINDER",
     ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
+    ["color"] = 15844367,
     ["fields"] = {
         {
             ["name"] = "Moon Phase",
