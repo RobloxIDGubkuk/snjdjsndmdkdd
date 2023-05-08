@@ -341,28 +341,6 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-else
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌕) : 0% ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport',"..game.JobId..") ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(urlInk, embed)
-
 end
     wait(0.1)
     if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
