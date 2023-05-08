@@ -203,6 +203,9 @@ local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
 local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
+-- Get the number of players currently in the game
+local playerCount = #game:GetService("Players"):GetPlayers()
+
 local mrgIsland = "https://discord.com/api/webhooks/1103984916481445909/Y3EU5_KXPN1pxuIEECR6ZDXoN7B6OdJrpVO_rAwaEXZUl7qoqw4iGbj9kJtrerJysvog"
 
 local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ5qXl7gumcHttfo459KeObX9qzmCtRzxp_ESibi68F1QCBqYNZRkcYcQNS"
@@ -217,6 +220,10 @@ local embed = {
         {
             ["name"] = "Mirrage Status",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
             ["name"] = "Server Job Id",
@@ -243,6 +250,10 @@ local embed = {
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
             ["name"] = "Server Job Id",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport',"..game.JobId..") ```"
         }
@@ -263,6 +274,10 @@ local embed = {
         {
             ["name"] = "Moon Phase",
             ["value"] = "``` (🌒) : 75% ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
             ["name"] = "Server Job Id",
@@ -287,6 +302,10 @@ local embed = {
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
             ["name"] = "Server Job Id",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport',"..game.JobId..") ```"
         }
@@ -309,6 +328,10 @@ local embed = {
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
             ["name"] = "Server Job Id",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport',"..game.JobId..") ```"
         }
@@ -329,6 +352,10 @@ local embed = {
         {
             ["name"] = "Moon Phase",
             ["value"] = "``` (🌖) : 15% ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
             ["name"] = "Server Job Id",
