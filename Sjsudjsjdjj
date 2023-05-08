@@ -162,6 +162,8 @@ function SendMessageEMBED(urlInk, embed)
     print("Sent")
 end
 
+wait(0.1)
+
 function SendMessageEMBED(mrgIsland, embed)
     local http = game:GetService("HttpService")
     local headers = {
