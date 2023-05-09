@@ -1,6 +1,8 @@
-local Settings = {}
+klocal Settings = {}
 local HttpService = game:GetService("HttpService")
 local Workspace = game:GetService("Workspace")
+
+local Notification = require(game:GetService("ReplicatedStorage").Notification)
 
 local SaveFileName = "FruitFinderSonic.json"
 
@@ -48,12 +50,32 @@ local function HopServer()
          if childinstance.Name == "ErrorPrompt" then
              if childinstance.Visible then
                  if childinstance.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
-                     HopServer()
+                         HopServer()
+                         wait(1)
+                         HopServer()
+                         wait(1)
+                         HopServer()
+                         wait(1)
+                         HopServer()
+                         wait(1)
+                         HopServer()
+                         wait(1)
+                         HopServer()
                  end
              end
              childinstance:GetPropertyChangedSignal("Visible"):Connect(function()
                  if childinstance.Visible then
                      if childinstance.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
+                         HopServer()
+                         wait(1)
+                         HopServer()
+                         wait(1)
+                         HopServer()
+                         wait(1)
+                         HopServer()
+                         wait(1)
+                         HopServer()
+                         wait(1)
                          HopServer()
                      end
                  end
@@ -565,6 +587,9 @@ end
      wait(0.1)
     end
 end
-require(game:GetService("ReplicatedStorage").Notification).new("Wait Hop Server!"):Display();
+Notification.new("<Color=Yellow>!! SOMETHING MASSAGE FORM DEV !!<Color=/>"):Display()
 wait(1)
+Notification.new("<Color=Blue>Sonic Turu :<Color=/> If Always Hop Its No Fruit Spawn In The Server"):Display()
+wait(3)
+Notification.new("<Color=Red>Wait Hop Server !!<Color=/>"):Display()
 HopServer()
