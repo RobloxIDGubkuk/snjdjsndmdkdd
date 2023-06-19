@@ -418,7 +418,7 @@ bav.MaxTorque = Vector3.new(1/0, 1/0, 1/0)
 bav.Name = "bAV" 
 
 for _,v in next, workspace:GetChildren() do
-    if v.Name:find("Fruit") and (v:IsA("Model") or v:IsA("Model")) then
+    if v.Name:find("Fruit") and (v:IsA("Model") or v:IsA("Tool")) then
        if not v.Name:find("Fruit ") and not (v:IsA("Model") or not v:IsA("Model")) or _G.hopDeteck == true then
         require(game:GetService("ReplicatedStorage").Notification).new("Hop 1"):Display();
         HopServer()
