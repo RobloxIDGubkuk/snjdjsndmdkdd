@@ -587,9 +587,9 @@ end
      wait(0.1)
     end
 end
-Notification.new("<Color=Yellow>MASSAGE FORM SONIC TURU!!<Color=/>"):Display()
+Notification.new("<Color=Yellow>!! NEW FRUIT FINDER JOIN DISCORD !!<Color=/>"):Display()
 wait(1)
-Notification.new("<Color=Blue>Sonic Turu :<Color=/> If Always Hop Its, No Fruit Spawn In The Server"):Display()
-wait(2)
+Notification.new("<Color=Blue>Sonic Turu :<Color=/> New Fruit Finder ( Collect All Fruit In Server, Not Only Fruit Spawn )"):Display()
+wait(3)
 Notification.new("<Color=Red>Wait Hop Server !!<Color=/>"):Display()
 HopServer()
