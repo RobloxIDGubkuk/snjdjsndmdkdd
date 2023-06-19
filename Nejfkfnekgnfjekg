@@ -521,14 +521,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` Third Sea ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
     ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+        ["text"] = " | "..formattedDate.." | Note : It Only Shows People Who Got Fruit From Fruit Finder"
     }
 }
 SendMessageEMBED(url, embed)
@@ -547,14 +543,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` Second Sea ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
     ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+        ["text"] = " | "..formattedDate.." | Note : It Only Shows People Who Got Fruit From Fruit Finder"
     }
 }
 SendMessageEMBED(url, embed)
@@ -573,14 +565,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` First Sea ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
     ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+        ["text"] = " | "..formattedDate.." | Note : It Only Shows People Who Got Fruit From Fruit Finder"
     }
 }
 SendMessageEMBED(url, embed)
