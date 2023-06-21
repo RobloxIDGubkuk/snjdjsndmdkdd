@@ -1,0 +1,403 @@
+-- # FUNCTION & LOCAL # --
+
+function Hop()
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+function TPReturner()
+local Site;
+if foundAnything == "" then
+Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+else
+Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+end
+local ID = ""
+if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+lfoundAnything = Site.nextPageCursor
+end
+local num = 0;
+for i,v in pairs(Site.data) do
+local Possible = true
+ID = tostring(v.id)
+if tonumber(v.maxPlayers) > tonumber(v.playing) then
+for _,Existing in pairs(AllIDs) do
+if num ~= 0 then
+if ID == tostring(Existing) then
+Possible = false
+end
+else
+if tonumber(actualHour) ~= tonumber(Existing) then
+local delFile = pcall(function()
+AllIDs = {}
+table.insert(AllIDs, actualHour)
+end)
+end
+end
+num = num + 1
+end
+if Possible == true then
+table.insert(AllIDs, ID)
+wait()
+pcall(function()
+wait()
+game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+end)
+wait(4)
+end
+end
+end
+end
+function Teleport() 
+while wait() do
+pcall(function()
+TPReturner()
+if foundAnything ~= "" then
+TPReturner()
+end
+end)
+end
+end
+Teleport()
+end
+
+local Notification = require(game:GetService("ReplicatedStorage").Notification)
+
+function topos(Pos)
+Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
+pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/210, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
+tween:Play()
+if Distance <= 250 then
+tween:Cancel()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
+end
+if _G.StopTween == true then
+tween:Cancel()
+_G.Clip = false
+end
+end
+
+-- # REQUIRED # --
+
+if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
+for i,v in pairs({"MouseButton1Click", "MouseButton1Down", "Activated"}) do
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton[v])) do
+v.Function()
+end
+end
+end
+wait(1)
+if game.PlaceId == 2753915549 then 
+
+Notification.new("<Color=Red> < FIRST SEA DETECTED > <Color=/>"):Display()
+Notification.new("<Color=Red> < U MUST BE ON THIRD SEA > <Color=/>"):Display()
+wait(1)
+Notification.new("<Color=Red> < TELEPORT TO THIRD SEA !! > <Color=/>"):Display()
+wait(2)
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+
+elseif game.PlaceId == 4442272183 then
+
+Notification.new("<Color=Red> < SECOND SEA DETECTED > <Color=/>"):Display()
+Notification.new("<Color=Red> < U MUST BE ON THIRD SEA > <Color=/>"):Display()
+wait(1)
+Notification.new("<Color=Red> < TELEPORT TO THIRD SEA !! > <Color=/>"):Display()
+wait(2)
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+
+end
+
+-- # INTI # --
+
+wait(1)
+Notification.new("<Color=Green> < SCRIPT AUTO FIND MIRRAGE > <Color=/>"):Display()
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+Title = "---[WELCOME]---";
+Text = ""..game.Players.LocalPlayer.DisplayName.."";
+Duration = math.huge;
+})
+wait(0.1)
+game.StarterGui:SetCore("SendNotification", {
+Title = "---[DEVELOPER]---";
+Text = "Made By SonicTuru#0001";
+Duration = math.huge;
+})
+wait(0.1)
+game.StarterGui:SetCore("SendNotification", {
+Title = "---[SOCIAL MEDIA]---";
+Text = "SonicTeam Discord\nhttps://discord.gg/EVxNxE7KK3";
+Duration = math.huge;
+})
+wait(0.1)
+function SendMessage(url, message)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["content"] = message
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+function SendMessageEMBED(urlInk, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = urlInk,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+wait(0.1)
+
+function SendMessageEMBED(mrgIsland, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = mrgIsland,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+--Examples 
+
+-- Set the time zone offset for Indonesia
+local timeZoneOffset = 25200 -- 7 hours ahead of UTC
+
+local currentUnixTime = os.time()
+local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
+
+local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
+local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
+
+-- Get the number of players currently in the game
+local playerCount = #game:GetService("Players"):GetPlayers()
+
+local mrgIsland = "https://discord.com/api/webhooks/1103984916481445909/Y3EU5_KXPN1pxuIEECR6ZDXoN7B6OdJrpVO_rAwaEXZUl7qoqw4iGbj9kJtrerJysvog"
+
+local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ5qXl7gumcHttfo459KeObX9qzmCtRzxp_ESibi68F1QCBqYNZRkcYcQNS"
+
+if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+
+local embed = {
+    ["title"] = "MIRRAGE ISLAND FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "Mirrage Status",
+            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "Server Job Id",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(mrgIsland, embed)
+
+end
+
+if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "Moon Phase",
+            ["value"] = "``` (🌑) : Full Moon !! ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "Server Job Id",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(urlInk, embed)
+
+elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "Moon Phase",
+            ["value"] = "``` (🌒) : 75% ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "Server Job Id",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(urlInk, embed)
+
+elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "Moon Phase",
+            ["value"] = "``` (🌓) : 50% ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "Server Job Id",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(urlInk, embed)
+
+elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "Moon Phase",
+            ["value"] = "``` (🌗) : 25% ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "Server Job Id",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(urlInk, embed)
+
+elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "Moon Phase",
+            ["value"] = "``` (🌖) : 15% ```"
+        },
+        {
+            ["name"] = "Players In Server",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "Server Job Id",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(urlInk, embed)
+
+end
+wait(0.5)
+Notification.new("<Color=Yellow> !! CHECKING IS THERE A MIRAGE ISLAND OR NOT !!<Color=/>"):Display()
+wait(1)
+if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+Notification.new("<Color=Green> !! Mirrage Its Spawn In This Server !! <Color=/>"):Display()
+wait(1)
+topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
+else
+Notification.new("<Color=Red> !! No Mirrage In This Server !! <Color=/>"):Display()
+wait(0.1)
+Notification.new("Wait Server Hop !!"):Display()
+wait(1)
+Hop()
+end
+
+-- # END CODE # --
