@@ -1,3 +1,5 @@
+-- # ONLY FRUIT SPAWN # --
+
 local Settings = {}
 local HttpService = game:GetService("HttpService")
 local Workspace = game:GetService("Workspace")
@@ -250,6 +252,10 @@ local embed = {
         {
             ["name"] = "Server Job Id",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        },
+        {
+            ["name"] = "Ping",
+            ["value"] = "<@&1121490699607605278>"
         }
     },
     ["footer"] = {
@@ -278,6 +284,10 @@ local embed = {
         {
             ["name"] = "Server Job Id",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        },
+        {
+            ["name"] = "Ping",
+            ["value"] = "<@&1121490924619448360>"
         }
     },
     ["footer"] = {
