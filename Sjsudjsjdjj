@@ -122,6 +122,10 @@ if getgenv().Ran == true then
     end
     end
     wait(0.5)
+    Notification.new("<Color=Yellow>!! NEW FRUIT FINDER JOIN DISCORD !!<Color=/>"):Display()
+    wait(0.5)
+    Notification.new("<Color=Yellow>!! NEW BETA V3 ( INSTAN TP ) IN DISCORD !!<Color=/>"):Display()
+    wait(0.1)
     game.StarterGui:SetCore("SendNotification", {
     Title = "---[WELCOME]---";
     Text = ""..game.Players.LocalPlayer.DisplayName.."";
@@ -141,6 +145,42 @@ if getgenv().Ran == true then
     })
     wait(0.1)
     function SendMessage(url, message)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["content"] = message
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+function SendMessage(urlInk, message)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["content"] = message
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+function SendMessage(mrgIsland, message)
     local http = game:GetService("HttpService")
     local headers = {
         ["Content-Type"] = "application/json"
@@ -236,6 +276,8 @@ local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
+SendMessage(mrgIsland, "<@&1121490699607605278>")
+
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
     ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
@@ -252,10 +294,6 @@ local embed = {
         {
             ["name"] = "Server Job Id",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        },
-        {
-            ["name"] = "Ping",
-            ["value"] = "<@&1121490699607605278>"
         }
     },
     ["footer"] = {
@@ -267,6 +305,8 @@ SendMessageEMBED(mrgIsland, embed)
 end
 
 if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+
+SendMessage(urlInk, "<@&1121490924619448360>")
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -284,10 +324,6 @@ local embed = {
         {
             ["name"] = "Server Job Id",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        },
-        {
-            ["name"] = "Ping",
-            ["value"] = "<@&1121490924619448360>"
         }
     },
     ["footer"] = {
@@ -585,9 +621,6 @@ end
      wait(0.1)
     end
 end
-Notification.new("<Color=Yellow>!! NEW FRUIT FINDER JOIN DISCORD !!<Color=/>"):Display()
-wait(1)
-Notification.new("<Color=Blue>Sonic Turu :<Color=/> New Fruit Finder ( Collect All Fruit In Server + auto hop, Not Only Fruit Spawn )"):Display()
-wait(3)
+wait(2)
 Notification.new("<Color=Red>Wait Hop Server !!<Color=/>"):Display()
 HopServer()
