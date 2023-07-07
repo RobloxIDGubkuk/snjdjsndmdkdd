@@ -1,7 +1,8 @@
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
+local veryImportantWaitTime = 0.5
 
-if collectAllFruit == true and playerId == 3229297325 or playerId == 1946961941 or playerId == 4548995471 then
+if collectAllFruit == true and playerId == 3229297325 or collectAllFruit == true and playerId == 1946961941 or collectAllFruit == true and playerId == 4548995471 then
 
 local Settings = {}
 local HttpService = game:GetService("HttpService")
@@ -56,51 +57,51 @@ local function HopServer()
              if childinstance.Visible then
                  if childinstance.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
                  end
              end
@@ -108,63 +109,63 @@ local function HopServer()
                  if childinstance.Visible then
                      if childinstance.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
                      end
                  end
@@ -180,6 +181,22 @@ local function HopServer()
  while not Hop() do wait() end
  SaveSettings()
 end
+task.spawn(function()
+while task.wait(veryImportantWaitTime) do
+pcall(function()
+for i,v in pairs(game.CoreGui:GetDescendants()) do
+pcall(function()
+if string.find(v.Name,"ErrorMessage") then
+if string.find(v.Text,"Security kick") then
+veryImportantWaitTime = 1e9
+HopServer()                        
+end
+end
+end)
+end
+end)
+end
+end)
 
 repeat wait() until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
 if Ran then 
@@ -189,6 +206,7 @@ else
 end
 
 if getgenv().Ran == true then
+    wait(1)
     for i,v in pairs(game.Workspace:GetDescendants()) do -- grabs everything from workspace
     if v.ClassName == 'TouchTransmitter' and v.Parent.Name == 'Handle' then -- checks if it has a handle and if its a touchtransmitter
         local BillboardGui = Instance.new('BillboardGui') -- Makes Billboardgui
@@ -451,7 +469,7 @@ local embed = {
 }
 SendMessageEMBED(mrgIsland, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
@@ -506,7 +524,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1) 
+wait(0.1) 
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -558,7 +576,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -610,7 +628,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -662,7 +680,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -714,7 +732,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -854,7 +872,7 @@ local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
 local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
-local url = "https://discord.com/api/webhooks/1120236388177154230/xRs-6GZ9b05BylhRFq0NoF_moTrlF765_0jp_gIWuQCAkV0Mbz5VJgJiracdAmohuDsQ"
+local url = customWebhook
 
 
 if game.PlaceId == 7449423635 then
@@ -871,6 +889,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "Powered By",
+            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -893,6 +915,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "Powered By",
+            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -915,6 +941,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` First Sea ```"
+        },
+        {
+            ["name"] = "Powered By",
+            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -930,8 +960,24 @@ end
 wait(2)
 Notification.new("<Color=Red>Wait Hop Server !!<Color=/>"):Display()
 HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
 
-elseif collectOnlyFruitSpawn == true and playerId == 3229297325 or playerId == 1946961941 or playerId == 4548995471 then
+elseif collectOnlyFruitSpawn == true and playerId == 3229297325 or collectOnlyFruitSpawn == true and playerId == 1946961941 or collectOnlyFruitSpawn == true and playerId == 4548995471 then
 
 -- # BETA V3 # --
 
@@ -988,63 +1034,63 @@ local function HopServer()
              if childinstance.Visible then
                  if childinstance.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
                  end
              end
@@ -1052,63 +1098,63 @@ local function HopServer()
                  if childinstance.Visible then
                      if childinstance.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
-                         wait(1)
+                         wait(0.1)
                          HopServer()
                      end
                  end
@@ -1124,6 +1170,22 @@ local function HopServer()
  while not Hop() do wait() end
  SaveSettings()
 end
+task.spawn(function()
+while task.wait(veryImportantWaitTime) do
+pcall(function()
+for i,v in pairs(game.CoreGui:GetDescendants()) do
+pcall(function()
+if string.find(v.Name,"ErrorMessage") then
+if string.find(v.Text,"Security kick") then
+veryImportantWaitTime = 1e9
+HopServer()                        
+end
+end
+end)
+end
+end)
+end
+end)
 
 repeat wait() until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
 if Ran then 
@@ -1133,6 +1195,7 @@ else
 end
 
 if getgenv().Ran == true then
+    wait(1)
     for i,v in pairs(game.Workspace:GetDescendants()) do -- grabs everything from workspace
     if v.ClassName == 'TouchTransmitter' and v.Parent.Name == 'Handle' then -- checks if it has a handle and if its a touchtransmitter
         local BillboardGui = Instance.new('BillboardGui') -- Makes Billboardgui
@@ -1153,7 +1216,7 @@ if getgenv().Ran == true then
     end
     end
     wait(0.5)
-    Notification.new("<Color=Yellow>!! FRUIT FINDER V3 !!<Color=/>"):Display()
+    Notification.new("<Color=Yellow>!! FRUIT FINDER V3 ( PREMIUM ) !!<Color=/>"):Display()
     wait(0.5)
     Notification.new("<Color=Green>!! Collect Only Fruit Spawn : ✓ !!<Color=/>"):Display()
     wait(0.5)
@@ -1395,7 +1458,7 @@ local embed = {
 }
 SendMessageEMBED(mrgIsland, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
@@ -1449,7 +1512,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1) 
+wait(0.1) 
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -1501,7 +1564,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -1553,7 +1616,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -1605,7 +1668,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -1657,7 +1720,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -1797,7 +1860,7 @@ local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
 local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
-local url = "https://discord.com/api/webhooks/1120236388177154230/xRs-6GZ9b05BylhRFq0NoF_moTrlF765_0jp_gIWuQCAkV0Mbz5VJgJiracdAmohuDsQ"
+local url = customWebhook
 
 
 if game.PlaceId == 7449423635 then
@@ -1814,6 +1877,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "Powered By",
+            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -1836,6 +1903,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "Powered By",
+            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -1858,6 +1929,10 @@ local embed = {
         {
             ["name"] = "Located",
             ["value"] = "``` First Sea ```"
+        },
+        {
+            ["name"] = "Powered By",
+            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -1872,6 +1947,22 @@ end
 end
 wait(2)
 Notification.new("<Color=Red>Wait Hop Server !!<Color=/>"):Display()
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
+HopServer()
+wait(1)
 HopServer()
 
 elseif collectAllFruit == true and collectOnlyFruitSpawn == true and playerId == 3229297325 or playerId == 1946961941 or playerId == 4548995471 then
