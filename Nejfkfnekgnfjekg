@@ -1,843 +1,102 @@
--- # ALL FRUIT # --
+-- Create the ScreenGui
+local gui = Instance.new("ScreenGui")
+gui.Name = "MyGUI"
+gui.ResetOnSpawn = false
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-local Settings = {}
-local HttpService = game:GetService("HttpService")
-local Workspace = game:GetService("Workspace")
+-- Create the Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 400, 0, 300)
+frame.Position = UDim2.new(0.5, -200, 0.5, -160)
+frame.BackgroundColor3 = Color3.new(0, 0, 0) -- Black background
+frame.BorderColor3 = Color3.new(0, 0, 1) -- Blue border
+frame.BorderSizePixel = 5
+frame.Parent = gui
 
-local Notification = require(game:GetService("ReplicatedStorage").Notification)
+-- Create the TextLabel (Name)
+local nameLabel = Instance.new("TextLabel")
+nameLabel.Size = UDim2.new(0.2, 0, 0.05, 0)
+nameLabel.Position = UDim2.new(0, 10, 0, 10)
+nameLabel.BackgroundColor3 = Color3.new(0, 0, 0) -- Black background
+nameLabel.Font = Enum.Font.SourceSansBold
+nameLabel.FontSize = Enum.FontSize.Size24
+nameLabel.TextColor3 = Color3.new(1, 1, 1) -- White text
+nameLabel.TextWrapped = true
+nameLabel.Parent = frame
 
-local SaveFileName = "FruitFinderSonic.json"
+-- Create the TextLabel (Content)
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, -10, 0.7, -10)
+textLabel.Position = UDim2.new(0, 5, 0, 40)
+textLabel.BackgroundColor3 = Color3.new(0, 0, 0) -- Black background
+textLabel.Text = "The script you are using is an old version,\nreplace your script with the new one.\nCopy the link below to get the latest version."
+textLabel.Font = Enum.Font.SourceSansBold
+textLabel.FontSize = Enum.FontSize.Size24
+textLabel.TextColor3 = Color3.new(1, 1, 1) -- White text
+textLabel.TextWrapped = true
+textLabel.Parent = frame
 
-local function SaveSettings()
- local HttpService = game:GetService("HttpService")
- writefile(SaveFileName, HttpService:JSONEncode(Settings))
+-- Create the Copy Button
+local copyButton = Instance.new("TextButton")
+copyButton.Size = UDim2.new(0.5, -10, 0.1, 0)
+copyButton.Position = UDim2.new(0.25, 0, 0.8, -5) -- Adjust the Y position here
+copyButton.BackgroundColor3 = Color3.new(0, 0.5, 1) -- Blue button color
+copyButton.Font = Enum.Font.SourceSansBold
+copyButton.FontSize = Enum.FontSize.Size24
+copyButton.TextColor3 = Color3.new(30, 30, 30) -- White text
+copyButton.Text = "Link New Script!"
+copyButton.Parent = frame
+
+-- Create the Discord Button
+local discordButton = Instance.new("TextButton")
+discordButton.Size = UDim2.new(0.5, -10, 0.1, 0)
+discordButton.Position = UDim2.new(0.25, 0, 0.9, -5) -- Adjust the Y position here
+discordButton.BackgroundColor3 = Color3.new(0, 0.5, 1) -- Green button color
+discordButton.Font = Enum.Font.SourceSansBold
+discordButton.FontSize = Enum.FontSize.Size24
+discordButton.TextColor3 = Color3.new(256, 256, 256) -- White text
+discordButton.Text = "Copy Discord Link"
+discordButton.Parent = frame
+
+-- Create the Close Button
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0.1, 0, 0.1, 0)
+closeButton.Position = UDim2.new(0.9, 0, 0, 0)
+closeButton.BackgroundColor3 = Color3.new(1, 0, 0) -- Red button color
+closeButton.Font = Enum.Font.SourceSansBold
+closeButton.FontSize = Enum.FontSize.Size24
+closeButton.TextColor3 = Color3.new(256, 256, 256) -- White text
+closeButton.Text = "X"
+closeButton.Parent = frame
+
+-- Function to close the GUI
+local function closeGUI()
+    gui:Destroy()
 end
 
-local function ReadSetting()
- local s,e = pcall(function()
-     local HttpService = game:GetService("HttpService")
-     return HttpService:JSONDecode(readfile(SaveFileName))
- end)
- if s then return e
- else
-     SaveSettings()
-     return ReadSetting()
- end
-end
-Settings = ReadSetting()
-
-local function HopServer()
- local function Hop()
-     for i=1,200 do
-         local serverlist = game:GetService("ReplicatedStorage").__ServerBrowser:InvokeServer(i)
-         for k,v in pairs(serverlist) do
-             if k~=game.JobId and v.Count < 11 then
-                 if not Settings[k] or tick() - Settings[k].Time > 60*60  then
-                      Settings[k] = {
-                          Time = tick()
-                      }
-                      SaveSettings()
-                     game:GetService("ReplicatedStorage").__ServerBrowser:InvokeServer("teleport",k)
-                     return true
-                 elseif tick() - Settings[k].Time > 60*120 then
-                     Settings[k] = nil
-                 end
-             end
-         end
-     end
-     return false
- end
- if not getgenv().Loaded then
-     local function child(childinstance)
-         if childinstance.Name == "ErrorPrompt" then
-             if childinstance.Visible then
-                 if childinstance.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                 end
-             end
-             childinstance:GetPropertyChangedSignal("Visible"):Connect(function()
-                 if childinstance.Visible then
-                     if childinstance.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                         wait(1)
-                         HopServer()
-                     end
-                 end
-             end)
-         end
-     end
-     for k,v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetChildren()) do
-         child(v)
-     end
-     game.CoreGui.RobloxPromptGui.promptOverlay.ChildAdded:Connect(child)
-     getgenv().Loaded = true
- end
- while not Hop() do wait() end
- SaveSettings()
+-- Function to update the player's name
+local function updatePlayerName()
+    local player = game.Players.LocalPlayer
+    nameLabel.Text = player.Name
 end
 
-repeat wait() until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
-if Ran then 
-    return
-else
-    getgenv().Ran = true
-end
-
-if getgenv().Ran == true then
-    for i,v in pairs(game.Workspace:GetDescendants()) do -- grabs everything from workspace
-    if v.ClassName == 'TouchTransmitter' and v.Parent.Name == 'Handle' then -- checks if it has a handle and if its a touchtransmitter
-        local BillboardGui = Instance.new('BillboardGui') -- Makes Billboardgui
-        local TextLabel = Instance.new('TextLabel') -- makes text label
-        
-        BillboardGui.Parent = v.Parent -- what the billboardgui goes into
-        BillboardGui.AlwaysOnTop = true -- if its on top or not
-        BillboardGui.Size = UDim2.new(0, 60, 0, 60) -- size of it
-        BillboardGui.StudsOffset = Vector3.new(0,2,0)
-        
-        TextLabel.Parent = BillboardGui -- putting textlabel into billboardgui
-        TextLabel.BackgroundColor3 = Color3.new(1,1,1) -- color
-        TextLabel.BackgroundTransparency = 1 -- transparency
-        TextLabel.Size = UDim2.new(1, 0, 1, 0) -- size
-        TextLabel.Text = v.Parent.Parent.Name -- what the label says
-        TextLabel.TextColor3 = Color3.new(1, 0, 0) -- color
-        TextLabel.TextScaled = true -- if the text is scaled or not
-    end
-    end
-    wait(0.5)
-    Notification.new("<Color=Yellow>This Script Auto Collect All Fruit And Auto Hop<Color=/>"):Display()
-    wait(0.5)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "---[WELCOME]---";
-    Text = ""..game.Players.LocalPlayer.DisplayName.."";
-    Duration = math.huge;
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "---[DEVELOPER]---";
-    Text = "Made By SonicTuru#0001";
-    Duration = math.huge;
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "---[SOCIAL MEDIA]---";
-    Text = "SonicTeam Discord\nhttps://discord.gg/EVxNxE7KK3";
-    Duration = math.huge;
-    })
-    wait(0.1)
-    function SendMessage(url, message)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["content"] = message
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-function SendMessage(urlInk, message)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["content"] = message
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-function SendMessage(mrgIsland, message)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["content"] = message
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-function SendMessageEMBED(urlInk, embed)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["embeds"] = {
-            {
-                ["title"] = embed.title,
-                ["description"] = embed.description,
-                ["color"] = embed.color,
-                ["fields"] = embed.fields,
-                ["footer"] = {
-                    ["text"] = embed.footer.text
-                }
-            }
-        }
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = urlInk,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-wait(0.1)
-
-function SendMessageEMBED(byIsnahazam, embed)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["embeds"] = {
-            {
-                ["title"] = embed.title,
-                ["description"] = embed.description,
-                ["color"] = embed.color,
-                ["fields"] = embed.fields,
-                ["footer"] = {
-                    ["text"] = embed.footer.text
-                }
-            }
-        }
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = byIsnahazam,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-wait(0.1)
-
-function SendMessageEMBED(isnahazamFm, embed)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["embeds"] = {
-            {
-                ["title"] = embed.title,
-                ["description"] = embed.description,
-                ["color"] = embed.color,
-                ["fields"] = embed.fields,
-                ["footer"] = {
-                    ["text"] = embed.footer.text
-                }
-            }
-        }
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = isnahazamFm,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-wait(0.1)
-
-function SendMessageEMBED(mrgIsland, embed)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["embeds"] = {
-            {
-                ["title"] = embed.title,
-                ["description"] = embed.description,
-                ["color"] = embed.color,
-                ["fields"] = embed.fields,
-                ["footer"] = {
-                    ["text"] = embed.footer.text
-                }
-            }
-        }
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = mrgIsland,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
---Examples 
-
--- Set the time zone offset for Indonesia
-local timeZoneOffset = 25200 -- 7 hours ahead of UTC
-
-local currentUnixTime = os.time()
-local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
-
-local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
-local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
-
--- Get the number of players currently in the game
-local playerCount = #game:GetService("Players"):GetPlayers()
-
-local mrgIsland = "https://discord.com/api/webhooks/1103984916481445909/Y3EU5_KXPN1pxuIEECR6ZDXoN7B6OdJrpVO_rAwaEXZUl7qoqw4iGbj9kJtrerJysvog"
-
-local byIsnahazam = "https://discord.com/api/webhooks/1125763769964961822/E4CaRMZD4HFvxtP-1nmp2_WLfrakM1D_EF6F1eBMQGxMtIOxWLBn7oMJoL5JG53i7n9O"
-
-local isnahazamFm = "https://discord.com/api/webhooks/1125763887233519757/pRT5NgpBpPqOb8xjPC6hdP44qgmYEDQ294t_Eeb1WtCrLr8whyq_Sy84n3q9-FeyyQR_"
-
-local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ5qXl7gumcHttfo459KeObX9qzmCtRzxp_ESibi68F1QCBqYNZRkcYcQNS"
-
-if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-
-local embed = {
-    ["title"] = "MIRRAGE ISLAND FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 15844367,
-    ["fields"] = {
-        {
-            ["name"] = "Mirrage Status",
-            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(mrgIsland, embed)
-
-wait(1)
-
-local embed = {
-    ["title"] = "MIRRAGE ISLAND FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 15844367,
-    ["fields"] = {
-        {
-            ["name"] = "Mirrage Status",
-            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(byIsnahazam, embed)
-
-end
-
-if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 15844367,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌑) : Full Moon !! ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(urlInk, embed)
-
-wait(1) 
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 15844367,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌑) : Full Moon !! ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(isnahazamFm, embed)
-
-elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌒) : 75% ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(urlInk, embed)
-
-wait(1)
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌒) : 75% ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(isnahazamFm, embed)
-
-elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌓) : 50% ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(urlInk, embed)
-
-wait(1)
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌓) : 50% ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(isnahazamFm, embed)
-
-elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌗) : 25% ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(urlInk, embed)
-
-wait(1)
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌗) : 25% ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(isnahazamFm, embed)
-
-elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌖) : 15% ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(urlInk, embed)
-
-wait(1)
-
-local embed = {
-    ["title"] = "FULL MOON FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Moon Phase",
-            ["value"] = "``` (🌖) : 15% ```"
-        },
-        {
-            ["name"] = "Players In Server",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "Server Job Id",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(isnahazamFm, embed)
-
-end
-    wait(0.1)
-    if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
-    for i,v in pairs({"MouseButton1Click", "MouseButton1Down", "Activated"}) do
-    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton[v])) do
-    v.Function()
-    end
-    end
-    wait(1)
-end
-end
-
-wait(2)
-
-local plr = game.Players.LocalPlayer
-local chr = plr.Character
-local t = game.TweenService
-
-local bv = Instance.new("BodyVelocity")
-bv.MaxForce = Vector3.new(1/0, 1/0, 1/0)
-bv.Velocity = Vector3.new()
-bv.Name = "bV"
-local bav = Instance.new("BodyAngularVelocity")
-bav.AngularVelocity = Vector3.new()
-bav.MaxTorque = Vector3.new(1/0, 1/0, 1/0)
-bav.Name = "bAV" 
-
-for _,v in next, workspace:GetChildren() do
-    if v.Name:find("Fruit") and (v:IsA("Model") or v:IsA("Tool")) then
-       if not v.Name:find("Fruit") and not (v:IsA("Model") or not v:IsA("Tool")) or _G.hopDeteck == true then
-        require(game:GetService("ReplicatedStorage").Notification).new("Hop 1"):Display();
-        HopServer()
-        end
-        repeat
-            local anc1 = bv:Clone()
-            anc1.Parent = chr.HumanoidRootPart
-            local anc2 = bav:Clone()
-            anc2.Parent = chr.HumanoidRootPart
-            local p = t:Create(chr.HumanoidRootPart, TweenInfo.new((plr:DistanceFromCharacter(v.Handle.Position)-1)/10792660990526442019426788, Enum.EasingStyle.Linear), {CFrame=v.Handle.CFrame + Vector3.new(1, v.Handle.Size.Y, 1)})
-            p:Play()
-            p.Completed:Wait()
-            chr.HumanoidRootPart.CFrame = v.Handle.CFrame
-            anc1:Destroy()
-            anc2:Destroy()
-            wait(1)
-        until v.Parent ~= workspace
-        wait(1)
-        local fruit = chr:FindFirstChildOfClass("Tool") and chr:FindFirstChildOfClass("Tool").Name:find("Fruit") and chr:FindFirstChildOfClass("Tool") or (function()
-            for _,fr in plr.Backpack:GetChildren() do
-                if fr.Name:find("Fruit") then
-                    return fr
-                 end 
-            end
-        end)()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit", fruit:GetAttribute("OriginalName"), fruit)
-        wait(0.5)
-function SendMessage(url, message)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["content"] = message
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-function SendMessageEMBED(url, embed)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["embeds"] = {
-            {
-                ["title"] = embed.title,
-                ["description"] = embed.description,
-                ["color"] = embed.color,
-                ["fields"] = embed.fields,
-                ["footer"] = {
-                    ["text"] = embed.footer.text
-                }
-            }
-        }
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-
---Examples 
-
--- Set the time zone offset for Indonesia
-local timeZoneOffset = 25200 -- 7 hours ahead of UTC
-
-local currentUnixTime = os.time()
-local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
-
-local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
-local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
-
-local url = "https://discord.com/api/webhooks/1120236388177154230/xRs-6GZ9b05BylhRFq0NoF_moTrlF765_0jp_gIWuQCAkV0Mbz5VJgJiracdAmohuDsQ"
-
-
-if game.PlaceId == 7449423635 then
-
-local embed = {
-    ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Fruit Name",
-            ["value"] = "``` "..fruit.Name.." ```"
-        },
-        {
-            ["name"] = "Located",
-            ["value"] = "``` Third Sea ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : It Only Shows People Who Got Fruit From Fruit Finder"
-    }
-}
-SendMessageEMBED(url, embed)
-
-elseif game.PlaceId == 4442272183 then
-
-local embed = {
-    ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Fruit Name",
-            ["value"] = "``` "..fruit.Name.." ```"
-        },
-        {
-            ["name"] = "Located",
-            ["value"] = "``` Second Sea ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : It Only Shows People Who Got Fruit From Fruit Finder"
-    }
-}
-SendMessageEMBED(url, embed)
-
-elseif game.PlaceId == 2753915549 then
-
-local embed = {
-    ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
-    ["color"] = 10181046,
-    ["fields"] = {
-        {
-            ["name"] = "Fruit Name",
-            ["value"] = "``` "..fruit.Name.." ```"
-        },
-        {
-            ["name"] = "Located",
-            ["value"] = "``` First Sea ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : It Only Shows People Who Got Fruit From Fruit Finder"
-    }
-}
-SendMessageEMBED(url, embed)
-
-end
-     wait(0.1)
-    end
-end
-wait(2)
-Notification.new("<Color=Red>Wait Hop Server !!<Color=/>"):Display()
-HopServer()
+-- Call the function to initially set the player's name
+updatePlayerName()
+
+-- Add a PlayerAdded event to update the player's name if it changes
+game.Players.PlayerAdded:Connect(updatePlayerName)
+
+-- Add click event for the copy button
+copyButton.MouseButton1Click:Connect(function()
+    setclipboard("https://direct-link.net/595432/beta-fruit-finder") -- Replace with the actual URL
+end)
+
+-- Add click event for the discord button
+discordButton.MouseButton1Click:Connect(function()
+    setclipboard("https://discord.gg/EVxNxE7KK3") -- Replace with the actual Discord invite link
+end)
+
+-- Add click event for the close button
+closeButton.MouseButton1Click:Connect(function()
+    closeGUI()
+end)
