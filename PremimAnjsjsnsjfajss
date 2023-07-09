@@ -2,7 +2,90 @@ local player = game.Players.LocalPlayer
 local playerId = player.UserId
 local veryImportantWaitTime = 0.5
 
-if collectAllFruit == true and playerId == 3229297325 or collectAllFruit == true and playerId == 1946961941 or collectAllFruit == true and playerId == 4548995471 then
+-- https://discord.com/api/webhooks/1120236388177154230/xRs-6GZ9b05BylhRFq0NoF_moTrlF765_0jp_gIWuQCAkV0Mbz5VJgJiracdAmohuDsQ --
+
+if antiLag == true then
+function lagAnti()
+local ToDisable = {
+	Textures = true,
+	VisualEffects = true,
+	Parts = true,
+	Particles = true,
+	Sky = true
+}
+
+local ToEnable = {
+	FullBright = false
+}
+
+local Stuff = {}
+
+for _, v in next, game:GetDescendants() do
+	if ToDisable.Parts then
+		if v:IsA("Part") or v:IsA("Union") or v:IsA("BasePart") then
+			v.Material = Enum.Material.SmoothPlastic
+			table.insert(Stuff, 1, v)
+		end
+	end
+	
+	if ToDisable.Particles then
+		if v:IsA("ParticleEmitter") or v:IsA("Smoke") or v:IsA("Explosion") or v:IsA("Sparkles") or v:IsA("Fire") then
+			v.Enabled = false
+			table.insert(Stuff, 1, v)
+		end
+	end
+	
+	if ToDisable.VisualEffects then
+		if v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("SunRaysEffect") then
+			v.Enabled = false
+			table.insert(Stuff, 1, v)
+		end
+	end
+	
+	if ToDisable.Textures then
+		if v:IsA("Decal") or v:IsA("Texture") then
+			v.Texture = ""
+			table.insert(Stuff, 1, v)
+		end
+	end
+	
+	if ToDisable.Sky then
+		if v:IsA("Sky") then
+			v.Parent = nil
+			table.insert(Stuff, 1, v)
+		end
+	end
+end
+
+game:GetService("TestService"):Message("Effects Disabler Script : Successfully disabled "..#Stuff.." assets / effects. Settings :")
+
+for i, v in next, ToDisable do
+	print(tostring(i)..": "..tostring(v))
+end
+
+if ToEnable.FullBright then
+    local Lighting = game:GetService("Lighting")
+    
+    Lighting.FogColor = Color3.fromRGB(255, 255, 255)
+    Lighting.FogEnd = math.huge
+    Lighting.FogStart = math.huge
+    Lighting.Ambient = Color3.fromRGB(255, 255, 255)
+    Lighting.Brightness = 5
+    Lighting.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)
+    Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)
+    Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)
+    Lighting.Outlines = true
+end
+end
+
+wait(0.1)
+lagAnti()
+
+end
+
+wait(0.1) -- Perbatasan --- ///////////////////////////
+
+if collectAllFruit == true and playerId == 3229297325 or collectAllFruit == true and playerId == 1946961941 or collectAllFruit == true and playerId == 4548995471 or collectAllFruit == true and playerId ==  4710928628 or collectAllFruit == true and playerId ==  3354272846 or collectAllFruit == true and playerId ==  3354290455 or collectAllFruit == true and playerId ==  4710942448 then
 
 local Settings = {}
 local HttpService = game:GetService("HttpService")
@@ -977,7 +1060,10 @@ HopServer()
 wait(1)
 HopServer()
 
-elseif collectOnlyFruitSpawn == true and playerId == 3229297325 or collectOnlyFruitSpawn == true and playerId == 1946961941 or collectOnlyFruitSpawn == true and playerId == 4548995471 then
+elseif collectOnlyFruitSpawn == true and playerId == 3229297325 or collectOnlyFruitSpawn == true and playerId == 1946961941 or collectOnlyFruitSpawn == true and playerId == 4548995471 or collectOnlyFruitSpawn == true and playerId == 4710942448 or
+collectOnlyFruitSpawn == true and playerId == 3354290455 or
+collectOnlyFruitSpawn == true and playerId == 3354272846 or
+collectOnlyFruitSpawn == true and playerId == 4710928628 then
 
 -- # BETA V3 # --
 
@@ -1965,7 +2051,7 @@ HopServer()
 wait(1)
 HopServer()
 
-elseif collectAllFruit == true and collectOnlyFruitSpawn == true and playerId == 3229297325 or playerId == 1946961941 or playerId == 4548995471 then
+elseif collectAllFruit == true and collectOnlyFruitSpawn == true then
 
 Notification.new("<Color=Red> HEY! STUPID, U MUST BE PICK ONE DONT TRUE ALL <Color=/>"):Display()
 
@@ -1975,6 +2061,6 @@ local Notification = require(game:GetService("ReplicatedStorage").Notification)
 
 Notification.new("<Color=Red> This Script For Premium U Cant Use For Free! ( Ur Name Not Found On List ) <Color=/>"):Display()
 wait(1)
-Notification.new("<Color=Yellow> Premium User In This Script ( 3 People ) <Color=/>"):Display()
+Notification.new("<Color=Yellow> Buy? Dm Discord SonicTuru <Color=/>"):Display()
 
 end
