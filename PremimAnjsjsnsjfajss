@@ -366,7 +366,7 @@ function SendMessage(urlInk, message)
     }
     local body = http:JSONEncode(data)
     local response = request({
-        Url = url,
+        Url = urlInk,
         Method = "POST",
         Headers = headers,
         Body = body
@@ -384,7 +384,7 @@ function SendMessage(mrgIsland, message)
     }
     local body = http:JSONEncode(data)
     local response = request({
-        Url = url,
+        Url = mrgIsland,
         Method = "POST",
         Headers = headers,
         Body = body
@@ -534,6 +534,9 @@ local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
+
+SendMessage(mrgIsland, "<@&1121490699607605278>")
+
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
     ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
@@ -588,6 +591,8 @@ end
 
 if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
 
+
+SendMessage(urlInk, "<@&1121490924619448360>")
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -1394,7 +1399,7 @@ function SendMessage(urlInk, message)
     }
     local body = http:JSONEncode(data)
     local response = request({
-        Url = url,
+        Url = urlInk,
         Method = "POST",
         Headers = headers,
         Body = body
@@ -1412,7 +1417,7 @@ function SendMessage(mrgIsland, message)
     }
     local body = http:JSONEncode(data)
     local response = request({
-        Url = url,
+        Url = mrgIsland,
         Method = "POST",
         Headers = headers,
         Body = body
@@ -1562,6 +1567,8 @@ local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
+SendMessage(mrgIsland, "<@&1121490699607605278>")
+
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
     ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
@@ -1615,6 +1622,8 @@ SendMessageEMBED(byIsnahazam, embed)
 end
 
 if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+
+SendMessage(urlInk, "<@&1121490924619448360>")
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
