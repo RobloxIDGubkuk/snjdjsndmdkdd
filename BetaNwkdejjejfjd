@@ -1,4 +1,11 @@
 repeat wait() until game:IsLoaded()
+
+if WhiteScreen == true then
+    game:GetService("RunService"):Set3dRenderingEnabled(false)
+elseif WhiteScreen == false then
+    game:GetService("RunService"):Set3dRenderingEnabled(true)
+end
+
 if collectAllFruit == true then
 
 local Settings = {}
