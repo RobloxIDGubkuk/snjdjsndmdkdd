@@ -1,3 +1,4 @@
+repeat wait() until game:IsLoaded()
 if collectAllFruit == true then
 
 local Settings = {}
