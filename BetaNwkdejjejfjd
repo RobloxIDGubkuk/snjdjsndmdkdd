@@ -1363,7 +1363,7 @@ SendMessageEMBED(url, embed)
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Pure Red" then
 
 local embed = {
-    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
     ["description"] = "Hello, Im Bot For Haki Finder",
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
