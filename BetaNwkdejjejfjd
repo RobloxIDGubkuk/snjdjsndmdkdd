@@ -1919,11 +1919,16 @@ local playerCount = #game:GetService("Players"):GetPlayers()
 
 -- Wando Saddi Shisui
 
+local args = {
+[1] = "LegendarySwordDealer",
+[2] = "1"
+}
+
 local lgndSword = "https://discord.com/api/webhooks/1128172269894643753/BTFrlUjwggqqKxVIMjSRZzW7jWiYnH-Wi0jgND9HtkxuX8RRMhNCNw3iILr81n1_4jKx" -- PUT UR WEBHOOK LINK HERE
 
 -- THIS THE WEBHOOK U CAN CUSTOM ( TITTLE OR DESCRIPTION ) ( the one below )
 
-if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") == "Shisui" then
+if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) == "Shisui" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -1950,9 +1955,9 @@ if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.C
             ["text"] = " | " .. formattedDate .. " | Note : Execute Script ( Server Job Id ) To Join Server"
         }
     }
-    SendMessage(url,embed)
+    SendMessage(lgndSword,embed)
 
-elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") == "Wando" then
+elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))) == "Wando" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -1979,9 +1984,9 @@ elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remot
             ["text"] = " | " .. formattedDate .. " | Note : Execute Script ( Server Job Id ) To Join Server"
         }
     }
-    SendMessage(url,embed)
+    SendMessage(lgndSword,embed)
     
-elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") == "Saddi" then
+elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) == "Saddi" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -2008,9 +2013,10 @@ elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remot
             ["text"] = " | " .. formattedDate .. " | Note : Execute Script ( Server Job Id ) To Join Server"
         }
     }
-    SendMessage(url,embed)
+    SendMessage(lgndSword,embed)
     
 end
+
 
 wait(0.1)
 
@@ -4126,11 +4132,16 @@ local playerCount = #game:GetService("Players"):GetPlayers()
 
 -- Wando Saddi Shisui
 
+local args = {
+[1] = "LegendarySwordDealer",
+[2] = "1"
+}
+
 local lgndSword = "https://discord.com/api/webhooks/1128172269894643753/BTFrlUjwggqqKxVIMjSRZzW7jWiYnH-Wi0jgND9HtkxuX8RRMhNCNw3iILr81n1_4jKx" -- PUT UR WEBHOOK LINK HERE
 
 -- THIS THE WEBHOOK U CAN CUSTOM ( TITTLE OR DESCRIPTION ) ( the one below )
 
-if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") == "Shisui" then
+if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) == "Shisui" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -4157,9 +4168,9 @@ if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.C
             ["text"] = " | " .. formattedDate .. " | Note : Execute Script ( Server Job Id ) To Join Server"
         }
     }
-    SendMessage(url,embed)
+    SendMessage(lgndSword,embed)
 
-elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") == "Wando" then
+elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))) == "Wando" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -4186,9 +4197,9 @@ elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remot
             ["text"] = " | " .. formattedDate .. " | Note : Execute Script ( Server Job Id ) To Join Server"
         }
     }
-    SendMessage(url,embed)
+    SendMessage(lgndSword,embed)
     
-elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") == "Saddi" then
+elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) == "Saddi" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -4215,9 +4226,10 @@ elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remot
             ["text"] = " | " .. formattedDate .. " | Note : Execute Script ( Server Job Id ) To Join Server"
         }
     }
-    SendMessage(url,embed)
+    SendMessage(lgndSword,embed)
     
 end
+
 
 wait(0.1)
 
