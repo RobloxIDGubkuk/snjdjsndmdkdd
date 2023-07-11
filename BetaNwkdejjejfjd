@@ -1923,7 +1923,7 @@ local lgndSword = "https://discord.com/api/webhooks/1128172269894643753/BTFrlUjw
 
 -- THIS THE WEBHOOK U CAN CUSTOM ( TITTLE OR DESCRIPTION ) ( the one below )
 
-if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Shisui" then
+if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") == "Shisui" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -1952,7 +1952,7 @@ if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.C
     }
     SendMessage(lgndSword,embed)
 
-elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Wando" then
+elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") == "Wando" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -1981,7 +1981,7 @@ elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remot
     }
     SendMessage(lgndSword,embed)
     
-elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Saddi" then
+elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") == "Saddi" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -4131,7 +4131,7 @@ local lgndSword = "https://discord.com/api/webhooks/1128172269894643753/BTFrlUjw
 
 -- THIS THE WEBHOOK U CAN CUSTOM ( TITTLE OR DESCRIPTION ) ( the one below )
 
-if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Shisui" then
+if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") == "Shisui" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -4160,7 +4160,7 @@ if game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.C
     }
     SendMessage(lgndSword,embed)
 
-elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Wando" then
+elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") == "Wando" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
@@ -4189,7 +4189,7 @@ elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remot
     }
     SendMessage(lgndSword,embed)
     
-elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Saddi" then
+elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") == "Saddi" then
     local embed = {
         ["title"] = "Legend Sword Hunter ( LEGENDARY SWORD )",
         ["description"] = "Hello, I'm Bot For Legendary Sword",
