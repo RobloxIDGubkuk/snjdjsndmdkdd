@@ -90,8 +90,7 @@ wait(0.1) -- Perbatasan --- ///////////////////////////
 
 if collectAllFruit == true and playerId == 3229297325 or collectAllFruit == true and playerId == 1946961941 or collectAllFruit == true and playerId == 4548995471 or collectAllFruit == true and playerId ==  4763444784 or
 collectAllFruit == true and idHw == "E66A0BC1-1EDC-4E76-BC27-5BD45DA5C904" or 
-collectAllFruit == true and idHw == "CB33F0CF-749E-45A2-80D9-AD34303B7C09" or 
-collectAllFruit == true and idHw == "9D80C1D2-FD5A-4D2A-9DB7-684AF5C5623C" then
+collectAllFruit == true and gtKey == "Najd@X239" then
 
 local Settings = {}
 local HttpService = game:GetService("HttpService")
@@ -1105,8 +1104,7 @@ HopServer()
 
 elseif collectOnlyFruitSpawn == true and playerId == 3229297325 or collectOnlyFruitSpawn == true and playerId == 1946961941 or collectOnlyFruitSpawn == true and playerId == 4548995471 or collectOnlyFruitSpawn == true and playerId == 4763444784 or
 collectOnlyFruitSpawn == true and idHw == "E66A0BC1-1EDC-4E76-BC27-5BD45DA5C904" or 
-collectOnlyFruitSpawn == true and idHw == "CB33F0CF-749E-45A2-80D9-AD34303B7C09" or 
-collectOnlyFruitSpawn == true and idHw == "9D80C1D2-FD5A-4D2A-9DB7-684AF5C5623C" then
+collectOnlyFruitSpawn == true and gtKey == "Najd@X239" then
 
 -- # BETA V3 # --
 
