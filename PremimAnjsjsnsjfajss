@@ -892,7 +892,7 @@ for _,v in next, workspace:GetChildren() do
             chr.HumanoidRootPart.CFrame = v.Handle.CFrame
             anc1:Destroy()
             anc2:Destroy()
-            wait(1)
+            wait(dlyTp)
         until v.Parent ~= workspace
         wait(1)
         local fruit = chr:FindFirstChildOfClass("Tool") and chr:FindFirstChildOfClass("Tool").Name:find("Fruit") and chr:FindFirstChildOfClass("Tool") or (function()
@@ -1920,7 +1920,7 @@ for _,v in next, workspace:GetChildren() do
             chr.HumanoidRootPart.CFrame = v.Handle.CFrame
             anc1:Destroy()
             anc2:Destroy()
-            wait(1)
+            wait(dlyTp)
         until v.Parent ~= workspace
         wait(1)
         local fruit = chr:FindFirstChildOfClass("Tool") and chr:FindFirstChildOfClass("Tool").Name:find("Fruit") and chr:FindFirstChildOfClass("Tool") or (function()
