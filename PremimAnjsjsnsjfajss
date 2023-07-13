@@ -87,7 +87,7 @@ end
 
 wait(0.1) -- Perbatasan --- ///////////////////////////
 
-if collectAllFruit == true and playerId == 3229297325 or collectAllFruit == true and playerId == 1946961941 or collectAllFruit == true and playerId == 4548995471 or collectAllFruit == true and playerId ==  4763444784 or collectAllFruit == true and idHw == "E66A0BC1-1EDC-4E76-BC27-5BD45DA5C904" or collectAllFruit == true and playerId == 3941065480 or collectAllFruit == true and gtKey == "Najd@X239" then
+if collectAllFruit == true and playerId == 3229297325 or collectAllFruit == true and playerId == 1946961941 or collectAllFruit == true and playerId == 4548995471 or collectAllFruit == true and playerId == 4763444784 or collectAllFruit == true and playerId == 3941065480 or collectAllFruit == true and idHw == "E66A0BC1-1EDC-4E76-BC27-5BD45DA5C904" or collectAllFruit == true and gtKey == "Najd@X239" then
 
 local Settings = {}
 local HttpService = game:GetService("HttpService")
