@@ -3,7 +3,6 @@ repeat wait() until game:IsLoaded()
 local idHw = game:GetService("RbxAnalyticsService"):GetClientId()
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
-local veryImportantWaitTime = 0.5
 
 -- https://discord.com/api/webhooks/1120236388177154230/xRs-6GZ9b05BylhRFq0NoF_moTrlF765_0jp_gIWuQCAkV0Mbz5VJgJiracdAmohuDsQ --
 
@@ -88,8 +87,9 @@ end
 
 wait(0.1) -- Perbatasan --- ///////////////////////////
 
-if collectAllFruit == true and playerId == 3229297325 or collectAllFruit == true and playerId == 1946961941 or collectAllFruit == true and playerId == 4548995471 or collectAllFruit == true and playerId ==  4763444784 or
+if collectAllFruit == true and playerId == 3229297325 or collectAllFruit == true and playerId == 1946961941 or collectAllFruit == true and playerId == 4548995471 or collectAllFruit == true and playerId ==  4763444784 or 
 collectAllFruit == true and idHw == "E66A0BC1-1EDC-4E76-BC27-5BD45DA5C904" or 
+collectAllFruit == true and idHw == "0966A37A-09AF-4A83-A1CE-108708ECD53A" or 
 collectAllFruit == true and gtKey == "Najd@X239" then
 
 local Settings = {}
@@ -269,22 +269,6 @@ local function HopServer()
  while not Hop() do wait() end
  SaveSettings()
 end
-task.spawn(function()
-while task.wait(veryImportantWaitTime) do
-pcall(function()
-for i,v in pairs(game.CoreGui:GetDescendants()) do
-pcall(function()
-if string.find(v.Name,"ErrorMessage") then
-if string.find(v.Text,"Security kick") then
-veryImportantWaitTime = 1e9
-HopServer()                        
-end
-end
-end)
-end
-end)
-end
-end)
 
 repeat wait() until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
 if Ran then 
@@ -892,6 +876,23 @@ for _,v in next, workspace:GetChildren() do
             anc1:Destroy()
             anc2:Destroy()
             wait(dlyTp)
+            local veryImportantWaitTime = 0.1
+            task.spawn(function()
+            while task.wait(veryImportantWaitTime) do
+            pcall(function()
+            for i,v in pairs(game.CoreGui:GetDescendants()) do
+            pcall(function()
+            if string.find(v.Name,"Disconnected") then
+            if string.find(v.Text,"You were kicked") then
+            veryImportantWaitTime = 1e9
+            HopServer()
+            end
+            end
+            end)
+            end
+            end)
+            end
+            end)
         until v.Parent ~= workspace
         wait(1)
         local fruit = chr:FindFirstChildOfClass("Tool") and chr:FindFirstChildOfClass("Tool").Name:find("Fruit") and chr:FindFirstChildOfClass("Tool") or (function()
@@ -1104,6 +1105,7 @@ HopServer()
 
 elseif collectOnlyFruitSpawn == true and playerId == 3229297325 or collectOnlyFruitSpawn == true and playerId == 1946961941 or collectOnlyFruitSpawn == true and playerId == 4548995471 or collectOnlyFruitSpawn == true and playerId == 4763444784 or
 collectOnlyFruitSpawn == true and idHw == "E66A0BC1-1EDC-4E76-BC27-5BD45DA5C904" or 
+collectOnlyFruitSpawn == true and idHw == "0966A37A-09AF-4A83-A1CE-108708ECD53A" or 
 collectOnlyFruitSpawn == true and gtKey == "Najd@X239" then
 
 -- # BETA V3 # --
