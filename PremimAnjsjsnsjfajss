@@ -296,7 +296,7 @@ if getgenv().Ran == true then
     end
     end
     wait(0.5)
-    Notification.new("<Color=Yellow>!! FRUIT FINDER V3 !!<Color=/>"):Display()
+    Notification.new("<Color=Yellow>!! FRUIT FINDER V3 ( PREMIUM ) !!<Color=/>"):Display()
     wait(0.5)
     Notification.new("<Color=Green>!! Collect All Fruit : ✓ !!<Color=/>"):Display()
     wait(0.5)
@@ -882,7 +882,7 @@ for _,v in next, workspace:GetChildren() do
             if string.find(v.Name,"Disconnected") then
             if string.find(v.Text,"You were kicked") then
             veryImportantWaitTime = 1e9
-            HopServer()
+            game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
             end
             end
             end)
@@ -1293,22 +1293,7 @@ local function HopServer()
  while not Hop() do wait() end
  SaveSettings()
 end
-task.spawn(function()
-while task.wait(veryImportantWaitTime) do
-pcall(function()
-for i,v in pairs(game.CoreGui:GetDescendants()) do
-pcall(function()
-if string.find(v.Name,"ErrorMessage") then
-if string.find(v.Text,"Security kick") then
-veryImportantWaitTime = 1e9
-HopServer()                        
-end
-end
-end)
-end
-end)
-end
-end)
+
 
 repeat wait() until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
 if Ran then 
@@ -1915,6 +1900,23 @@ for _,v in next, workspace:GetChildren() do
             anc1:Destroy()
             anc2:Destroy()
             wait(dlyTp)
+            local veryImportantWaitTime = 0.1
+            task.spawn(function()
+            while task.wait(veryImportantWaitTime) do
+            pcall(function()
+            for i,v in pairs(game.CoreGui:GetDescendants()) do
+            pcall(function()
+            if string.find(v.Name,"Disconnected") then
+            if string.find(v.Text,"You were kicked") then
+            veryImportantWaitTime = 1e9
+            game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+            end
+            end
+            end)
+            end
+            end)
+            end
+            end)
         until v.Parent ~= workspace
         wait(1)
         local fruit = chr:FindFirstChildOfClass("Tool") and chr:FindFirstChildOfClass("Tool").Name:find("Fruit") and chr:FindFirstChildOfClass("Tool") or (function()
