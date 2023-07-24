@@ -1050,7 +1050,7 @@ for _,v in next, workspace:GetChildren() do
             for i,v in pairs(game.CoreGui:GetDescendants()) do
             pcall(function()
             if string.find(v.Name,"Disconnected") then
-            if string.find(v.Text,"You were kicked") then
+            if string.find(v.Text,"You were kicked from this experience") then
             veryImportantWaitTime = 1e9
             game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
             end
@@ -2247,7 +2247,7 @@ for _,v in next, workspace:GetChildren() do
             for i,v in pairs(game.CoreGui:GetDescendants()) do
             pcall(function()
             if string.find(v.Name,"Disconnected") then
-            if string.find(v.Text,"You were kicked") then
+            if string.find(v.Text,"You were kicked from this experience") then
             veryImportantWaitTime = 1e9
             game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
             end
