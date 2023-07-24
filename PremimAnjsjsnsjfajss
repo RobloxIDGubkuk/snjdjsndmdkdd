@@ -300,23 +300,146 @@ if getgenv().Ran == true then
     wait(0.5)
     Notification.new("<Color=Green>!! Collect All Fruit : ✓ !!<Color=/>"):Display()
     wait(0.5)
+    local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Mengatur properti GUI
+ScreenGui.IgnoreGuiInset = true
+ScreenGui.Enabled = true
+ScreenGui.ResetOnSpawn = false
+
+-- Variabel untuk menyimpan informasi tentang penggeseran GUI
+local isDragging = true
+local offset = Vector2.new(0, 0)
+
+-- Membuat latar belakang hitam
+local Background = Instance.new("Frame")
+Background.Name = "Background"
+Background.Size = UDim2.new(0, 250, 0, 200)
+Background.Position = UDim2.new(0.5, -200, 0.5, -150)
+Background.AnchorPoint = Vector2.new(0.5, 0.5)
+Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Background.BorderSizePixel = 0
+Background.Parent = ScreenGui
+
+-- Membuat area biru di sekeliling latar belakang
+local BlueBorder = Instance.new("Frame")
+BlueBorder.Name = "BlueBorder"
+BlueBorder.Size = UDim2.new(1, 6, 1, 6)
+BlueBorder.Position = UDim2.new(0, -3, 0, -3)
+BlueBorder.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+BlueBorder.BorderSizePixel = 0
+BlueBorder.Parent = Background
+
+-- Membuat area putih di dalam latar belakang
+local WhiteArea = Instance.new("Frame")
+WhiteArea.Name = "WhiteArea"
+WhiteArea.Size = UDim2.new(1, -12, 1, -12)
+WhiteArea.Position = UDim2.new(0, 6, 0, 6)
+WhiteArea.BackgroundColor3 = Color3.fromRGB(1, 1, 1)
+WhiteArea.BorderSizePixel = 0
+WhiteArea.Parent = BlueBorder
+
+-- Menambahkan fungsi untuk menggeser GUI
+Background.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = true
+        offset = input.Position - Background.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                isDragging = false
+            end
+        end)
+    end
+end)
+
+Background.InputChanged:Connect(function(input)
+    if isDragging then
+        Background.Position = UDim2.new(0, input.Position.X - offset.X, 0, input.Position.Y - offset.Y)
+    end
+end)
+
+-- Menambahkan baris teks pertama
+local TextLabel1 = Instance.new("TextLabel")
+TextLabel1.Name = "Text1"
+TextLabel1.Size = UDim2.new(1, -10, 0, 20)
+TextLabel1.Position = UDim2.new(0, 5, 0, 11)
+TextLabel1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel1.BorderSizePixel = 0
+TextLabel1.Text = "Welcome "..game.Players.LocalPlayer.DisplayName..""
+TextLabel1.Parent = WhiteArea
+
+-- Menambahkan baris teks kedua
+local TextLabel2 = Instance.new("TextLabel")
+TextLabel2.Name = "Text2"
+TextLabel2.Size = UDim2.new(1, -10, 0, 20)
+TextLabel2.Position = UDim2.new(0, 5, 0, 36)
+TextLabel2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2.BorderSizePixel = 0
+TextLabel2.Text = "Version : Premium"
+TextLabel2.Parent = WhiteArea
+
+local readFruit = readfile("TextTestSonic.txt")
+
+-- Menambahkan baris teks ketiga
+local TextLabel3 = Instance.new("TextLabel")
+TextLabel3.Name = "Text3"
+TextLabel3.Size = UDim2.new(1, -10, 0, 20)
+TextLabel3.Position = UDim2.new(0, 5, 0, 61)
+TextLabel3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel3.BorderSizePixel = 0
+TextLabel3.Text = "Last Take Fruit : "..readFruit..""
+TextLabel3.Parent = WhiteArea
+
+-- Menambahkan baris teks keempat
+local TextLabel4 = Instance.new("TextLabel")
+TextLabel4.Name = "Text4"
+TextLabel4.Size = UDim2.new(1, -10, 0, 20)
+TextLabel4.Position = UDim2.new(0, 5, 0, 86)
+TextLabel4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel4.BorderSizePixel = 0
+TextLabel4.Text = "Script Made By : SonicTuru"
+TextLabel4.Parent = WhiteArea
+
+local BlueLine = Instance.new("Frame")
+BlueLine.Name = "BlueLine"
+BlueLine.Size = UDim2.new(1, 0, 0, 6) -- Mengatur lebar garis
+BlueLine.Position = UDim2.new(0, 0, 0, 120) -- Menempatkannya di antara "Text4" dan "CopyButton"
+BlueLine.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+BlueLine.BorderSizePixel = 0
+BlueLine.Parent = WhiteArea
+
+local CopyButton = Instance.new("TextButton")
+CopyButton.Name = "CopyButton"
+CopyButton.Size = UDim2.new(1, -10, 0, 20)
+CopyButton.Position = UDim2.new(0, 5, 0, 140) -- Mengatur posisi "CopyButton" sedikit di bawah "BlueLine"
+CopyButton.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+CopyButton.BorderSizePixel = 0
+CopyButton.Text = "Copy Discord"
+CopyButton.Parent = WhiteArea
+
+-- Fungsi untuk menyalin Discord ke clipboard saat tombol diklik
+CopyButton.MouseButton1Click:Connect(function()
+    setclipboard("https://discord.gg/EVxNxE7KK3")
+end)
+
+local BuyButton = Instance.new("TextButton")
+BuyButton.Name = "BuyButton"
+BuyButton.Size = UDim2.new(1, -10, 0, 20)
+BuyButton.Position = UDim2.new(0, 5, 0, 160) -- Position below the "Copy Discord" button
+BuyButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0) -- Green color
+BuyButton.BorderSizePixel = 0
+BuyButton.Text = "Buy Premium Version?" -- Button text
+BuyButton.Parent = WhiteArea
+
+-- Function to handle the "Buy Premium Script" button click event
+BuyButton.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
-    Title = "---[WELCOME]---";
-    Text = ""..game.Players.LocalPlayer.DisplayName.."";
-    Duration = math.huge;
+    Title = "---[PREMIUM]---";
+    Text = "Buy Premium Version? \n Join Discord! ";
+    Duration = 3;
     })
-    wait(0.5)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "---[DEVELOPER]---";
-    Text = "Made By SonicTuru";
-    Duration = math.huge;
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "---[SOCIAL MEDIA]---";
-    Text = "SonicTeam Discord\nhttps://discord.gg/EVxNxE7KK3";
-    Duration = math.huge;
-    })
+end)
     wait(0.1)
     function SendMessage(url, message)
     local http = game:GetService("HttpService")
@@ -1002,7 +1125,7 @@ end
     wait(0.1)
     if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
     for i,v in pairs({"MouseButton1Click", "MouseButton1Down", "Activated"}) do
-    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton[v])) do
+    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton[v])) do
     v.Function()
     end
     end
@@ -1071,6 +1194,8 @@ for _,v in next, workspace:GetChildren() do
         end)()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit", fruit:GetAttribute("OriginalName"), fruit)
         wait(0.5)
+        writefile("TextTestSonic.txt", fruit.Name)
+        wait(0.5)
 function SendMessage(url, message)
     local http = game:GetService("HttpService")
     local headers = {
@@ -1130,7 +1255,6 @@ local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, curr
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
 local url = customWebhook
-
 
 if game.PlaceId == 7449423635 then
 
@@ -1498,23 +1622,146 @@ if getgenv().Ran == true then
     wait(0.5)
     Notification.new("<Color=Green>!! Collect Only Fruit Spawn : ✓ !!<Color=/>"):Display()
     wait(0.5)
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Mengatur properti GUI
+ScreenGui.IgnoreGuiInset = true
+ScreenGui.Enabled = true
+ScreenGui.ResetOnSpawn = false
+
+-- Variabel untuk menyimpan informasi tentang penggeseran GUI
+local isDragging = true
+local offset = Vector2.new(0, 0)
+
+-- Membuat latar belakang hitam
+local Background = Instance.new("Frame")
+Background.Name = "Background"
+Background.Size = UDim2.new(0, 250, 0, 200)
+Background.Position = UDim2.new(0.5, -200, 0.5, -150)
+Background.AnchorPoint = Vector2.new(0.5, 0.5)
+Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Background.BorderSizePixel = 0
+Background.Parent = ScreenGui
+
+-- Membuat area biru di sekeliling latar belakang
+local BlueBorder = Instance.new("Frame")
+BlueBorder.Name = "BlueBorder"
+BlueBorder.Size = UDim2.new(1, 6, 1, 6)
+BlueBorder.Position = UDim2.new(0, -3, 0, -3)
+BlueBorder.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+BlueBorder.BorderSizePixel = 0
+BlueBorder.Parent = Background
+
+-- Membuat area putih di dalam latar belakang
+local WhiteArea = Instance.new("Frame")
+WhiteArea.Name = "WhiteArea"
+WhiteArea.Size = UDim2.new(1, -12, 1, -12)
+WhiteArea.Position = UDim2.new(0, 6, 0, 6)
+WhiteArea.BackgroundColor3 = Color3.fromRGB(1, 1, 1)
+WhiteArea.BorderSizePixel = 0
+WhiteArea.Parent = BlueBorder
+
+-- Menambahkan fungsi untuk menggeser GUI
+Background.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = true
+        offset = input.Position - Background.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                isDragging = false
+            end
+        end)
+    end
+end)
+
+Background.InputChanged:Connect(function(input)
+    if isDragging then
+        Background.Position = UDim2.new(0, input.Position.X - offset.X, 0, input.Position.Y - offset.Y)
+    end
+end)
+
+-- Menambahkan baris teks pertama
+local TextLabel1 = Instance.new("TextLabel")
+TextLabel1.Name = "Text1"
+TextLabel1.Size = UDim2.new(1, -10, 0, 20)
+TextLabel1.Position = UDim2.new(0, 5, 0, 11)
+TextLabel1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel1.BorderSizePixel = 0
+TextLabel1.Text = "Welcome "..game.Players.LocalPlayer.DisplayName..""
+TextLabel1.Parent = WhiteArea
+
+-- Menambahkan baris teks kedua
+local TextLabel2 = Instance.new("TextLabel")
+TextLabel2.Name = "Text2"
+TextLabel2.Size = UDim2.new(1, -10, 0, 20)
+TextLabel2.Position = UDim2.new(0, 5, 0, 36)
+TextLabel2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2.BorderSizePixel = 0
+TextLabel2.Text = "Version : Premium"
+TextLabel2.Parent = WhiteArea
+
+local readFruit = readfile("TextTestSonic.txt")
+
+-- Menambahkan baris teks ketiga
+local TextLabel3 = Instance.new("TextLabel")
+TextLabel3.Name = "Text3"
+TextLabel3.Size = UDim2.new(1, -10, 0, 20)
+TextLabel3.Position = UDim2.new(0, 5, 0, 61)
+TextLabel3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel3.BorderSizePixel = 0
+TextLabel3.Text = "Last Take Fruit : "..readFruit..""
+TextLabel3.Parent = WhiteArea
+
+-- Menambahkan baris teks keempat
+local TextLabel4 = Instance.new("TextLabel")
+TextLabel4.Name = "Text4"
+TextLabel4.Size = UDim2.new(1, -10, 0, 20)
+TextLabel4.Position = UDim2.new(0, 5, 0, 86)
+TextLabel4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel4.BorderSizePixel = 0
+TextLabel4.Text = "Script Made By : SonicTuru"
+TextLabel4.Parent = WhiteArea
+
+local BlueLine = Instance.new("Frame")
+BlueLine.Name = "BlueLine"
+BlueLine.Size = UDim2.new(1, 0, 0, 6) -- Mengatur lebar garis
+BlueLine.Position = UDim2.new(0, 0, 0, 120) -- Menempatkannya di antara "Text4" dan "CopyButton"
+BlueLine.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+BlueLine.BorderSizePixel = 0
+BlueLine.Parent = WhiteArea
+
+local CopyButton = Instance.new("TextButton")
+CopyButton.Name = "CopyButton"
+CopyButton.Size = UDim2.new(1, -10, 0, 20)
+CopyButton.Position = UDim2.new(0, 5, 0, 140) -- Mengatur posisi "CopyButton" sedikit di bawah "BlueLine"
+CopyButton.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+CopyButton.BorderSizePixel = 0
+CopyButton.Text = "Copy Discord"
+CopyButton.Parent = WhiteArea
+
+-- Fungsi untuk menyalin Discord ke clipboard saat tombol diklik
+CopyButton.MouseButton1Click:Connect(function()
+    setclipboard("https://discord.gg/EVxNxE7KK3")
+end)
+
+local BuyButton = Instance.new("TextButton")
+BuyButton.Name = "BuyButton"
+BuyButton.Size = UDim2.new(1, -10, 0, 20)
+BuyButton.Position = UDim2.new(0, 5, 0, 160) -- Position below the "Copy Discord" button
+BuyButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0) -- Green color
+BuyButton.BorderSizePixel = 0
+BuyButton.Text = "Buy Premium Version?" -- Button text
+BuyButton.Parent = WhiteArea
+
+-- Function to handle the "Buy Premium Script" button click event
+BuyButton.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
-    Title = "---[WELCOME]---";
-    Text = ""..game.Players.LocalPlayer.DisplayName.."";
-    Duration = math.huge;
+    Title = "---[PREMIUM]---";
+    Text = "Buy Premium Version? \n Join Discord! ";
+    Duration = 3;
     })
-    wait(0.5)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "---[DEVELOPER]---";
-    Text = "Made By SonicTuru";
-    Duration = math.huge;
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "---[SOCIAL MEDIA]---";
-    Text = "SonicTeam Discord\nhttps://discord.gg/EVxNxE7KK3";
-    Duration = math.huge;
-    })
+end)
     wait(0.1)
     function SendMessage(url, message)
     local http = game:GetService("HttpService")
@@ -2199,14 +2446,13 @@ end
     wait(0.1)
     if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
     for i,v in pairs({"MouseButton1Click", "MouseButton1Down", "Activated"}) do
-    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton[v])) do
+    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton[v])) do
     v.Function()
     end
     end
     wait(1)
 end
 end
-
 wait(2)
 
 local plr = game.Players.LocalPlayer
@@ -2480,6 +2726,6 @@ Notification.new("<Color=Red> ( Id / Hwid. Not Found On List ) <Color=/>"):Displ
 wait(1)
 Notification.new("<Color=Red> This Script For Premium U Cant Use For Free! <Color=/>"):Display()
 wait(1)
-Notification.new("<Color=Yellow> Buy? Dm Discord SonicTuru <Color=/>"):Display()
+Notification.new("<Color=Yellow> Buy Premium? Dm Discord SonicTuru <Color=/>"):Display()
 
 end
