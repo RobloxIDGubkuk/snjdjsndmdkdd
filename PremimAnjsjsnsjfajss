@@ -379,8 +379,6 @@ TextLabel2.BorderSizePixel = 0
 TextLabel2.Text = "Version : Premium"
 TextLabel2.Parent = WhiteArea
 
-local readFruit = readfile("TextTestSonic.txt")
-
 -- Menambahkan baris teks ketiga
 local TextLabel3 = Instance.new("TextLabel")
 TextLabel3.Name = "Text3"
@@ -1700,8 +1698,6 @@ TextLabel2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel2.BorderSizePixel = 0
 TextLabel2.Text = "Version : Premium"
 TextLabel2.Parent = WhiteArea
-
-local readFruit = readfile("TextTestSonic.txt")
 
 -- Menambahkan baris teks ketiga
 local TextLabel3 = Instance.new("TextLabel")
