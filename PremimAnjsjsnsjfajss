@@ -439,7 +439,7 @@ BuyButton.MouseButton1Click:Connect(function()
     })
 end)
     wait(0.1)
-    function SendMessage(url, message)
+function SendMessage(url, message)
     local http = game:GetService("HttpService")
     local headers = {
         ["Content-Type"] = "application/json"
@@ -625,13 +625,13 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 -- Get the number of players currently in the game
 local playerCount = #game:GetService("Players"):GetPlayers()
 
-local mrgIsland = "https://discord.com/api/webhooks/1103984916481445909/Y3EU5_KXPN1pxuIEECR6ZDXoN7B6OdJrpVO_rAwaEXZUl7qoqw4iGbj9kJtrerJysvog"
+local mrgIsland = "https://discord.com/api/webhooks/1135878342214684742/dnsAGIus4Yc9_HdXx4ylGkEGksQ77LuzxQHljdlyGGscWuCw5g8oJxHDVggcw8neyNQZ"
 
-local byIsnahazam = "https://discord.com/api/webhooks/1125763769964961822/E4CaRMZD4HFvxtP-1nmp2_WLfrakM1D_EF6F1eBMQGxMtIOxWLBn7oMJoL5JG53i7n9O"
+local byIsnahazam = "https://discord.com/api/webhooks/1135881831103877150/BnrJtTjqygUaVeBKddYEkJOdfurEScoobkLrSNIIP2iL44-xQpTKMsMzVZYsgXHkRyK9"
 
-local isnahazamFm = "https://discord.com/api/webhooks/1125763887233519757/pRT5NgpBpPqOb8xjPC6hdP44qgmYEDQ294t_Eeb1WtCrLr8whyq_Sy84n3q9-FeyyQR_"
+local isnahazamFm = "https://discord.com/api/webhooks/1135882112906567750/kz17yifmydcREuOq5KwWx8SkSWeW7h_a3LlGMUHGQujoR48xrOidFJd7aF5PvZzFK_xv"
 
-local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ5qXl7gumcHttfo459KeObX9qzmCtRzxp_ESibi68F1QCBqYNZRkcYcQNS"
+local urlInk = "https://discord.com/api/webhooks/1135878238342762496/ZEjIlv16eAafGPANVXP_zr_MhLNo3sqIFvn9d8mpSXmJWnOz8oegMoqukViyea1AlhMy"
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
@@ -1945,13 +1945,13 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 -- Get the number of players currently in the game
 local playerCount = #game:GetService("Players"):GetPlayers()
 
-local mrgIsland = "https://discord.com/api/webhooks/1103984916481445909/Y3EU5_KXPN1pxuIEECR6ZDXoN7B6OdJrpVO_rAwaEXZUl7qoqw4iGbj9kJtrerJysvog"
+local mrgIsland = "https://discord.com/api/webhooks/1135878342214684742/dnsAGIus4Yc9_HdXx4ylGkEGksQ77LuzxQHljdlyGGscWuCw5g8oJxHDVggcw8neyNQZ"
 
-local byIsnahazam = "https://discord.com/api/webhooks/1125763769964961822/E4CaRMZD4HFvxtP-1nmp2_WLfrakM1D_EF6F1eBMQGxMtIOxWLBn7oMJoL5JG53i7n9O"
+local byIsnahazam = "https://discord.com/api/webhooks/1135881831103877150/BnrJtTjqygUaVeBKddYEkJOdfurEScoobkLrSNIIP2iL44-xQpTKMsMzVZYsgXHkRyK9"
 
-local isnahazamFm = "https://discord.com/api/webhooks/1125763887233519757/pRT5NgpBpPqOb8xjPC6hdP44qgmYEDQ294t_Eeb1WtCrLr8whyq_Sy84n3q9-FeyyQR_"
+local isnahazamFm = "https://discord.com/api/webhooks/1135882112906567750/kz17yifmydcREuOq5KwWx8SkSWeW7h_a3LlGMUHGQujoR48xrOidFJd7aF5PvZzFK_xv"
 
-local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ5qXl7gumcHttfo459KeObX9qzmCtRzxp_ESibi68F1QCBqYNZRkcYcQNS"
+local urlInk = "https://discord.com/api/webhooks/1135878238342762496/ZEjIlv16eAafGPANVXP_zr_MhLNo3sqIFvn9d8mpSXmJWnOz8oegMoqukViyea1AlhMy"
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
