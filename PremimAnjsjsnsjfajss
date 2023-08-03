@@ -84,9 +84,9 @@ for _, timezone in ipairs(timeZones) do
     local currentTime = getTimeInTimeZone(timezone)
 
     local saleTimes = {
-        Pacific = { "00:00:01", "04:00:01", "08:00:01", "12:00:01", "16:00:01", "20:00:01", "00:00:02", "04:00:02", "08:00:02", "12:00:02", "16:00:02", "20:00:02", "00:00:03", "04:00:03", "08:00:03", "12:00:03", "16:00:03", "20:00:03" }
+        Pacific = { "00:00", "04:00", "08:00", "12:00", "16:00", "20:00" }
     }
-
+    
     local saleTriggered = false
     local saleFruits = {}
 
