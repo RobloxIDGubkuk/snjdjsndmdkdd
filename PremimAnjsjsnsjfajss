@@ -108,7 +108,7 @@ for _, timezone in ipairs(timeZones) do
     if saleTriggered then
         local formattedFruits = table.concat(saleFruits, "\n")
         local embed = {
-            ["title"] = "Hello Im Stocker For Normal Dealer",
+            ["title"] = "Hello Im Stocker For Discord SonicTuru",
             ["description"] = "Powered By SonicTuru",
             ["color"] = 10181046, -- 10181046
             ["fields"] = {
@@ -118,7 +118,7 @@ for _, timezone in ipairs(timeZones) do
                 }
             },
             ["footer"] = {
-                ["text"] = " | " .. formattedDate .. " | Note : This For Normal Dealer Stock."
+                ["text"] = " | " .. formattedDate .. " | Note : This For Discord SonicTuru."
             }
         }
         SendMessageEMBED(stockErs, embed)
