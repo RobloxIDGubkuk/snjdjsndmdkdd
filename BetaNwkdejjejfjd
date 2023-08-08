@@ -107,7 +107,7 @@ for _, timezone in ipairs(timeZones) do
             ["color"] = 10181046, -- 10181046
             ["fields"] = {
                 {
-                    ["name"] = "List Stock",
+                    ["name"] = "**[🤵] List Stock:**",
                     ["value"] = "```" .. formattedFruits .. "```"
                 }
             },
@@ -415,15 +415,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -441,15 +441,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -469,15 +469,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -495,15 +495,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -521,15 +521,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -547,15 +547,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -573,15 +573,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -599,15 +599,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -625,15 +625,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -651,15 +651,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -677,15 +677,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -703,15 +703,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -804,19 +804,19 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Boss Name",
+            ["name"] = "**[👹] Boss Name:**",
             ["value"] = "```"..v.Name.."```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -834,19 +834,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Boss Name",
+            ["name"] = "**[👹] Boss Name:**",
             ["value"] = "```"..v.Name.."```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -864,19 +864,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Boss Name",
+            ["name"] = "**[👹] Boss Name:**",
             ["value"] = "```"..v.Name.."```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` First Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         }, 
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -981,23 +981,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Orange Soda ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #001 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1015,23 +1015,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Bright Yellow ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #002 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1049,23 +1049,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Yellow Sundane ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #003 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1082,23 +1082,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Slimy Green ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #004 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1116,23 +1116,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Green Livard ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #005 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1150,23 +1150,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Blue Jeans ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #006 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1184,23 +1184,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Plump Purple ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #007 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1218,23 +1218,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Fiery Rece ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #008 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1252,23 +1252,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Heat Wave ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #009 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1286,23 +1286,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Absolute Zero ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #010 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1322,23 +1322,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Snow White ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #011 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1356,23 +1356,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Pure Red ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #012 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1390,23 +1390,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Winter Sky ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #013 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1427,23 +1427,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Orange Soda ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #001 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1461,23 +1461,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Bright Yellow ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #002 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1495,23 +1495,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Yellow Sundane ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #003 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1528,23 +1528,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Slimy Green ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #004 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1562,23 +1562,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Green Livard ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #005 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1596,23 +1596,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Blue Jeans ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #006 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1630,23 +1630,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Plump Purple ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #007 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1664,23 +1664,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Fiery Rece ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #008 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1698,23 +1698,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Heat Wave ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #009 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1732,23 +1732,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Absolute Zero ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #010 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1768,23 +1768,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Snow White ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #011 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1802,23 +1802,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Pure Red ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #012 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1836,23 +1836,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Winter Sky ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #013 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1946,19 +1946,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Shisui ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -1977,19 +1977,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Shisui ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2007,19 +2007,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Saddi ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2037,19 +2037,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Saddi ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2067,19 +2067,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Wando ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2097,19 +2097,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Wando ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2216,11 +2216,11 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         }
     },
@@ -2238,11 +2238,11 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         }
     },
@@ -2260,11 +2260,11 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` First Sea ```"
         }
     },
@@ -2600,15 +2600,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2626,15 +2626,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2654,15 +2654,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2680,15 +2680,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2706,15 +2706,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2732,15 +2732,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2758,15 +2758,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2784,15 +2784,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2810,15 +2810,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2836,15 +2836,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2862,15 +2862,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2888,15 +2888,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3025,19 +3025,19 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Boss Name",
+            ["name"] = "**[👹] Boss Name:**",
             ["value"] = "```"..v.Name.."```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3055,19 +3055,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Boss Name",
+            ["name"] = "**[👹] Boss Name:**",
             ["value"] = "```"..v.Name.."```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3085,19 +3085,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Boss Name",
+            ["name"] = "**[👹] Boss Name:**",
             ["value"] = "```"..v.Name.."```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` First Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         }, 
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3239,23 +3239,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Orange Soda ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #001 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3273,23 +3273,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Bright Yellow ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #002 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3307,23 +3307,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Yellow Sundane ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #003 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3340,23 +3340,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Slimy Green ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #004 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3374,23 +3374,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Green Livard ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #005 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3408,23 +3408,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Blue Jeans ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #006 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3442,23 +3442,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Plump Purple ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #007 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3476,23 +3476,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Fiery Rece ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #008 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3510,23 +3510,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Heat Wave ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #009 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3544,23 +3544,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Absolute Zero ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #010 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3580,23 +3580,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Snow White ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #011 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3609,28 +3609,28 @@ SendMessageEMBED(url, embed)
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Pure Red" then
 
 local embed = {
-    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
     ["description"] = "Hello, Im Bot For Haki Finder",
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Pure Red ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #012 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3648,23 +3648,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Winter Sky ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #013 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3685,23 +3685,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Orange Soda ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #001 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3719,23 +3719,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Bright Yellow ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #002 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3753,23 +3753,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Yellow Sundane ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #003 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3786,23 +3786,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Slimy Green ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #004 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3820,23 +3820,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Green Livard ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #005 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3854,23 +3854,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Blue Jeans ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #006 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3888,23 +3888,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Plump Purple ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #007 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3922,23 +3922,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Fiery Rece ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #008 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3956,23 +3956,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Heat Wave ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #009 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -3990,23 +3990,23 @@ local embed = {
     ["color"] = 10181046, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Absolute Zero ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #010 / Reguler ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -4026,23 +4026,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Snow White ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #011 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -4060,23 +4060,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Pure Red ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #012 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -4094,23 +4094,23 @@ local embed = {
     ["color"] = 15844367, -- 10181046
     ["fields"] = {
         {
-            ["name"] = "Haki Name",
+            ["name"] = "**[❓] Haki Name:**",
             ["value"] = "``` Winter Sky ```"
         },
         {
-            ["name"] = "Rank Haki",
+            ["name"] = "**[🏅] Rank Haki:**",
             ["value"] = "``` #013 / Legendary ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -4204,19 +4204,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Shisui ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -4235,19 +4235,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Shisui ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -4265,19 +4265,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Saddi ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -4295,19 +4295,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Saddi ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -4325,19 +4325,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Wando ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -4355,19 +4355,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Wando ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -4492,11 +4492,11 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
         }
     },
@@ -4514,11 +4514,11 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
         }
     },
@@ -4536,11 +4536,11 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` First Sea ```"
         }
     },
