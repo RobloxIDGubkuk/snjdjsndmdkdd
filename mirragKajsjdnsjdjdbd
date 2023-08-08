@@ -132,42 +132,6 @@ Text = "SonicTeam Discord\nhttps://discord.gg/EVxNxE7KK3";
 Duration = math.huge;
 })
 wait(0.1)
-function SendMessage(urlInk, message)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["content"] = message
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
-function SendMessage(mrgIsland, message)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["content"] = message
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
-
 function SendMessageEMBED(urlInk, embed)
     local http = game:GetService("HttpService")
     local headers = {
@@ -193,7 +157,67 @@ function SendMessageEMBED(urlInk, embed)
         Headers = headers,
         Body = body
     })
-    print("Sent")
+    print("Sent -- Full Moon")
+end
+
+wait(0.1)
+
+function SendMessageEMBED(byIsnahazam, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = byIsnahazam,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Mirrage ( Isnaham )")
+end
+
+wait(0.1)
+
+function SendMessageEMBED(isnahazamFm, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = isnahazamFm,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Full Moon ( Isnaham ) ")
 end
 
 wait(0.1)
@@ -223,7 +247,7 @@ function SendMessageEMBED(mrgIsland, embed)
         Headers = headers,
         Body = body
     })
-    print("Sent")
+    print("Sent -- Mirrage")
 end
 
 --Examples 
@@ -240,9 +264,13 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 -- Get the number of players currently in the game
 local playerCount = #game:GetService("Players"):GetPlayers()
 
-local mrgIsland = "https://discord.com/api/webhooks/1103984916481445909/Y3EU5_KXPN1pxuIEECR6ZDXoN7B6OdJrpVO_rAwaEXZUl7qoqw4iGbj9kJtrerJysvog"
+local mrgIsland = "https://discord.com/api/webhooks/1135878342214684742/dnsAGIus4Yc9_HdXx4ylGkEGksQ77LuzxQHljdlyGGscWuCw5g8oJxHDVggcw8neyNQZ"
 
-local urlInk = "https://discord.com/api/webhooks/1104457187134275674/oWTymqS_cMJ5qXl7gumcHttfo459KeObX9qzmCtRzxp_ESibi68F1QCBqYNZRkcYcQNS"
+local byIsnahazam = "https://discord.com/api/webhooks/1135881831103877150/BnrJtTjqygUaVeBKddYEkJOdfurEScoobkLrSNIIP2iL44-xQpTKMsMzVZYsgXHkRyK9"
+
+local isnahazamFm = "https://discord.com/api/webhooks/1135882112906567750/kz17yifmydcREuOq5KwWx8SkSWeW7h_a3LlGMUHGQujoR48xrOidFJd7aF5PvZzFK_xv"
+
+local urlInk = "https://discord.com/api/webhooks/1135878238342762496/ZEjIlv16eAafGPANVXP_zr_MhLNo3sqIFvn9d8mpSXmJWnOz8oegMoqukViyea1AlhMy"
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
@@ -252,15 +280,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -269,6 +297,32 @@ local embed = {
     }
 }
 SendMessageEMBED(mrgIsland, embed)
+
+wait(1)
+
+local embed = {
+    ["title"] = "MIRRAGE ISLAND FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🏝️] Mirrage Status:**",
+            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(byIsnahazam, embed)
 
 end
 
@@ -280,15 +334,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -297,6 +351,32 @@ local embed = {
     }
 }
 SendMessageEMBED(urlInk, embed)
+
+wait(1) 
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌑) : Full Moon !! ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnahazamFm, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
 
@@ -306,15 +386,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -323,6 +403,32 @@ local embed = {
     }
 }
 SendMessageEMBED(urlInk, embed)
+
+wait(1)
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌒) : 75% ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnahazamFm, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
 
@@ -332,15 +438,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -349,6 +455,32 @@ local embed = {
     }
 }
 SendMessageEMBED(urlInk, embed)
+
+wait(1)
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌓) : 50% ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnahazamFm, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
 
@@ -358,15 +490,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -375,6 +507,32 @@ local embed = {
     }
 }
 SendMessageEMBED(urlInk, embed)
+
+wait(1)
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌗) : 25% ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnahazamFm, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
 
@@ -384,15 +542,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -401,6 +559,32 @@ local embed = {
     }
 }
 SendMessageEMBED(urlInk, embed)
+
+wait(1)
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌖) : 15% ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnahazamFm, embed)
 
 end
 wait(0.5)
