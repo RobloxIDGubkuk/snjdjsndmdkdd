@@ -756,22 +756,21 @@ local urlInk = "https://discord.com/api/webhooks/1135878238342762496/ZEjIlv16eAa
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
-
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
     ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -781,7 +780,7 @@ local embed = {
 }
 SendMessageEMBED(mrgIsland, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
@@ -789,15 +788,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -811,22 +810,21 @@ end
 
 if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
 
-
 local embed = {
     ["title"] = "FULL MOON FINDER",
     ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -836,7 +834,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1) 
+wait(1) 
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -844,15 +842,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -870,15 +868,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -888,7 +886,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -896,15 +894,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -922,15 +920,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -940,7 +938,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -948,15 +946,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -974,15 +972,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -992,7 +990,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -1000,15 +998,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1026,15 +1024,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1044,7 +1042,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -1052,15 +1050,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -1154,19 +1152,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Shisui ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -1185,19 +1183,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Shisui ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -1215,19 +1213,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Saddi ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -1245,19 +1243,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Saddi ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -1275,19 +1273,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Wando ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -1305,19 +1303,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Wando ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -1471,16 +1469,12 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
-        },
-        {
-            ["name"] = "Powered By",
-            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -1497,16 +1491,12 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
-        },
-        {
-            ["name"] = "Powered By",
-            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -1523,16 +1513,12 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` First Sea ```"
-        },
-        {
-            ["name"] = "Powered By",
-            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -2164,22 +2150,21 @@ local urlInk = "https://discord.com/api/webhooks/1135878238342762496/ZEjIlv16eAa
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
-
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
     ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2189,7 +2174,7 @@ local embed = {
 }
 SendMessageEMBED(mrgIsland, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
@@ -2197,15 +2182,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Mirrage Status",
+            ["name"] = "**[🏝️] Mirrage Status:**",
             ["value"] = "``` Mirrage Island Spawn : ✅ ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2225,15 +2210,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2243,7 +2228,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1) 
+wait(1) 
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -2251,15 +2236,15 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌑) : Full Moon !! ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2277,15 +2262,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2295,7 +2280,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -2303,15 +2288,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌒) : 75% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2329,15 +2314,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2347,7 +2332,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -2355,15 +2340,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌓) : 50% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2381,15 +2366,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2399,7 +2384,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -2407,15 +2392,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌗) : 25% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2433,15 +2418,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2451,7 +2436,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(0.1)
+wait(1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -2459,15 +2444,15 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Moon Phase",
+            ["name"] = "**[🌕] Moon Phase:**",
             ["value"] = "``` (🌖) : 15% ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "``` ".. playerCount .."/12 ```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
         }
     },
@@ -2561,19 +2546,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Shisui ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2592,19 +2577,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Shisui ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2622,19 +2607,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Saddi ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2652,19 +2637,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Saddi ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2682,19 +2667,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Wando ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2712,19 +2697,19 @@ local embed = {
     ["color"] = 15844367,
     ["fields"] = {
         {
-            ["name"] = "Sword Name",
+            ["name"] = "**[⚔️] Sword Name:**",
             ["value"] = "``` Wando ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Seacond Sea ```"
         },
         {
-            ["name"] = "Players In Server",
+            ["name"] = "**[👥] Players In Server:**",
             ["value"] = "```" ..playerCount.. "/12```"
         },
         {
-            ["name"] = "Server Job Id",
+            ["name"] = "**[🔗] Server Job Id:**",
             ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
          }
     },
@@ -2876,16 +2861,12 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Third Sea ```"
-        },
-        {
-            ["name"] = "Powered By",
-            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -2902,16 +2883,12 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` Second Sea ```"
-        },
-        {
-            ["name"] = "Powered By",
-            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
@@ -2928,16 +2905,12 @@ local embed = {
     ["color"] = 10181046,
     ["fields"] = {
         {
-            ["name"] = "Fruit Name",
+            ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
         },
         {
-            ["name"] = "Located",
+            ["name"] = "**[📌] Located:**",
             ["value"] = "``` First Sea ```"
-        },
-        {
-            ["name"] = "Powered By",
-            ["value"] = "``` SonicTuru ```"
         }
     },
     ["footer"] = {
