@@ -49,7 +49,7 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 
 local playerCount = #game:GetService("Players"):GetPlayers()
 
-local stockErs = "https://discord.com/api/webhooks/1103349214995550220/IHpRx49ZzRFDDCEw5e4yXv0sYkYGgQ2bwdTByLNe6HZ4SEPOMBtTgow8IQnXHC_70nX4"
+local stockErs = "https://discord.com/api/webhooks/1140062051377610802/zAuRY-Ojw-z9WJyixvdDA-oKH8XPv2BqaQPiRmT-L1Q7BDwjOVaJsZvjOgI2mNLh0wfd"
 
 local function getTimeInTimeZone(timezone)
     local utcTime = os.time(os.date("!*t"))
