@@ -353,6 +353,34 @@ function SendMessageEMBED(isnahazamFm, embed)
     print("Sent -- Full Moon ( Isnaham ) ")
 end
 
+function SendMessageEMBED(mirrageKevin, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = mirrageKevin,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Mirrage")
+end
+
 wait(0.1)
 
 function SendMessageEMBED(mrgIsland, embed)
@@ -396,6 +424,8 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 
 -- Get the number of players currently in the game
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local mirrageKevin = "https://discord.com/api/webhooks/1140670487463206912/RqcoA-IbKWfqcTKHssY-BaSpNFU_QIA_tAcvslGxzezo9WEmlr0o6g79oE4h6zAZYbRw"
 
 local mrgIsland = "https://discord.com/api/webhooks/1139480661892276255/7JMEf-cJfvsHND_4pm47LKAnnm1Y4OGMll2ARNGUpczPZZlpTMKvtPZH76tR3nqEyMJZ"   
 
@@ -456,6 +486,32 @@ local embed = {
     }
 }
 SendMessageEMBED(byIsnahazam, embed)
+
+wait(0.5)
+
+local embed = {
+    ["title"] = "MIRRAGE ISLAND FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🏝️] Mirrage Status:**",
+            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(mirrageKevin, embed)
 
 end
 
@@ -2547,6 +2603,34 @@ function SendMessageEMBED(isnahazamFm, embed)
     print("Sent")
 end
 
+function SendMessageEMBED(mirrageKevin, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = mirrageKevin,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Mirrage")
+end
+
 wait(0.1)
 
 function SendMessageEMBED(mrgIsland, embed)
@@ -2574,7 +2658,7 @@ function SendMessageEMBED(mrgIsland, embed)
         Headers = headers,
         Body = body
     })
-    print("Sent")
+    print("Sent -- Mirrage")
 end
 
 --Examples 
@@ -2590,6 +2674,8 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 
 -- Get the number of players currently in the game
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local mirrageKevin = "https://discord.com/api/webhooks/1140670487463206912/RqcoA-IbKWfqcTKHssY-BaSpNFU_QIA_tAcvslGxzezo9WEmlr0o6g79oE4h6zAZYbRw"
 
 local mrgIsland = "https://discord.com/api/webhooks/1139480661892276255/7JMEf-cJfvsHND_4pm47LKAnnm1Y4OGMll2ARNGUpczPZZlpTMKvtPZH76tR3nqEyMJZ"   
 
@@ -2650,6 +2736,32 @@ local embed = {
     }
 }
 SendMessageEMBED(byIsnahazam, embed)
+
+wait(0.5)
+
+local embed = {
+    ["title"] = "MIRRAGE ISLAND FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🏝️] Mirrage Status:**",
+            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(mirrageKevin, embed)
 
 end
 
