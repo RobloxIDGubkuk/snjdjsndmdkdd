@@ -2209,9 +2209,13 @@ if game.PlaceId == 7449423635 then
 
 local embed = {
     ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
+    ["description"] = "** Someone Get Something Fruit Form Fruit Finder **",
     ["color"] = 10181046,
     ["fields"] = {
+        {
+            ["name"] = "**[👤] Player Name:**",
+            ["value"] = "```"..game.Players.LocalPlayer.DisplayName.."```"
+        },
         {
             ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
@@ -2231,9 +2235,13 @@ elseif game.PlaceId == 4442272183 then
 
 local embed = {
     ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
+    ["description"] = "** Someone Get Something Fruit Form Fruit Finder **",
     ["color"] = 10181046,
     ["fields"] = {
+        {
+            ["name"] = "**[👤] Player Name:**",
+            ["value"] = "```"..game.Players.LocalPlayer.DisplayName.."```"
+        },
         {
             ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
@@ -2253,9 +2261,13 @@ elseif game.PlaceId == 2753915549 then
 
 local embed = {
     ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
+    ["description"] = "** Someone Get Something Fruit Form Fruit Finder **",
     ["color"] = 10181046,
     ["fields"] = {
+        {
+            ["name"] = "**[👤] Player Name:**",
+            ["value"] = "```"..game.Players.LocalPlayer.DisplayName.."```"
+        },
         {
             ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
@@ -4446,9 +4458,13 @@ if game.PlaceId == 7449423635 then
 
 local embed = {
     ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
+    ["description"] = "** Someone Get Something Fruit Form Fruit Finder **",
     ["color"] = 10181046,
     ["fields"] = {
+        {
+            ["name"] = "**[👤] Player Name:**",
+            ["value"] = "```"..game.Players.LocalPlayer.DisplayName.."```"
+        },
         {
             ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
@@ -4468,9 +4484,13 @@ elseif game.PlaceId == 4442272183 then
 
 local embed = {
     ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
+    ["description"] = "** Someone Get Something Fruit Form Fruit Finder **",
     ["color"] = 10181046,
     ["fields"] = {
+        {
+            ["name"] = "**[👤] Player Name:**",
+            ["value"] = "```"..game.Players.LocalPlayer.DisplayName.."```"
+        },
         {
             ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
@@ -4490,9 +4510,13 @@ elseif game.PlaceId == 2753915549 then
 
 local embed = {
     ["title"] = "FRUIT FINDER",
-    ["description"] = "**"..game.Players.LocalPlayer.DisplayName.."** Get Something Fruit",
+    ["description"] = "** Someone Get Something Fruit Form Fruit Finder **",
     ["color"] = 10181046,
     ["fields"] = {
+        {
+            ["name"] = "**[👤] Player Name:**",
+            ["value"] = "```"..game.Players.LocalPlayer.DisplayName.."```"
+        },
         {
             ["name"] = "**[🍎] Fruit Name:**",
             ["value"] = "``` "..fruit.Name.." ```"
