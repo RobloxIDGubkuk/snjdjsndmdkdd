@@ -2076,7 +2076,7 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 
 local playerCount = #game:GetService("Players"):GetPlayers()
 
-local isnaSword = "https://discord.com/api/webhooks/1137976219812503572/StDbNl4nn4UVlQSTjekFGUz1NMFQVVQ_v8I_gquCAQazcBH3mTYn8gT0nitW3KrMOLat"
+local isnaSword = "https://discord.com/api/webhooks/1145369922281676852/b_8N9SygcfkukPVfiMoZfLmscoDYEoNNHElBsQCM_m373ta16EJPOVNXdGpqPVuO9-P8"
 
 local lgdSword = "https://discord.com/api/webhooks/1139480701096427571/xV70-Juobcsxh9qK45bi_PoOIOn8bpe0guIM94E6_tjGy4AJteiRKvsK3hi30pNb1Ya-" -- PUT UR WEBHOOK LINK HERE
 
@@ -2112,6 +2112,36 @@ local embed = {
 }
 SendMessageEMBED(lgdSword, embed)
 
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Shisui ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnaSword, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Saddi" then
 
 local embed = {
@@ -2142,6 +2172,36 @@ local embed = {
 }
 SendMessageEMBED(lgdSword, embed)
 
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Saddi ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnaSword, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Wando" then
 
 local embed = {
@@ -2171,6 +2231,36 @@ local embed = {
     }
 }
 SendMessageEMBED(lgdSword, embed)
+
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Wando ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnaSword, embed)
 
 end
 
@@ -4363,7 +4453,7 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 
 local playerCount = #game:GetService("Players"):GetPlayers()
 
-local isnaSword = "https://discord.com/api/webhooks/1137976219812503572/StDbNl4nn4UVlQSTjekFGUz1NMFQVVQ_v8I_gquCAQazcBH3mTYn8gT0nitW3KrMOLat"
+local isnaSword = "https://discord.com/api/webhooks/1145369922281676852/b_8N9SygcfkukPVfiMoZfLmscoDYEoNNHElBsQCM_m373ta16EJPOVNXdGpqPVuO9-P8"
 
 local lgdSword = "https://discord.com/api/webhooks/1139480701096427571/xV70-Juobcsxh9qK45bi_PoOIOn8bpe0guIM94E6_tjGy4AJteiRKvsK3hi30pNb1Ya-" -- PUT UR WEBHOOK LINK HERE
 
@@ -4399,6 +4489,36 @@ local embed = {
 }
 SendMessageEMBED(lgdSword, embed)
 
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Shisui ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnaSword, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Saddi" then
 
 local embed = {
@@ -4429,6 +4549,36 @@ local embed = {
 }
 SendMessageEMBED(lgdSword, embed)
 
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Saddi ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnaSword, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Wando" then
 
 local embed = {
@@ -4458,6 +4608,36 @@ local embed = {
     }
 }
 SendMessageEMBED(lgdSword, embed)
+
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Wando ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(isnaSword, embed)
 
 end
 
