@@ -1,4 +1,4 @@
- repeat wait() until game:IsLoaded()
+repeat wait() until game:IsLoaded()
 
 local idHw = game:GetService("RbxAnalyticsService"):GetClientId()
 local player = game.Players.LocalPlayer
@@ -45,13 +45,14 @@ function SendMessageEMBED(stockErs, embed)
     print("Sent")
 end
 
-local timeZoneOffset = 25200 -- 7 hours ahead of UTC
-
-local currentUnixTime = os.time()
+-- Menggunakan os.time(os.date("!*t")) untuk mendapatkan waktu lokal saat ini
+local currentUnixTime = os.time(os.date("!*t"))
+local timeZoneOffset = 25200 -- 7 jam lebih awal dari UTC
 local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
 
-local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
-local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
+-- Menggunakan os.date() untuk memformat waktu
+local formattedTime = os.date("%H:%M:%S", currentUnixTime + timeZoneOffset)
+local formattedDate = os.date("%Y-%m-%d", currentUnixTime + timeZoneOffset)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
 
@@ -126,6 +127,7 @@ for _, timezone in ipairs(timeZones) do
         print("Hi - Form SonicTuru")
     end
 end
+
 
 if antiLag == true then
 function lagAnti()
@@ -835,32 +837,6 @@ local embed = {
     }
 }
 SendMessageEMBED(byIsnahazam, embed)
-
-wait(0.5)
-
-local embed = {
-    ["title"] = "MIRRAGE ISLAND FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 15844367,
-    ["fields"] = {
-        {
-            ["name"] = "**[🏝️] Mirrage Status:**",
-            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
-        },
-        {
-            ["name"] = "**[👥] Players In Server:**",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "**[🔗] Server Job Id:**",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(mirrageKevin, embed)
 
 end
 
@@ -2266,32 +2242,6 @@ local embed = {
     }
 }
 SendMessageEMBED(byIsnahazam, embed)
-
-wait(0.5)
-
-local embed = {
-    ["title"] = "MIRRAGE ISLAND FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 15844367,
-    ["fields"] = {
-        {
-            ["name"] = "**[🏝️] Mirrage Status:**",
-            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
-        },
-        {
-            ["name"] = "**[👥] Players In Server:**",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "**[🔗] Server Job Id:**",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(mirrageKevin, embed)
 
 end
 
