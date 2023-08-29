@@ -39,13 +39,14 @@ function SendMessageEMBED(stockErs, embed)
     print("Sent")
 end
 
-local timeZoneOffset = 25200 -- 7 hours ahead of UTC
-
-local currentUnixTime = os.time()
+-- Menggunakan os.time(os.date("!*t")) untuk mendapatkan waktu lokal saat ini
+local currentUnixTime = os.time(os.date("!*t"))
+local timeZoneOffset = 25200 -- 7 jam lebih awal dari UTC
 local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
 
-local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
-local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
+-- Menggunakan os.date() untuk memformat waktu
+local formattedTime = os.date("%H:%M:%S", currentUnixTime + timeZoneOffset)
+local formattedDate = os.date("%Y-%m-%d", currentUnixTime + timeZoneOffset)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
 
@@ -67,7 +68,9 @@ local function getTimeInTimeZone(timezone)
     return formattedTime
 end
 
--- Tambahkan Surabaya ke dalam daftar zona waktu yang akan diperiksa
+-- Example usage and checking for Pacific Time
+local stockCheck = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
+
 local timeZones = {
     "Pacific"
 }
@@ -118,6 +121,7 @@ for _, timezone in ipairs(timeZones) do
         print("Hi - Form SonicTuru")
     end
 end
+
 
 if collectAllFruit == true then
 
@@ -487,32 +491,6 @@ local embed = {
 }
 SendMessageEMBED(byIsnahazam, embed)
 
-wait(0.5)
-
-local embed = {
-    ["title"] = "MIRRAGE ISLAND FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 15844367,
-    ["fields"] = {
-        {
-            ["name"] = "**[🏝️] Mirrage Status:**",
-            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
-        },
-        {
-            ["name"] = "**[👥] Players In Server:**",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "**[🔗] Server Job Id:**",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(mirrageKevin, embed)
-
 end
 
 if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
@@ -833,6 +811,34 @@ function SendMessageEMBED(bossIsnah, embed)
     print("Sent -- Raid Boss")
 end
 
+function SendMessageEMBED(bossKevin, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = bossKevin,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Raid Boss")
+end
+
 local timeZoneOffset = 25200 -- 7 hours ahead of UTC
 
 local currentUnixTime = os.time()
@@ -842,6 +848,8 @@ local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, curr
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local bossKevin = "https://discord.com/api/webhooks/1145977032992366602/HCSlHVUb-mBVtfDgZZPVLugPejt7QjQCVQDcaBBP18gzYrmrlSuQGhwqogIxXPZuqhjk"
 
 local bossIsnah = "https://discord.com/api/webhooks/1139506277962235956/jkT9LBNcfJNRbZKe1-B3xfQTU3ZmlRNvIPVMneSPBlkKSvp5_Kp0kiAEK26FmqWjm2OF"
 
@@ -910,6 +918,36 @@ local embed = {
 }
 SendMessageEMBED(bossIsnah, embed)
 
+wait(0.1)
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossKevin, embed)
+
 elseif game.PlaceId == 4442272183 and string.find(v.Name, "Raid Boss") then
 
 local embed = {
@@ -970,6 +1008,36 @@ local embed = {
 }
 SendMessageEMBED(bossIsnah, embed)
 
+wait(0.1)
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossKevin, embed)
+
 elseif game.PlaceId == 2753915549 and string.find(v.Name, "Raid Boss") then
 
 local embed = {
@@ -1029,6 +1097,36 @@ local embed = {
     }
 }
 SendMessageEMBED(bossIsnah, embed)
+
+wait(0.1)
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` First Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossKevin, embed)
 
 end
 end
@@ -2827,32 +2925,6 @@ local embed = {
 }
 SendMessageEMBED(byIsnahazam, embed)
 
-wait(0.5)
-
-local embed = {
-    ["title"] = "MIRRAGE ISLAND FINDER",
-    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
-    ["color"] = 15844367,
-    ["fields"] = {
-        {
-            ["name"] = "**[🏝️] Mirrage Status:**",
-            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
-        },
-        {
-            ["name"] = "**[👥] Players In Server:**",
-            ["value"] = "``` ".. playerCount .."/12 ```"
-        },
-        {
-            ["name"] = "**[🔗] Server Job Id:**",
-            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
-        }
-    },
-    ["footer"] = {
-        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
-    }
-}
-SendMessageEMBED(mirrageKevin, embed)
-
 end
 
 if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
@@ -3173,6 +3245,34 @@ function SendMessageEMBED(bossIsnah, embed)
     print("Sent -- Raid Boss")
 end
 
+function SendMessageEMBED(bossKevin, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = bossKevin,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Raid Boss")
+end
+
 local timeZoneOffset = 25200 -- 7 hours ahead of UTC
 
 local currentUnixTime = os.time()
@@ -3182,6 +3282,8 @@ local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, curr
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local bossKevin = "https://discord.com/api/webhooks/1145977032992366602/HCSlHVUb-mBVtfDgZZPVLugPejt7QjQCVQDcaBBP18gzYrmrlSuQGhwqogIxXPZuqhjk"
 
 local bossIsnah = "https://discord.com/api/webhooks/1139506277962235956/jkT9LBNcfJNRbZKe1-B3xfQTU3ZmlRNvIPVMneSPBlkKSvp5_Kp0kiAEK26FmqWjm2OF"
 
@@ -3250,6 +3352,36 @@ local embed = {
 }
 SendMessageEMBED(bossIsnah, embed)
 
+wait(0.1)
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossKevin, embed)
+
 elseif game.PlaceId == 4442272183 and string.find(v.Name, "Raid Boss") then
 
 local embed = {
@@ -3310,6 +3442,36 @@ local embed = {
 }
 SendMessageEMBED(bossIsnah, embed)
 
+wait(0.1)
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossKevin, embed)
+
 elseif game.PlaceId == 2753915549 and string.find(v.Name, "Raid Boss") then
 
 local embed = {
@@ -3369,6 +3531,36 @@ local embed = {
     }
 }
 SendMessageEMBED(bossIsnah, embed)
+
+wait(0.1)
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` First Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossKevin, embed)
 
 end
 end
