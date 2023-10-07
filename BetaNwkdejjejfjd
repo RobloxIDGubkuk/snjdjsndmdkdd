@@ -398,6 +398,32 @@ local embed = {
 }
 SendMessageEMBED(byIsnahazam, embed)
 
+wait(0.2) 
+
+local embed = {
+    ["title"] = "MIRRAGE ISLAND FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🏝️] Mirrage Status:**",
+            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(mirrageBukanEll, embed)
+
 end
 
 if game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
