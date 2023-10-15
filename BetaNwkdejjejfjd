@@ -174,7 +174,33 @@ function SendMessageEMBED(urlInk, embed)
     print("Sent -- Full Moon")
 end
 
-wait(0.1)
+function SendMessageEMBED(moonSkys, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = moonSkys,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Mirrage")
+end
 
 function SendMessageEMBED(byIsnahazam, embed)
     local http = game:GetService("HttpService")
@@ -203,8 +229,6 @@ function SendMessageEMBED(byIsnahazam, embed)
     })
     print("Sent -- Mirrage ( Isnaham )")
 end
-
-wait(0.1)
 
 function SendMessageEMBED(isnahazamFm, embed)
     local http = game:GetService("HttpService")
@@ -262,8 +286,6 @@ function SendMessageEMBED(mirrageKevin, embed)
     print("Sent -- Mirrage")
 end
 
-wait(0.1)
-
 function SendMessageEMBED(mirrageBukanEll, embed)
     local http = game:GetService("HttpService")
     local headers = {
@@ -285,6 +307,34 @@ function SendMessageEMBED(mirrageBukanEll, embed)
     local body = http:JSONEncode(data)
     local response = request({
         Url = mirrageBukanEll,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Mirrage")
+end
+
+function SendMessageEMBED(mirrageSkys, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = mirrageSkys,
         Method = "POST",
         Headers = headers,
         Body = body
@@ -334,6 +384,8 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 -- Get the number of players currently in the game
 local playerCount = #game:GetService("Players"):GetPlayers()
 
+local mirrageSkys = "https://discord.com/api/webhooks/1163011025528946788/sYiLPMoT-4NvXGzQU-B3J3tj9qhlth2J-UJbm0KQz_QAQZD2CshRGvgwLpmWrorQ7-CQ"
+
 local mirrageBukanEll = "https://discord.com/api/webhooks/1159061220075245578/MOQU5FRr7XDBXzESIZzVZnnOjDi6Ju2HGUSxKhCuwKYwd55PbAmPIqqydLJ6qDeA-l43"
 
 local mirrageKevin = "https://discord.com/api/webhooks/1140670487463206912/RqcoA-IbKWfqcTKHssY-BaSpNFU_QIA_tAcvslGxzezo9WEmlr0o6g79oE4h6zAZYbRw"
@@ -343,6 +395,8 @@ local mrgIsland = "https://discord.com/api/webhooks/1139480661892276255/7JMEf-cJ
 local byIsnahazam = "https://discord.com/api/webhooks/1145365783187304518/anPQ802J0P5_wH2be7gv1FOBAsVLSZAHvAJKts4p0e6ZbCYsb2fRKdQKQtxKQ12Fi5WE"
 
 local isnahazamFm = "https://discord.com/api/webhooks/1145366827086647296/rMMBcgYLpVSLh_U3Y90MugLV00QN8X_c6jt65dw5vDBgT74mBQ3P74Kf65HASrbhculE"
+
+local moonSkys = "https://discord.com/api/webhooks/1163011209625354270/rvnqa1S2zwcuAGfD7SPzKNMxUwFUE6Wu_6QhRbEGGIzFg5q9ITegFjiXVBv84MY3Lazn"
 
 local urlInk = "https://discord.com/api/webhooks/1139480676278747147/O_ZNgOlEgR8b4gA1-AlLYnu8HUFFK9Z_qBsWaubDepVF5P_7l4kmgQ_E8O7UblLIB3Wv"
 
@@ -398,7 +452,7 @@ local embed = {
 }
 SendMessageEMBED(byIsnahazam, embed)
 
-wait(0.2) 
+wait(0.1) 
 
 local embed = {
     ["title"] = "MIRRAGE ISLAND FINDER",
@@ -423,6 +477,32 @@ local embed = {
     }
 }
 SendMessageEMBED(mirrageBukanEll, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "MIRRAGE ISLAND FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🏝️] Mirrage Status:**",
+            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(mirrageSkys, embed)
 
 end
 
@@ -452,7 +532,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1) 
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -477,6 +557,32 @@ local embed = {
     }
 }
 SendMessageEMBED(isnahazamFm, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌑) : Full Moon !! ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(moonSkys, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
 
@@ -504,7 +610,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -529,6 +635,32 @@ local embed = {
     }
 }
 SendMessageEMBED(isnahazamFm, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌒) : 75% ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(moonSkys, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
 
@@ -556,7 +688,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -581,6 +713,32 @@ local embed = {
     }
 }
 SendMessageEMBED(isnahazamFm, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌓) : 50% ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(moonSkys, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
 
@@ -608,7 +766,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1) 
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -633,6 +791,32 @@ local embed = {
     }
 }
 SendMessageEMBED(isnahazamFm, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌗) : 25% ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(moonSkys, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
 
@@ -660,7 +844,7 @@ local embed = {
 }
 SendMessageEMBED(urlInk, embed)
 
-wait(1)
+wait(0.1)
 
 local embed = {
     ["title"] = "FULL MOON FINDER",
@@ -685,6 +869,32 @@ local embed = {
     }
 }
 SendMessageEMBED(isnahazamFm, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "FULL MOON FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 10181046,
+    ["fields"] = {
+        {
+            ["name"] = "**[🌕] Moon Phase:**",
+            ["value"] = "``` (🌖) : 15% ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(moonSkys, embed)
 
 end
 wait(0.1)
@@ -1130,6 +1340,34 @@ function SendMessageEMBED(legendHakiBukanEll, embed)
     print("Sent -- Normal Haki")
 end
 
+function SendMessageEMBED(legendHakiSkys, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = legendHakiSkys,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Normal Haki")
+end
+
 function SendMessageEMBED(hakiNorml, embed)
     local http = game:GetService("HttpService")
     local headers = {
@@ -1167,6 +1405,8 @@ local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, curr
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local legendHakiSkys = "https://discord.com/api/webhooks/1163011482708082719/jXFr4BF0cXstUKLuJsFOjAEUbIpxPi4iiBXtgjptG5DuyXwVZvlNRWgQbXwF6fZrAyIj"
 
 local legendHakiBukanEll = "https://discord.com/api/webhooks/1159059355077984377/2T_s6r7SGPZj3Zmsaax8NPCdZahH6FDbLfGAhksiB1IFx_QcyIZDA7sbVp4Rs4RCRyNz"
 
@@ -1587,6 +1827,40 @@ local embed = {
 }
 SendMessageEMBED(legendHakiBukanEll, embed)    
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Snow White ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #011 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendHakiSkys, embed)    
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Pure Red" then
 
 local embed = {
@@ -1655,6 +1929,40 @@ local embed = {
 }
 SendMessageEMBED(legendHakiBukanEll, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Pure Red ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #012 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendHakiSkys, embed)
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Winter Sky" then
 
 local embed = {
@@ -1722,6 +2030,40 @@ local embed = {
     }
 }
 SendMessageEMBED(legendHakiBukanEll, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Winter Sky ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #013 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendHakiSkys, embed)
 
 
 -- Second Sea ////////////////
@@ -2135,6 +2477,40 @@ local embed = {
 }
 SendMessageEMBED(legendHakiBukanEll, embed)    
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Snow White ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #011 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendHakiSkys, embed)    
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Pure Red" then
 
 local embed = {
@@ -2203,6 +2579,40 @@ local embed = {
 }
 SendMessageEMBED(legendHakiBukanEll, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Pure Red ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #012 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendHakiSkys, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Winter Sky" then
 
 local embed = {
@@ -2269,7 +2679,41 @@ local embed = {
         ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
     }
 }
-SendMessageEMBED(mirrageBukanEll, embed)
+SendMessageEMBED(legendHakiBukanEll, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Winter Sky ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #013 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendHakiSkys, embed)
 
 end
 
