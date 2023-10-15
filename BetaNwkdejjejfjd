@@ -926,6 +926,34 @@ function SendMessageEMBED(url, embed)
     print("Sent")
 end
 
+function SendMessageEMBED(bossSkays, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = bossSkays,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
 function SendMessageEMBED(bossIsnah, embed)
     local http = game:GetService("HttpService")
     local headers = {
@@ -991,6 +1019,8 @@ local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, curr
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local bossSkays = "https://discord.com/api/webhooks/1163030918664036452/SiyvaoxBbnGsJ-6qxxj416l-N4zu1Oy_TAMYRiro36ybCRz60kI9_qr0hkv9AQbotkRb"
 
 local bossKevin = "https://discord.com/api/webhooks/1145977032992366602/HCSlHVUb-mBVtfDgZZPVLugPejt7QjQCVQDcaBBP18gzYrmrlSuQGhwqogIxXPZuqhjk"
 
@@ -1091,6 +1121,36 @@ local embed = {
 }
 SendMessageEMBED(bossKevin, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossSkays, embed)
+
 elseif game.PlaceId == 4442272183 and string.find(v.Name, "Raid Boss") then
 
 local embed = {
@@ -1181,6 +1241,36 @@ local embed = {
 }
 SendMessageEMBED(bossKevin, embed)
 
+wait(0.1)
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossSkays, embed)
+
 elseif game.PlaceId == 2753915549 and string.find(v.Name, "Raid Boss") then
 
 local embed = {
@@ -1270,6 +1360,36 @@ local embed = {
     }
 }
 SendMessageEMBED(bossKevin, embed)
+
+wait(0.1)
+
+local embed = {
+    ["title"] = "Boss Hunter ( RAID BOSS )",
+    ["description"] = "Hello, Im Bot For Boss Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[👹] Boss Name:**",
+            ["value"] = "```"..v.Name.."```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` First Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(bossSkays, embed)
 
 end
 end
@@ -1368,6 +1488,34 @@ function SendMessageEMBED(legendHakiSkys, embed)
     print("Sent -- Normal Haki")
 end
 
+function SendMessageEMBED(normalHakiSkays, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = normalHakiSkays,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Normal Haki")
+end
+
 function SendMessageEMBED(hakiNorml, embed)
     local http = game:GetService("HttpService")
     local headers = {
@@ -1405,6 +1553,8 @@ local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, curr
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local normalHakiSkays = "https://discord.com/api/webhooks/1163030836942225418/w9Iz82NHa7Iah2O6tpjhLypfhakPT_7z-Xe903UGZuN4VyZmAcxkwFHEWcZdT875Ysh4"
 
 local legendHakiSkys = "https://discord.com/api/webhooks/1163011482708082719/jXFr4BF0cXstUKLuJsFOjAEUbIpxPi4iiBXtgjptG5DuyXwVZvlNRWgQbXwF6fZrAyIj"
 
@@ -1452,6 +1602,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Orange Soda ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #001 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Bright Yellow" then
 
 local embed = {
@@ -1486,6 +1670,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Bright Yellow ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #002 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Yellow Sundane" then
 
 local embed = {
@@ -1519,6 +1737,41 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Yellow Sundane ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #003 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Slimy Green" then
 
 local embed = {
@@ -1552,6 +1805,40 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)    
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Slimy Green ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #004 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)    
 
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Green Livard" then
 
@@ -1587,6 +1874,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Green Livard ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #005 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Blue Jeans" then
 
 local embed = {
@@ -1620,6 +1941,40 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Blue Jeans ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #006 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Plump Purple" then
 
@@ -1655,6 +2010,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Plump Purple ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #007 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Fiery Rece" then
 
 local embed = {
@@ -1688,6 +2077,40 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Fiery Rece ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #008 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Heat Wave" then
 
@@ -1723,6 +2146,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Heat Wave ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #009 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Absolute Zero" then
 
 local embed = {
@@ -1756,6 +2213,40 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Absolute Zero ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #010 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
 
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Snow White" then
 
@@ -2102,6 +2593,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Orange Soda ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #001 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Bright Yellow" then
 
 local embed = {
@@ -2136,6 +2661,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Bright Yellow ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #002 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Yellow Sundane" then
 
 local embed = {
@@ -2169,6 +2728,41 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Yellow Sundane ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #003 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Slimy Green" then
 
 local embed = {
@@ -2202,6 +2796,40 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)    
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Slimy Green ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #004 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)    
 
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Green Livard" then
 
@@ -2237,6 +2865,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Green Livard ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #005 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Blue Jeans" then
 
 local embed = {
@@ -2270,6 +2932,40 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Blue Jeans ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #006 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
 
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Plump Purple" then
 
@@ -2305,6 +3001,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Plump Purple ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #007 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Fiery Rece" then
 
 local embed = {
@@ -2338,6 +3068,40 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Fiery Rece ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #008 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
 
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Heat Wave" then
 
@@ -2373,6 +3137,40 @@ local embed = {
 }
 SendMessageEMBED(hakiNorml, embed)
 
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Heat Wave ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #009 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Absolute Zero" then
 
 local embed = {
@@ -2406,6 +3204,40 @@ local embed = {
     }
 }
 SendMessageEMBED(hakiNorml, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 10181046, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Absolute Zero ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #010 / Reguler ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(normalHakiSkays, embed)
 
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Snow White" then
 
@@ -2747,6 +3579,34 @@ function SendMessageEMBED(lgdSword, embed)
     print("Sent")
 end
 
+function SendMessageEMBED(skaysSword, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = skaysSword,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
 function SendMessageEMBED(isnaSword, embed)
     local http = game:GetService("HttpService")
     local headers = {
@@ -2784,6 +3644,8 @@ local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, curr
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local skaysSword = "https://discord.com/api/webhooks/1163031040416301150/kKxiJVNX339Z1I3EdEczD2ja1kmhljtSl8m4x3huxY6T4AYD5A0Clw36kD3q6Hj3uok3"
 
 local isnaSword = "https://discord.com/api/webhooks/1145369922281676852/b_8N9SygcfkukPVfiMoZfLmscoDYEoNNHElBsQCM_m373ta16EJPOVNXdGpqPVuO9-P8"
 
@@ -2851,6 +3713,36 @@ local embed = {
 }
 SendMessageEMBED(isnaSword, embed)
 
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Shisui ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(skaysSword, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Saddi" then
 
 local embed = {
@@ -2911,6 +3803,36 @@ local embed = {
 }
 SendMessageEMBED(isnaSword, embed)
 
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Saddi ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(skaysSword, embed)
+
 elseif game.PlaceId == 4442272183 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Wando" then
 
 local embed = {
@@ -2970,6 +3892,36 @@ local embed = {
     }
 }
 SendMessageEMBED(isnaSword, embed)
+
+wait(0.5)
+
+local embed = {
+    ["title"] = "Legendary Sword Finder",
+    ["description"] = "Hello Im Bot For Legendary Sword Finder",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[⚔️] Sword Name:**",
+            ["value"] = "``` Wando ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Seacond Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "```" ..playerCount.. "/12```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+         }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(skaysSword, embed)
 
 end
 
