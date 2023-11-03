@@ -5237,9 +5237,6 @@ end)
 local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
 CamShake:Stop()
     
-Main:AddToggle("Auto Click",false,function(value)
-_G.AutoClick = value
-end)
 
 Main:AddToggle("Remove Notifications Text",false,function(NamfonGay)
 _G.Remove_trct = NamfonGay
