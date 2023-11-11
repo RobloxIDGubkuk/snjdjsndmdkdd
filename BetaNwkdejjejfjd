@@ -1,8 +1,3 @@
--- # FRUIT FINDER V3 # --
-
-collectAllFruit = true --[ TRUE / FALSE ]--
-collectOnlyFruitSpawn = false --[ TRUE / FALSE ]--
-
 repeat wait() until game:IsLoaded()
 
 if collectAllFruit == true then
@@ -351,6 +346,34 @@ function SendMessageEMBED(mrgIsland, embed)
     print("Sent -- Mirrage")
 end
 
+function SendMessageEMBED(mirrageCris, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = mirrageCris,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent -- Mirrage")
+end
+
 --Examples 
 
 -- Set the time zone offset for Indonesia
@@ -364,6 +387,8 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 
 -- Get the number of players currently in the game
 local playerCount = #game:GetService("Players"):GetPlayers()
+
+local mirrageCris = "https://discord.com/api/webhooks/1167810430270443590/hiLTHbosTPNkD8IoRQSJgC-ALXlqob7mDbYGQYNjXAgEe0WNxH7_WgR8-Vet-VR6q_iy"
 
 local mirrageSkys = "https://discord.com/api/webhooks/1163011025528946788/sYiLPMoT-4NvXGzQU-B3J3tj9qhlth2J-UJbm0KQz_QAQZD2CshRGvgwLpmWrorQ7-CQ"
 
@@ -484,6 +509,32 @@ local embed = {
     }
 }
 SendMessageEMBED(mirrageSkys, embed)
+
+wait(0.1) 
+
+local embed = {
+    ["title"] = "MIRRAGE ISLAND FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🏝️] Mirrage Status:**",
+            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(mirrageCris, embed)
 
 end
 
