@@ -5157,7 +5157,28 @@ end
 end
     wait(0.1)
     if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
-    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates") 
+    repeat task.wait() until game:IsLoaded()
+
+local player = game.Players.LocalPlayer
+repeat task.wait() until player and player:FindFirstChild("PlayerGui") and player.PlayerGui:FindFirstChild("Main")
+
+local chooseTeam = player.PlayerGui.Main.ChooseTeam
+local teamContainer = chooseTeam.Container
+
+local function activateTeamButton(team)
+    for _, connection in pairs(getconnections(team.Frame.TextButton.Activated)) do
+        connection.Function()
+    end
+end
+
+repeat
+    local v2 = "Pirates"
+    local teamName = string.find(v2, "Marine") and "Marines" or "Pirates"
+
+    activateTeamButton(teamContainer[teamName])
+
+    task.wait()
+until player.Team ~= nil and game:IsLoaded()
     wait(1)
 end
 end
