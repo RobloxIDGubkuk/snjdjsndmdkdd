@@ -122,7 +122,7 @@ local bossIsnah = "https://discord.com/api/webhooks/1139506277962235956/jkT9LBNc
 
 local bossSonic = "https://discord.com/api/webhooks/1139481458185089094/30YbfrzONnbhpGgbzstQioEKt9Rlf9UHmKqlepH95DYSFo1hV3bVnmP6rdIlb78N8j22"
 
-local bossSkys = "https://discord.com/api/webhooks/1175226600594341908/eUa44EOEcbyDueRo5QM_qzP5LpJn6Tr46GSmctnGY5BXEBzggny2EPpSc05ZcgDRs8Ez"
+local bossSkys = "https://discord.com/api/webhooks/1175376916690243684/j6Ik9uPg61j2gy5UfxlrFtcXimklZJTRf799sbV8unZxADgy5B-BDRiyoyZkNBrSKDXx"
 
 local bossKevin = "https://discord.com/api/webhooks/1145977032992366602/HCSlHVUb-mBVtfDgZZPVLugPejt7QjQCVQDcaBBP18gzYrmrlSuQGhwqogIxXPZuqhjk"
 
@@ -138,7 +138,7 @@ local locatedSea
 if game.PlaceId == 2753915549 then
     locatedSea = "``` First Sea ```"
 elseif game.PlaceId == 4442272183 then
-    locatedSea = "``` Second SeaSea ```"
+    locatedSea = "``` Second Sea ```"
 elseif game.PlaceId == 7449423635 then
     locatedSea = "``` Third Sea ```"
 else
