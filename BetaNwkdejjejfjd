@@ -3844,7 +3844,7 @@ local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
 local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
-local url = "https://discord.com/api/webhooks/1139800618656088104/XaIcvSN9KrPmrQVOvyVFgsRzv41PJXqhqR7L3hfWCoeYJInJfsalSwTEplfWsRvkZcLA"
+local url = "https://discord.com/api/webhooks/1140670983452237824/ADfavCbKjZt9w0DDJUFAkVxkOw8hw-Xdj8IPSxvvsSTzKRNZlOQ2yBgU5IehrzHgmA4n"
 
 
 if game.PlaceId == 7449423635 then
@@ -4231,7 +4231,7 @@ local currentDateTime = os.date("*t", currentUnixTime + timeZoneOffset)
 local formattedTime = string.format("%02d:%02d:%02d", currentDateTime.hour, currentDateTime.min, currentDateTime.sec)
 local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, currentDateTime.month, currentDateTime.day)
 
-local url = "https://discord.com/api/webhooks/1139800618656088104/XaIcvSN9KrPmrQVOvyVFgsRzv41PJXqhqR7L3hfWCoeYJInJfsalSwTEplfWsRvkZcLA"
+local url = "https://discord.com/api/webhooks/1140670983452237824/ADfavCbKjZt9w0DDJUFAkVxkOw8hw-Xdj8IPSxvvsSTzKRNZlOQ2yBgU5IehrzHgmA4n"
 
 
 if game.PlaceId == 7449423635 then
