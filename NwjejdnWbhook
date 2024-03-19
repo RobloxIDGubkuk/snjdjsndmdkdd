@@ -118,7 +118,7 @@ local formattedDate = string.format("%d-%02d-%02d", currentDateTime.year, curren
 -- Get the number of players currently in the game
 local playerCount = #game:GetService("Players"):GetPlayers()
 
-local bossIsnah = "https://discord.com/api/webhooks/1139506277962235956/jkT9LBNcfJNRbZKe1-B3xfQTU3ZmlRNvIPVMneSPBlkKSvp5_Kp0kiAEK26FmqWjm2OF"
+local bossIsnah = "https://discord.com/api/webhooks/1179059848571273297/dVdJuEcXfKJiyMbXeKDGiS2RC-LLdKlCq7YXdKwwM83CFkrhyqupVmNiwdtMSt1d0dgt"
 
 local bossSonic = "https://discord.com/api/webhooks/1139481458185089094/30YbfrzONnbhpGgbzstQioEKt9Rlf9UHmKqlepH95DYSFo1hV3bVnmP6rdIlb78N8j22"
 
@@ -556,9 +556,9 @@ local mirrageKevin = "https://discord.com/api/webhooks/1140670487463206912/RqcoA
 
 local mrgIsland = "https://discord.com/api/webhooks/1139480661892276255/7JMEf-cJfvsHND_4pm47LKAnnm1Y4OGMll2ARNGUpczPZZlpTMKvtPZH76tR3nqEyMJZ"   
 
-local byIsnahazam = "https://discord.com/api/webhooks/1145366605040205844/gtZu-iR8SqlNKF1UkIIZ-_r5h25i10bZbtiX3k9Ay0wL4MYPXB13x3wnGLSiSbOh5ptq"
+local byIsnahazam = "https://discord.com/api/webhooks/1139498274542334042/qvh_beJfsIXYVYZABxLjLomb-ImL9J9zR-M6afG2ZKeBNJU0cnaDfRyBFx4A821-BMMP"
 
-local isnahazamFm = "https://discord.com/api/webhooks/1173490119026671666/4jGNy3n-G6IwofmEcn6o_t2FBBY7jwPL1HK9-xCVCvixJBL9cFMhtzHRP8lO2RwYlb_w"
+local isnahazamFm = "https://discord.com/api/webhooks/1145367251109822545/IQ7Njds_7UXMYFRxxtLE5DVVsA0kO3IWWvwQ5UrQAmyJbQH0XjgYQvbN_72xxtz_sKM1"
 
 local moonSkys = "https://discord.com/api/webhooks/1173086833052221511/6hn-SQpo3cUnvgmvimAyyx6EhEcGjB41z3ZSm7AqAC00g85xoGtIIK0oKHS8MB0zWnBw"
 
@@ -1251,6 +1251,33 @@ function SendMessageEMBED(hakiNorml, embed)
     })
 end
 
+function SendMessageEMBED(legendisna, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = legendisna,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+end
+
 local timeZoneOffset = 25200 -- 7 hours ahead of UTC
 
 local currentUnixTime = os.time()
@@ -1266,6 +1293,8 @@ local normalHakiSkays = "https://discord.com/api/webhooks/1173087036140441600/LG
 local legendHakiSkys = "https://discord.com/api/webhooks/1173086933711327304/F9FXjdwN5Bsj6WAwp466HfakM_DdJDjNvZET8_bq55C99UVihG_BnH2kl4VbP4ZifpS0"
 
 local legendHakiBukanEll = "https://discord.com/api/webhooks/1159059355077984377/2T_s6r7SGPZj3Zmsaax8NPCdZahH6FDbLfGAhksiB1IFx_QcyIZDA7sbVp4Rs4RCRyNz"
+
+local legendisna = "https://discord.com/api/webhooks/1166034168736645120/5JCsQzIPgVEKFXWiBMN3JW5BkjndJl50SIY9omvwknV4sRYaxhE-O3U6O6ARt51VIHek"
 
 local hakiNorml = "https://discord.com/api/webhooks/1139480769748799548/osuGkuI7VRltAkmRkA1sNclQ1ICrmwQUp7-DlAaBf4-1TOuQ8oA7___kfMGHMFA07MRL"
 
@@ -2059,6 +2088,39 @@ local embed = {
 }
 SendMessageEMBED(legendHakiSkys, embed)    
 
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Snow White ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #011 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendisna, embed)    
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Pure Red" then
 
 local embed = {
@@ -2161,6 +2223,39 @@ local embed = {
 }
 SendMessageEMBED(legendHakiSkys, embed)
 
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Pure Red ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #012 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendisna, embed)
+
 elseif game.PlaceId == 7449423635 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1") == "Winter Sky" then
 
 local embed = {
@@ -2194,6 +2289,40 @@ local embed = {
     }
 }
 SendMessageEMBED(url, embed)
+
+
+
+local embed = {
+    ["title"] = "Haki Hunter ( NORMAL HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Winter Sky ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #013 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Third Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendisna, embed)
 
 
 
@@ -3014,6 +3143,38 @@ local embed = {
         ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
     }
 }
+SendMessageEMBED(legendisna, embed)
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Snow White ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #011 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
 SendMessageEMBED(legendHakiBukanEll, embed)    
 
 
@@ -3116,6 +3277,40 @@ local embed = {
         ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
     }
 }
+SendMessageEMBED(legendisna, embed)
+
+
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Pure Red ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #012 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
 SendMessageEMBED(legendHakiBukanEll, embed)
 
 
@@ -3185,6 +3380,40 @@ local embed = {
     }
 }
 SendMessageEMBED(url, embed)
+
+
+
+local embed = {
+    ["title"] = "Haki Hunter ( LEGENDARY HAKI )",
+    ["description"] = "Hello, Im Bot For Haki Finder",
+    ["color"] = 15844367, -- 10181046
+    ["fields"] = {
+        {
+            ["name"] = "**[❓] Haki Name:**",
+            ["value"] = "``` Winter Sky ```"
+        },
+        {
+            ["name"] = "**[🏅] Rank Haki:**",
+            ["value"] = "``` #013 / Legendary ```"
+        },
+        {
+            ["name"] = "**[📌] Located:**",
+            ["value"] = "``` Second Sea ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(legendisna, embed)
 
 
 
