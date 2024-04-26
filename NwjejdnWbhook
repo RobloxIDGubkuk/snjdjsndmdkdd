@@ -3580,7 +3580,7 @@ local playerCount = #game:GetService("Players"):GetPlayers()
 
 local skaysSword = "https://discord.com/api/webhooks/1173087162900680734/xp6Ux5yD7DzbOEXB3kyJIicMR0cUqXlh4M9ouROhzMHRqYGZOPvAVysvavrm4RCl6nF_"
 
-local isnaSword = "https://discord.com/api/webhooks/1145369922281676852/b_8N9SygcfkukPVfiMoZfLmscoDYEoNNHElBsQCM_m373ta16EJPOVNXdGpqPVuO9-P8"
+local isnaSword = "https://discord.com/api/webhooks/1192120315694829578/kr5Tlyu4DCLUKZH07Yeqw7qy8ecstJlbkyIdL5zklhzedq8C19QR3AFpmHxruEu0HKoB"
 
 local lgdSword = "https://discord.com/api/webhooks/1139480701096427571/xV70-Juobcsxh9qK45bi_PoOIOn8bpe0guIM94E6_tjGy4AJteiRKvsK3hi30pNb1Ya-" -- PUT UR WEBHOOK LINK HERE
 
