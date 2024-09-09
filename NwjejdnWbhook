@@ -550,7 +550,7 @@ function SendMessageEMBED(MirrageZUZU, embed)
     }
     local body = http:JSONEncode(data)
     local response = request({
-        Url = mirrageVin,
+        Url = MirrageZUZU,
         Method = "POST",
         Headers = headers,
         Body = body
