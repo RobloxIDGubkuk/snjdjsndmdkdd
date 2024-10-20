@@ -577,7 +577,7 @@ function SendMessageEMBED(MirrageDANST, embed)
     }
     local body = http:JSONEncode(data)
     local response = request({
-        Url = MMirrageDANST,
+        Url = MirrageDANST,
         Method = "POST",
         Headers = headers,
         Body = body
