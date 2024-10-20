@@ -557,6 +557,33 @@ function SendMessageEMBED(MirrageZUZU, embed)
     })
 end
 
+function SendMessageEMBED(MirrageDANST, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = MMirrageDANST,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+end
+
 --Examples 
 
 -- Set the time zone offset for Indonesia
@@ -592,6 +619,8 @@ local moonSkys = "https://discord.com/api/webhooks/1173086833052221511/6hn-SQpo3
 local urlInk = "https://discord.com/api/webhooks/1139480676278747147/O_ZNgOlEgR8b4gA1-AlLYnu8HUFFK9Z_qBsWaubDepVF5P_7l4kmgQ_E8O7UblLIB3Wv"
 
 local MirrageZUZU = "https://discord.com/api/webhooks/1282722133016842311/UotuNmIMYIr2yqlIueaf8Gdixf7pOWZg6tBe9lg2Bcu38HYpf0qkhGNUlep9NgTCuR74"
+
+local MirrageDANST = "https://discord.com/api/webhooks/1297489920600047699/TJRvL6WyVRN1XjLQdngD0QOy975g2AfBTvY6lXQA8kZdCv2jE7sEz2nTtU9w8ihHnOAt"
 
 if game.PlaceId == 7449423635 and game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
@@ -773,6 +802,31 @@ local embed = {
     }
 }
 SendMessageEMBED(MirrageZUZU, embed)
+
+
+local embed = {
+    ["title"] = "MIRRAGE ISLAND FINDER",
+    ["description"] = "This Is In Third Sea Not In ( Second Sea Or First Sea )",
+    ["color"] = 15844367,
+    ["fields"] = {
+        {
+            ["name"] = "**[🏝️] Mirrage Status:**",
+            ["value"] = "``` Mirrage Island Spawn : ✅ ```"
+        },
+        {
+            ["name"] = "**[👥] Players In Server:**",
+            ["value"] = "``` ".. playerCount .."/12 ```"
+        },
+        {
+            ["name"] = "**[🔗] Server Job Id:**",
+            ["value"] = "``` game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."') ```"
+        }
+    },
+    ["footer"] = {
+        ["text"] = " | "..formattedDate.." | Note : Execute Script ( Server Job Id ) To Join Server"
+    }
+}
+SendMessageEMBED(MirrageDANST, embed)
 
 end
 
