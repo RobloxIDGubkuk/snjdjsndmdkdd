@@ -108,12 +108,6 @@ local LegendC = {
     "Winter Sky"
 }
 
-local validSword = {
-    "Shisui",
-    "Saddi",
-    "Wando"
-}
-
 local bossNamesGroups = {
     ["2753915549"] = {"The Saw", "Greybeard"},      -- First Sea
     ["4442272183"] = {"Darkbeard", "Order", "Cursed Captain"},  -- Second Sea
@@ -147,14 +141,16 @@ local links1 = {
     "https://discord.com/api/webhooks/1139480661892276255/7JMEf-cJfvsHND_4pm47LKAnnm1Y4OGMll2ARNGUpczPZZlpTMKvtPZH76tR3nqEyMJZ", -- Sonic
     "https://discord.com/api/webhooks/1139498274542334042/qvh_beJfsIXYVYZABxLjLomb-ImL9J9zR-M6afG2ZKeBNJU0cnaDfRyBFx4A821-BMMP", -- isnah
     "https://discord.com/api/webhooks/1282722133016842311/UotuNmIMYIr2yqlIueaf8Gdixf7pOWZg6tBe9lg2Bcu38HYpf0qkhGNUlep9NgTCuR74",
-    "https://discord.com/api/webhooks/1297489920600047699/TJRvL6WyVRN1XjLQdngD0QOy975g2AfBTvY6lXQA8kZdCv2jE7sEz2nTtU9w8ihHnOAt"
+    "https://discord.com/api/webhooks/1297489920600047699/TJRvL6WyVRN1XjLQdngD0QOy975g2AfBTvY6lXQA8kZdCv2jE7sEz2nTtU9w8ihHnOAt",
+    "https://discord.com/api/webhooks/1299018786896085032/v8KileiDavlAkgoBLeuBv7if6rxS4cY_F9BleeSydW2A7yeJyLd7cvbnAXwaEdHdpPMw"
 }
 
 -- Link Moon
 local links2 = {
     "https://discord.com/api/webhooks/1145367251109822545/IQ7Njds_7UXMYFRxxtLE5DVVsA0kO3IWWvwQ5UrQAmyJbQH0XjgYQvbN_72xxtz_sKM1", -- isnah
     "https://discord.com/api/webhooks/1173086833052221511/6hn-SQpo3cUnvgmvimAyyx6EhEcGjB41z3ZSm7AqAC00g85xoGtIIK0oKHS8MB0zWnBw",
-    "https://discord.com/api/webhooks/1139480676278747147/O_ZNgOlEgR8b4gA1-AlLYnu8HUFFK9Z_qBsWaubDepVF5P_7l4kmgQ_E8O7UblLIB3Wv"  -- Sonic
+    "https://discord.com/api/webhooks/1139480676278747147/O_ZNgOlEgR8b4gA1-AlLYnu8HUFFK9Z_qBsWaubDepVF5P_7l4kmgQ_E8O7UblLIB3Wv", -- Sonic
+    "https://discord.com/api/webhooks/1299018533618847795/7qePTBYzih16NXzmDHEMq9xytTL4YKfSYMMeBQ8WkmrobgbseRoT_oz0PtOIxdnDN9DN"
 }
 
 -- Link Boss
@@ -162,7 +158,8 @@ local links3 = {
     "https://discord.com/api/webhooks/1179059848571273297/dVdJuEcXfKJiyMbXeKDGiS2RC-LLdKlCq7YXdKwwM83CFkrhyqupVmNiwdtMSt1d0dgt", -- isnah
     "https://discord.com/api/webhooks/1139481458185089094/30YbfrzONnbhpGgbzstQioEKt9Rlf9UHmKqlepH95DYSFo1hV3bVnmP6rdIlb78N8j22", -- Sonic
     "https://discord.com/api/webhooks/1175376916690243684/j6Ik9uPg61j2gy5UfxlrFtcXimklZJTRf799sbV8unZxADgy5B-BDRiyoyZkNBrSKDXx",
-    "https://discord.com/api/webhooks/1145977032992366602/HCSlHVUb-mBVtfDgZZPVLugPejt7QjQCVQDcaBBP18gzYrmrlSuQGhwqogIxXPZuqhjk"
+    "https://discord.com/api/webhooks/1145977032992366602/HCSlHVUb-mBVtfDgZZPVLugPejt7QjQCVQDcaBBP18gzYrmrlSuQGhwqogIxXPZuqhjk",
+    "https://discord.com/api/webhooks/1299018717254127656/K2j_9MYaK3GaED0tCJK_fqMouSWB-JVq9DrCYOHKKHMzBBGi18Uto6l2bG101bg6Q-eh"
 }
 
 -- Link haki Normal
@@ -177,14 +174,16 @@ local links5 = {
     "https://discord.com/api/webhooks/1173086933711327304/F9FXjdwN5Bsj6WAwp466HfakM_DdJDjNvZET8_bq55C99UVihG_BnH2kl4VbP4ZifpS0",
     "https://discord.com/api/webhooks/1159059355077984377/2T_s6r7SGPZj3Zmsaax8NPCdZahH6FDbLfGAhksiB1IFx_QcyIZDA7sbVp4Rs4RCRyNz",
     "https://discord.com/api/webhooks/1166034168736645120/5JCsQzIPgVEKFXWiBMN3JW5BkjndJl50SIY9omvwknV4sRYaxhE-O3U6O6ARt51VIHek", -- isnah
-    "https://discord.com/api/webhooks/1139480690036068382/EiMtn6xxHpVyLiCJ_nqkjf199gIzXznwpInW_WWosGLILbvDJsKgTNtxOIDKQbS1J33k"  -- Sonic
+    "https://discord.com/api/webhooks/1139480690036068382/EiMtn6xxHpVyLiCJ_nqkjf199gIzXznwpInW_WWosGLILbvDJsKgTNtxOIDKQbS1J33k", -- Sonic
+    "https://discord.com/api/webhooks/1299018409358655619/XHrVsgpF9nXmUq1xlmeFgZyODSF77Gv-e3LOFE3q5wiHVX1_LTOid24qbQFXggg-P0_f"
 }
 
 -- Link Legendary Sword
 local links6 = {
     "https://discord.com/api/webhooks/1173087162900680734/xp6Ux5yD7DzbOEXB3kyJIicMR0cUqXlh4M9ouROhzMHRqYGZOPvAVysvavrm4RCl6nF_",
     "https://discord.com/api/webhooks/1192120315694829578/kr5Tlyu4DCLUKZH07Yeqw7qy8ecstJlbkyIdL5zklhzedq8C19QR3AFpmHxruEu0HKoB", -- isnah
-    "https://discord.com/api/webhooks/1139480701096427571/xV70-Juobcsxh9qK45bi_PoOIOn8bpe0guIM94E6_tjGy4AJteiRKvsK3hi30pNb1Ya-"  -- Sonic
+    "https://discord.com/api/webhooks/1139480701096427571/xV70-Juobcsxh9qK45bi_PoOIOn8bpe0guIM94E6_tjGy4AJteiRKvsK3hi30pNb1Ya-", -- Sonic
+    "https://discord.com/api/webhooks/1299018313459830844/ZJaTyfZZ0X8AI9fh3ZP-fg78Jiq7U72nJA5LIQYBrs6bCuajE-JElGHpt0buWWJvFkl0"
 }
 
 -- https://i.imgur.com/6RD5kZ0.png boss
@@ -386,7 +385,7 @@ end
 
 function Sword()
     local TTZ = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1")
-    if table.find(validSword, TTZ) then
+    if TTZ == "Shisui" or TTZ == "Saddi" or TTZ == "Wando" then
         local AdminMessage = {
             ["embeds"] = {
                 {
@@ -400,7 +399,7 @@ function Sword()
                     ["fields"] = {
                         {
                             ["name"] = "**[⚔️] Sword Name:**",
-                            ["value"] = "```".. SwordX .."```",
+                            ["value"] = "```".. game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") .."```",
                             ["inline"] = true
                         },
                         {
