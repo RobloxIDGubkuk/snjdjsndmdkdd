@@ -103,6 +103,12 @@ local validColors = {
     "Winter Sky"
 }
 
+local LegendC = {
+    "Snow White",
+    "Pure Red",
+    "Winter Sky"
+}
+
 local validSword = {
     "Shisui",
     "Saddi",
@@ -329,6 +335,56 @@ function HakiS()
     end
 end
 
+function LHaki()
+    local TT = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1")
+    if table.find(LegendC, TT) then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "HAKI FINDER | BLOX FRUIT",
+                    ["description"] = "NEW WEBHOOK !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/VibJJDn.png",
+                    },
+                    ["type"] = "rich",
+                    ["color"] = HKU,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**[❓] Haki Name:**",
+                            ["value"] = "```".. Haki .."```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[💵] Haki Price:**",
+                            ["value"] = HakiPrice,
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[📌] Located:**",
+                            ["value"] = locatedSea,
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                        },
+                        {
+                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                        },
+                        {
+                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
+                    },
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
+            }
+        }
+        return AdminMessage
+    end
+end
+
 function Sword()
     local TTZ = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1")
     if table.find(validSword, TTZ) then
@@ -431,11 +487,13 @@ function Boss()
 end
 
 wb(links1, Mirrage())
+wait(0.2)
 wb(links2, Moon())
+wait(0.2)
 wb(links3, Boss())
+wait(0.2)
 wb(links4, HakiS())
+wait(0.2)
+wb(links5, LHaki())
+wait(0.2)
 wb(links6, Sword())
-if _G.SatuSajaMa then
-    _G.SatuSajaMa = false
-    wb(links5, HakiS())
-end
