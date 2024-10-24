@@ -41,7 +41,6 @@ task.spawn(function()
     end
 end)
 
-_G.SatuSajaMa = false
 local HakiPrice
 local Haki
 local HKU
@@ -49,22 +48,22 @@ task.spawn(function()
     while task.wait() do
         pcall(function()
             local TT = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer", "1")
-            HakiPrice = "``` ƒ ".. TT[2] .." ```"
             if TT == "Winter Sky" then
                 Haki = "Winter Sky"
                 HKU = 15844367
-                _G.SatuSajaMa = true
+                HakiPrice = "``` ƒ 7,500 ```"
             elseif TT == "Pure Red" then
                 Haki = "Pure Red"
                 HKU = 15844367
-                _G.SatuSajaMa = true
+                HakiPrice = "``` ƒ 7,500 ```"
             elseif TT == "Snow White" then
                 Haki = "Snow White"
                 HKU = 15844367
-                _G.SatuSajaMa = true
+                HakiPrice = "``` ƒ 7,500 ```"
             else
                 Haki = TT
                 HKU = 10181046
+                HakiPrice = "``` ƒ 1,500 ```"
             end
         end)
     end
