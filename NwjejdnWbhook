@@ -142,7 +142,8 @@ local links1 = {
     "https://discord.com/api/webhooks/1139498274542334042/qvh_beJfsIXYVYZABxLjLomb-ImL9J9zR-M6afG2ZKeBNJU0cnaDfRyBFx4A821-BMMP", -- isnah
     "https://discord.com/api/webhooks/1282722133016842311/UotuNmIMYIr2yqlIueaf8Gdixf7pOWZg6tBe9lg2Bcu38HYpf0qkhGNUlep9NgTCuR74",
     "https://discord.com/api/webhooks/1297489920600047699/TJRvL6WyVRN1XjLQdngD0QOy975g2AfBTvY6lXQA8kZdCv2jE7sEz2nTtU9w8ihHnOAt",
-    "https://discord.com/api/webhooks/1299018786896085032/v8KileiDavlAkgoBLeuBv7if6rxS4cY_F9BleeSydW2A7yeJyLd7cvbnAXwaEdHdpPMw"
+    "https://discord.com/api/webhooks/1299018786896085032/v8KileiDavlAkgoBLeuBv7if6rxS4cY_F9BleeSydW2A7yeJyLd7cvbnAXwaEdHdpPMw",
+    "https://discord.com/api/webhooks/1299703780341977140/9V7brnp7X26eX0q5lmnHFbHHsQ2dpKW9HGz6-Kl9KzXUciw8WxO7LOQXSBAMbhdzpEaV"
 }
 
 -- Link Moon
@@ -150,7 +151,8 @@ local links2 = {
     "https://discord.com/api/webhooks/1145367251109822545/IQ7Njds_7UXMYFRxxtLE5DVVsA0kO3IWWvwQ5UrQAmyJbQH0XjgYQvbN_72xxtz_sKM1", -- isnah
     "https://discord.com/api/webhooks/1173086833052221511/6hn-SQpo3cUnvgmvimAyyx6EhEcGjB41z3ZSm7AqAC00g85xoGtIIK0oKHS8MB0zWnBw",
     "https://discord.com/api/webhooks/1139480676278747147/O_ZNgOlEgR8b4gA1-AlLYnu8HUFFK9Z_qBsWaubDepVF5P_7l4kmgQ_E8O7UblLIB3Wv", -- Sonic
-    "https://discord.com/api/webhooks/1299018533618847795/7qePTBYzih16NXzmDHEMq9xytTL4YKfSYMMeBQ8WkmrobgbseRoT_oz0PtOIxdnDN9DN"
+    "https://discord.com/api/webhooks/1299018533618847795/7qePTBYzih16NXzmDHEMq9xytTL4YKfSYMMeBQ8WkmrobgbseRoT_oz0PtOIxdnDN9DN",
+    "https://discord.com/api/webhooks/1299703791880507434/C7fE-yalJyQ--AZWQ8mEo0znkJxMAe7-3w8usd_crWpqp4Nvybq0NiCfu6PWoJKCilis"
 }
 
 -- Link Boss
