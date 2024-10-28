@@ -386,8 +386,7 @@ function LHaki()
 end
 
 function Sword()
-    local TTZ = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1")
-    if TTZ == "Shisui" or TTZ == "Saddi" or TTZ == "Wando" then
+    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Shisui" then
         local AdminMessage = {
             ["embeds"] = {
                 {
@@ -401,7 +400,7 @@ function Sword()
                     ["fields"] = {
                         {
                             ["name"] = "**[⚔️] Sword Name:**",
-                            ["value"] = "```".. game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") .."```",
+                            ["value"] = "``` Shisui ```",
                             ["inline"] = true
                         },
                         {
@@ -411,7 +410,97 @@ function Sword()
                         },
                         {
                             ["name"] = "**[📌] Located:**",
-                            ["value"] = locatedSea,
+                            ["value"] = "``` Seacond Sea ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                        },
+                        {
+                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                        },
+                        {
+                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
+                    },
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
+            }
+        }
+        return AdminMessage
+    elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Wando" then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "LEGEND SWORD FINDER | BLOX FRUIT",
+                    ["description"] = "NEW WEBHOOK !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/sM64Vat.png",
+                    },
+                    ["type"] = "rich",
+                    ["color"] = 15844367,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**[⚔️] Sword Name:**",
+                            ["value"] = "``` Wando ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[💵] Sword Price:**",
+                            ["value"] = "``` $ 2.000.000 ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[📌] Located:**",
+                            ["value"] = "``` Seacond Sea ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                        },
+                        {
+                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                        },
+                        {
+                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
+                    },
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
+            }
+        }
+        return AdminMessage
+    elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Saddi" then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "LEGEND SWORD FINDER | BLOX FRUIT",
+                    ["description"] = "NEW WEBHOOK !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/sM64Vat.png",
+                    },
+                    ["type"] = "rich",
+                    ["color"] = 15844367,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**[⚔️] Sword Name:**",
+                            ["value"] = "``` Saddi ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[💵] Sword Price:**",
+                            ["value"] = "``` $ 2.000.000 ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[📌] Located:**",
+                            ["value"] = "``` Seacond Sea ```",
                             ["inline"] = true
                         },
                         {
