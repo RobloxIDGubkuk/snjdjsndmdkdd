@@ -69,17 +69,16 @@ task.spawn(function()
     end
 end)
 
-local SwordPrice
 local SwordX
 task.spawn(function()
     while task.wait() do
         pcall(function()
             local TT = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1")
-            if TT == "Wando" then
+            if game.PlaceId == 4442272183 and TT == "Wando" then
                 SwordX = "Wando"
-            elseif TT == "Saddi" then
+            elseif game.PlaceId == 4442272183 and TT == "Saddi" then
                 SwordX = "Saddi"
-            elseif TT == "Shisui" then
+            elseif game.PlaceId == 4442272183 and TT == "Shisui" then
                 SwordX = "Shisui"
             end
         end)
@@ -106,6 +105,12 @@ local LegendC = {
     "Snow White",
     "Pure Red",
     "Winter Sky"
+}
+
+local SwordOcon = {
+    "Wando",
+    "Saddi",
+    "Shisui"
 }
 
 local bossNamesGroups = {
@@ -386,7 +391,8 @@ function LHaki()
 end
 
 function Sword()
-    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Shisui" then
+    local AnJay = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1")
+    if table.find(SwordOcon, AnJay) and game.PlaceId == 4442272183 then
         local AdminMessage = {
             ["embeds"] = {
                 {
@@ -400,102 +406,12 @@ function Sword()
                     ["fields"] = {
                         {
                             ["name"] = "**[⚔️] Sword Name:**",
-                            ["value"] = "``` Shisui ```",
+                            ["value"] = "``` ".. SwordX .." ```",
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[💵] Sword Price:**",
-                            ["value"] = "``` $ 2.000.000 ```",
-                            ["inline"] = true
-                        },
-                        {
-                            ["name"] = "**[📌] Located:**",
-                            ["value"] = "``` Seacond Sea ```",
-                            ["inline"] = true
-                        },
-                        {
-                            ["name"] = "How To Use? Read Text Below!",
-                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
-                        },
-                        {
-                            ["name"] = "**[🔗] Server Job Id:**",
-                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
-                        },
-                        {
-                            ["name"] = "**[🔗] Join Server Instant:**",
-                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
-                        }
-                    },
-                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
-                }
-            }
-        }
-        return AdminMessage
-    elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Wando" then
-        local AdminMessage = {
-            ["embeds"] = {
-                {
-                    ["title"] = "LEGEND SWORD FINDER | BLOX FRUIT",
-                    ["description"] = "NEW WEBHOOK !!",
-                    ["thumbnail"] = {
-                        ["url"] = "https://i.imgur.com/sM64Vat.png",
-                    },
-                    ["type"] = "rich",
-                    ["color"] = 15844367,
-                    ["fields"] = {
-                        {
-                            ["name"] = "**[⚔️] Sword Name:**",
-                            ["value"] = "``` Wando ```",
-                            ["inline"] = true
-                        },
-                        {
-                            ["name"] = "**[💵] Sword Price:**",
-                            ["value"] = "``` $ 2.000.000 ```",
-                            ["inline"] = true
-                        },
-                        {
-                            ["name"] = "**[📌] Located:**",
-                            ["value"] = "``` Seacond Sea ```",
-                            ["inline"] = true
-                        },
-                        {
-                            ["name"] = "How To Use? Read Text Below!",
-                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
-                        },
-                        {
-                            ["name"] = "**[🔗] Server Job Id:**",
-                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
-                        },
-                        {
-                            ["name"] = "**[🔗] Join Server Instant:**",
-                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
-                        }
-                    },
-                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
-                }
-            }
-        }
-        return AdminMessage
-    elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1") == "Saddi" then
-        local AdminMessage = {
-            ["embeds"] = {
-                {
-                    ["title"] = "LEGEND SWORD FINDER | BLOX FRUIT",
-                    ["description"] = "NEW WEBHOOK !!",
-                    ["thumbnail"] = {
-                        ["url"] = "https://i.imgur.com/sM64Vat.png",
-                    },
-                    ["type"] = "rich",
-                    ["color"] = 15844367,
-                    ["fields"] = {
-                        {
-                            ["name"] = "**[⚔️] Sword Name:**",
-                            ["value"] = "``` Saddi ```",
-                            ["inline"] = true
-                        },
-                        {
-                            ["name"] = "**[💵] Sword Price:**",
-                            ["value"] = "``` $ 2.000.000 ```",
+                            ["name"] = "**[👥] Players In Server:**",
+                            ["value"] = "``` ".. playerCount .."/12 ```",
                             ["inline"] = true
                         },
                         {
@@ -576,13 +492,14 @@ function Boss()
 end
 
 wb(links1, Mirrage())
-wait(0.2)
+wait(0.3)
 wb(links2, Moon())
-wait(0.2)
+wait(0.3) 
 wb(links3, Boss())
-wait(0.2)
+wait(0.3)
 wb(links4, HakiS())
-wait(0.2)
+wait(0.3) 
 wb(links5, LHaki())
-wait(0.2)
+wait(0.3)
 wb(links6, Sword())
+wait(0.3) 
