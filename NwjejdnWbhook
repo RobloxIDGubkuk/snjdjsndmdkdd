@@ -491,6 +491,8 @@ function Boss()
     end
 end
 
+wb(links6, Sword())
+wait(0.3) 
 wb(links1, Mirrage())
 wait(0.3)
 wb(links2, Moon())
@@ -500,6 +502,3 @@ wait(0.3)
 wb(links4, HakiS())
 wait(0.3) 
 wb(links5, LHaki())
-wait(0.3)
-wb(links6, Sword())
-wait(0.3) 
