@@ -245,45 +245,47 @@ function Mirrage()
 end
 
 function Moon()
-    local AdminMessage = {
-        ["embeds"] = {
-            {
-                ["title"] = "MOON FINDER | BLOX FRUIT",
-                ["description"] = "NEW WEBHOOK !!",
-                ["thumbnail"] = {
-                    ["url"] = "https://i.imgur.com/xeDy1OJ.png",
-                },
-                ["type"] = "rich",
-                ["color"] = ccOP,
-                ["fields"] = {
-                    {
-                        ["name"] = "**[🌕] Moon Phase:**",
-                        ["value"] = "``` ".. moonINF .." ```",
-                        ["inline"] = true
+    if game.PlaceId == 7449423635 then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "MOON FINDER | BLOX FRUIT",
+                    ["description"] = "NEW WEBHOOK !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/xeDy1OJ.png",
                     },
-                    {
-                        ["name"] = "**[👥] Players In Server:**",
-                        ["value"] = "``` ".. playerCount .."/12 ```",
-                        ["inline"] = true
+                    ["type"] = "rich",
+                    ["color"] = ccOP,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**[🌕] Moon Phase:**",
+                            ["value"] = "``` ".. moonINF .." ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[👥] Players In Server:**",
+                            ["value"] = "``` ".. playerCount .."/12 ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                        },
+                        {
+                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                        },
+                        {
+                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
                     },
-                    {
-                        ["name"] = "How To Use? Read Text Below!",
-                        ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
-                    },
-                    {
-                        ["name"] = "**[🔗] Server Job Id:**",
-                        ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
-                    },
-                    {
-                        ["name"] = "**[🔗] Join Server Instant:**",
-                        ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
-                    }
-                },
-                ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
             }
         }
-    }
-    return AdminMessage
+        return AdminMessage
+    end
 end
 
 function HakiS()
