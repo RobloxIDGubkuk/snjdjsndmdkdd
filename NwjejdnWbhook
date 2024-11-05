@@ -544,17 +544,17 @@ function CustomAlodieMirrage()
                     ["color"] = 3447003,
                     ["fields"] = {
                         {
-                            ["name"] = "**[🏝️] Mirrage Status:**",
+                            ["name"] = "**Mirrage Status:**",
                             ["value"] = "``` Spawn ✅ ```",
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[🌑] Full Moon Status:**",
+                            ["name"] = "**Full Moon Status:**",
                             ["value"] = "``` ".. moonINF .." ```",
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[👥] Players In Server:**",
+                            ["name"] = "**Players In Server:**",
                             ["value"] = "``` ".. playerCount .."/12 ```",
                         },
                         {
@@ -562,15 +562,15 @@ function CustomAlodieMirrage()
                             ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
                         },
                         {
-                            ["name"] = "**[🔗] Simple Job Id:**",
+                            ["name"] = "**Simple Job Id:**",
                             ["value"] = "``` "..game.JobId.."' ```"
                         },
                         {
-                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["name"] = "**Server Job Id:**",
                             ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
                         },
                         {
-                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["name"] = "**Join Server Instant:**",
                             ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
                         }
                     },
@@ -599,17 +599,17 @@ function CustomAlodieMoon()
                     ["color"] = 3447003,
                     ["fields"] = {
                         {
-                            ["name"] = "**[🌕] Moon Phase:**",
+                            ["name"] = "**Moon Phase:**",
                             ["value"] = "``` ".. moonINF .." ```",
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[📌] Located:**",
+                            ["name"] = "**Located:**",
                             ["value"] = locatedSea,
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[👥] Players In Server:**",
+                            ["name"] = "**Players In Server:**",
                             ["value"] = "``` ".. playerCount .."/12 ```"
                         },
                         {
@@ -617,15 +617,15 @@ function CustomAlodieMoon()
                             ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join Instant Server"
                         },
                         {
-                            ["name"] = "**[🔗] Simple Job Id:**",
+                            ["name"] = "**Simple Job Id:**",
                             ["value"] = "``` ".. game.JobId .." ```"
                         },
                         {
-                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["name"] = "**Server Job Id:**",
                             ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','".. game.JobId .."')```"
                         },
                         {
-                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["name"] = "**Join Server Instant:**",
                             ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
                         }
                     },
@@ -656,17 +656,17 @@ function CustomAlodieLegendHaki()
                     ["color"] = 3447003,
                     ["fields"] = {
                         {
-                            ["name"] = "**[❓] Haki Name:**",
+                            ["name"] = "**Haki Name:**",
                             ["value"] = "```".. Haki .."```",
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[💵] Haki Price:**",
+                            ["name"] = "**Haki Price:**",
                             ["value"] = HakiPrice,
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[📌] Located:**",
+                            ["name"] = "**Located:**",
                             ["value"] = locatedSea,
                         },
                         {
@@ -674,15 +674,15 @@ function CustomAlodieLegendHaki()
                             ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
                         },
                         {
-                            ["name"] = "**[🔗] Simple Job Id:**",
+                            ["name"] = "**Simple Job Id:**",
                             ["value"] = "``` "..game.JobId.."' ```"
                         },
                         {
-                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["name"] = "**Server Job Id:**",
                             ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
                         },
                         {
-                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["name"] = "**Join Server Instant:**",
                             ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
                         }
                     },
@@ -712,17 +712,17 @@ function CustomAlodieLegendSword()
                     ["color"] = 3447003,
                     ["fields"] = {
                         {
-                            ["name"] = "**[⚔️] Sword Name:**",
+                            ["name"] = "**Sword Name:**",
                             ["value"] = "``` ".. SwordX .." ```",
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[📌] Located:**",
+                            ["name"] = "**Located:**",
                             ["value"] = "``` Seacond Sea ```",
                             ["inline"] = true
                         },
                         {
-                            ["name"] = "**[👥] Players In Server:**",
+                            ["name"] = "**Players In Server:**",
                             ["value"] = "``` ".. playerCount .."/12 ```",
                         },
                         {
@@ -730,15 +730,15 @@ function CustomAlodieLegendSword()
                             ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
                         },
                         {
-                            ["name"] = "**[🔗] Simple Job Id:**",
+                            ["name"] = "**Simple Job Id:**",
                             ["value"] = "``` "..game.JobId.."' ```"
                         },
                         {
-                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["name"] = "**Server Job Id:**",
                             ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
                         },
                         {
-                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["name"] = "**Join Server Instant:**",
                             ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
                         }
                     },
@@ -768,17 +768,17 @@ function CustomAlodieBossRaid()
                         ["color"] = 3447003,
                         ["fields"] = {
                             {
-                                ["name"] = "**[👹] Boss Name:**",
+                                ["name"] = "**Boss Name:**",
                                 ["value"] = "``` ".. v.Name .." ```",
                                 ["inline"] = true
                             },
                             {
-                                ["name"] = "**[📌] Located:**",
+                                ["name"] = "**Located:**",
                                 ["value"] = locatedSea,
                                 ["inline"] = true
                             },
                             {
-                                ["name"] = "**[👥] Players In Server:**",
+                                ["name"] = "**Players In Server:**",
                                 ["value"] = "``` ".. playerCount .."/12 ```",
                             },
                             {
@@ -786,15 +786,15 @@ function CustomAlodieBossRaid()
                                 ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
                             },
                             {
-                                ["name"] = "**[🔗] Simple Job Id:**",
+                                ["name"] = "**Simple Job Id:**",
                                 ["value"] = "``` "..game.JobId.."' ```"
                             },
                             {
-                                ["name"] = "**[🔗] Server Job Id:**",
+                                ["name"] = "**Server Job Id:**",
                                 ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
                             },
                             {
-                                ["name"] = "**[🔗] Join Server Instant:**",
+                                ["name"] = "**Join Server Instant:**",
                                 ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
                             }
                         },
@@ -816,3 +816,4 @@ wait(0.3)
 wb(linksX3, CustomAlodieBossRaid())
 wait(0.3) 
 wb(linksX5, CustomAlodieLegendHaki())
+
