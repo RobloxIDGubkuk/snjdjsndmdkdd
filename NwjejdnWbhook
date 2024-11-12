@@ -489,17 +489,6 @@ function Boss()
     end
 end
 
-wb(links6, Sword())
-wait(0.3) 
-wb(links1, Mirrage())
-wait(0.3)
-wb(links2, Moon())
-wait(0.3) 
-wb(links3, Boss())
-wait(0.3)
-wb(links4, HakiS())
-wait(0.3) 
-wb(links5, LHaki())
 
 
 -- ARRA CUSTOM WEBHOOK --
@@ -528,6 +517,17 @@ local linksX5 = {
 local linksX6 = {
     "https://discord.com/api/webhooks/1299018313459830844/ZJaTyfZZ0X8AI9fh3ZP-fg78Jiq7U72nJA5LIQYBrs6bCuajE-JElGHpt0buWWJvFkl0"
 }
+
+-- Link Rare Item
+local linksX7 = {
+    "https://discord.com/api/webhooks/1305161333188329492/6nlXIljBUrZXzBYdJP1bG2C3iV0o_aNL1UOakn6Gi6h5rCsVwzOIFQnt1xDDauyq2wCD"
+}
+
+-- Link Rare Item
+local linksX8 = {
+    "https://discord.com/api/webhooks/1304480148996882442/gXxs3WBo44xfOc5RP8y9vAkWLsGv5cT-mCWxM7JRvQDXLSKdfVfLLTbnceRCJ8DF_r7p"
+}
+
 
 function CustomAlodieMirrage()
     if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
@@ -809,13 +809,152 @@ function CustomAlodieBossRaid()
     end
 end
 
-wb(linksX6, CustomAlodieLegendSword())
-wait(0.3) 
-wb(linksX1, CustomAlodieMirrage())
-wait(0.3)
-wb(linksX2, CustomAlodieMoon())
-wait(0.3) 
-wb(linksX3, CustomAlodieBossRaid())
-wait(0.3) 
-wb(linksX5, CustomAlodieLegendHaki())
+local backpack = game.Players.LocalPlayer.Backpack
+local targetItems = {"God's Chalice", "Sweet Chalice", "Fist of Darkness"}
+function CustomAlodieRareItem()
+    for _, item in pairs(backpack:GetChildren()) do
+        if table.find(targetItems, item.Name) then
+            local AdminMessage = {
+                ["embeds"] = {
+                    {
+                        ["title"] = "RARE ITEM FINDER | BLOX FRUIT",
+                        ["description"] = "Alodie Webhook Server !!",
+                        ["thumbnail"] = {
+                            ["url"] = "https://i.imgur.com/5luR9N3.png",
+                        },
+                        ["image"] = {
+                        ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
+                        },
+                        ["type"] = "rich",
+                        ["color"] = 3447003,
+                        ["fields"] = {
+                            {
+                                ["name"] = "**Item Name:**",
+                                ["value"] = "``` ".. item.Name .." ```",
+                                ["inline"] = true
+                            },
+                            {
+                                ["name"] = "**Located:**",
+                                ["value"] = locatedSea,
+                                ["inline"] = true
+                            },
+                            {
+                                ["name"] = "**Players In Server:**",
+                                ["value"] = "``` ".. playerCount .."/12 ```",
+                            },
+                            {
+                                ["name"] = "How To Use? Read Text Below!",
+                                ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                            },
+                            {
+                                ["name"] = "**Simple Job Id:**",
+                                ["value"] = "``` "..game.JobId.."' ```"
+                            },
+                            {
+                                ["name"] = "**Server Job Id:**",
+                                ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                            },
+                            {
+                                ["name"] = "**Join Server Instant:**",
+                                ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                            }
+                        },
+                        ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                    }
+                }
+            }
+            return AdminMessage
+        end
+    end
+end
+
+function CustomAlodieFruitFinder()
+    for _, v in next, workspace:GetChildren() do
+        if v.Name:find("Fruit") and (v:IsA("Model") or v:IsA("Tool")) then
+            local AdminMessage = {
+                ["embeds"] = {
+                    {
+                        ["title"] = "FRUIT FINDER | BLOX FRUIT",
+                        ["description"] = "Alodie Webhook Server !!",
+                        ["thumbnail"] = {
+                            ["url"] = "https://i.imgur.com/lX6qhTx.png",
+                        },
+                        ["image"] = {
+                        ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
+                        },
+                        ["type"] = "rich",
+                        ["color"] = 3447003,
+                        ["fields"] = {
+                            {
+                                ["name"] = "**Fruit Name:**",
+                                ["value"] = "``` ".. v.Name .." ```",
+                                ["inline"] = true
+                            },
+                            {
+                                ["name"] = "**Located:**",
+                                ["value"] = locatedSea,
+                                ["inline"] = true
+                            },
+                            {
+                                ["name"] = "**Players In Server:**",
+                                ["value"] = "``` ".. playerCount .."/12 ```",
+                            },
+                            {
+                                ["name"] = "How To Use? Read Text Below!",
+                                ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                            },
+                            {
+                                ["name"] = "**Simple Job Id:**",
+                                ["value"] = "``` "..game.JobId.."' ```"
+                            },
+                            {
+                                ["name"] = "**Server Job Id:**",
+                                ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                            },
+                            {
+                                ["name"] = "**Join Server Instant:**",
+                                ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                            }
+                        },
+                        ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                    }
+                }
+            }
+            return AdminMessage
+        end
+    end
+end
+
+task.spawn(function()
+    while true do
+        pcall(function()
+            wb(links6, Sword())
+            wait(0.3)
+            wb(links1, Mirrage())
+            wait(0.3)
+            wb(links2, Moon())
+            wait(0.3)
+            wb(links3, Boss())
+            wait(0.3)
+            wb(links4, HakiS())
+            wait(0.3)
+            wb(links5, LHaki())
+            wait(0.3)
+            wb(linksX6, CustomAlodieLegendSword())
+            wait(0.3)
+            wb(linksX7, CustomAlodieRareItem())
+            wait(0.3)
+            wb(linksX8, CustomAlodieFruitFinder())
+            wait(0.3)
+            wb(linksX1, CustomAlodieMirrage())
+            wait(0.3)
+            wb(linksX2, CustomAlodieMoon())
+            wait(0.3)
+            wb(linksX3, CustomAlodieBossRaid())
+            wait(0.3)
+            wb(linksX5, CustomAlodieLegendHaki())
+            wait(300)
+        end)
+    end
+end)
 
