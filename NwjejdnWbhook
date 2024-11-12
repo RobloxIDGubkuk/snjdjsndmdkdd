@@ -528,6 +528,16 @@ local linksX8 = {
     "https://discord.com/api/webhooks/1304480148996882442/gXxs3WBo44xfOc5RP8y9vAkWLsGv5cT-mCWxM7JRvQDXLSKdfVfLLTbnceRCJ8DF_r7p"
 }
 
+-- Link Kitsune
+local linksX9 = {
+    "https://discord.com/api/webhooks/1305917694562009231/nI6TdcCH4MdRSN0MyEea8--NUSFTPsjAXdSM5ALo_P4n10FKd6R-hyCZgYeMhe8tkp5P"
+}
+
+
+-- Link Low Player
+local linksX10 = {
+    "https://discord.com/api/webhooks/1305918028646584502/WOR7FCeeyOiiIZzddtrdz28nZEyDbKGUBwnVl93nHLwf5pTziHzJcrH5iCMq_veVbuPW"
+}
 
 function CustomAlodieMirrage()
     if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
@@ -569,7 +579,62 @@ function CustomAlodieMirrage()
                         },
                         {
                             ["name"] = "**Server Job Id:**",
-                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                            ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')"
+                        },
+                        {
+                            ["name"] = "**Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
+                    },
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
+            }
+        }
+        return AdminMessage
+    end
+end
+
+function CustomAlodieKitsune()
+    if game:GetService("Workspace").Map:FindFirstChild("Kitsune Island") then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "KITSUNE FINDER | BLOX FRUIT",
+                    ["description"] = "Alodie Webhook Server !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/acSTumQ.png",
+                    },
+                    ["image"] = {
+                        ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
+                    },
+                    ["type"] = "rich",
+                    ["color"] = 3447003,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**Kitsune Status:**",
+                            ["value"] = "``` Spawn ✅ ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**Full Moon Status:**",
+                            ["value"] = "``` ".. moonINF .." ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**Players In Server:**",
+                            ["value"] = "``` ".. playerCount .."/12 ```",
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                        },
+                        {
+                            ["name"] = "**Simple Job Id:**",
+                            ["value"] = " "..game.JobId.."' "
+                        },
+                        {
+                            ["name"] = "**Server Job Id:**",
+                            ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')"
                         },
                         {
                             ["name"] = "**Join Server Instant:**",
@@ -592,7 +657,7 @@ function CustomAlodieMoon()
                     ["title"] = "MOON FINDER | BLOX FRUIT",
                     ["description"] = "Alodie Webhook Server !!",
                     ["thumbnail"] = {
-                        ["url"] = "https://i.imgur.com/xeDy1OJ.png"
+                        ["url"] = "https://i.imgur.com/BlqBgbx.png"
                     },
                     ["image"] = {
                         ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
@@ -620,11 +685,11 @@ function CustomAlodieMoon()
                         },
                         {
                             ["name"] = "**Simple Job Id:**",
-                            ["value"] = "``` ".. game.JobId .." ```"
+                            ["value"] = " ".. game.JobId .." "
                         },
                         {
                             ["name"] = "**Server Job Id:**",
-                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','".. game.JobId .."')```"
+                            ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','".. game.JobId .."')"
                         },
                         {
                             ["name"] = "**Join Server Instant:**",
@@ -639,6 +704,58 @@ function CustomAlodieMoon()
     end
 end
 
+local Players = game:GetService("Players")
+function CustomAlodieLowServer()
+    local playerCount = #Players:GetPlayers()
+    if playerCount < 5 then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "LOW SERVER FINDER | BLOX FRUIT",
+                    ["description"] = "Alodie Webhook Server !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/BlqBgbx.png"
+                    },
+                    ["image"] = {
+                        ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
+                    },
+                    ["type"] = "rich",
+                    ["color"] = 3447003,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**Located:**",
+                            ["value"] = locatedSea,
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**Players In Server:**",
+                            ["value"] = "``` ".. playerCount .."/12 ```"
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join Instant Server"
+                        },
+                        {
+                            ["name"] = "**Simple Job Id:**",
+                            ["value"] = " ".. game.JobId .." "
+                        },
+                        {
+                            ["name"] = "**Server Job Id:**",
+                            ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','".. game.JobId .."')"
+                        },
+                        {
+                            ["name"] = "**Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
+                    },
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
+            }
+        }
+        return AdminMessage
+    end
+end
 
 function CustomAlodieLegendHaki()
     local TT = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1")
@@ -646,10 +763,10 @@ function CustomAlodieLegendHaki()
         local AdminMessage = {
             ["embeds"] = {
                 {
-                    ["title"] = "HAKI FINDER | BLOX FRUIT",
+                    ["title"] = "LEGEND HAKI FINDER | BLOX FRUIT",
                     ["description"] = "Alodie Webhook Server !!",
                     ["thumbnail"] = {
-                        ["url"] = "https://i.imgur.com/VibJJDn.png",
+                        ["url"] = "https://i.imgur.com/kbJjgOe.png",
                     },
                     ["image"] = {
                         ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
@@ -677,11 +794,67 @@ function CustomAlodieLegendHaki()
                         },
                         {
                             ["name"] = "**Simple Job Id:**",
-                            ["value"] = "``` "..game.JobId.."' ```"
+                            ["value"] = " "..game.JobId.."' "
                         },
                         {
                             ["name"] = "**Server Job Id:**",
-                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                            ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')"
+                        },
+                        {
+                            ["name"] = "**Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
+                    },
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
+            }
+        }
+        return AdminMessage
+    end
+end
+
+function CustomAlodieNormalHaki()
+    local TT = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1")
+    if table.find(validColors, TT) then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "NORMAL HAKI FINDER | BLOX FRUIT",
+                    ["description"] = "Alodie Webhook Server !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/kbJjgOe.png",
+                    },
+                    ["image"] = {
+                        ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
+                    },
+                    ["type"] = "rich",
+                    ["color"] = 3447003,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**Haki Name:**",
+                            ["value"] = "```".. Haki .."```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**Haki Price:**",
+                            ["value"] = HakiPrice,
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**Located:**",
+                            ["value"] = locatedSea,
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                        },
+                        {
+                            ["name"] = "**Simple Job Id:**",
+                            ["value"] = " "..game.JobId.."' "
+                        },
+                        {
+                            ["name"] = "**Server Job Id:**",
+                            ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')"
                         },
                         {
                             ["name"] = "**Join Server Instant:**",
@@ -733,11 +906,11 @@ function CustomAlodieLegendSword()
                         },
                         {
                             ["name"] = "**Simple Job Id:**",
-                            ["value"] = "``` "..game.JobId.."' ```"
+                            ["value"] = " "..game.JobId.."' "
                         },
                         {
                             ["name"] = "**Server Job Id:**",
-                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                            ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')"
                         },
                         {
                             ["name"] = "**Join Server Instant:**",
@@ -761,7 +934,7 @@ function CustomAlodieBossRaid()
                         ["title"] = "BOSS FINDER | BLOX FRUIT",
                         ["description"] = "Alodie Webhook Server !!",
                         ["thumbnail"] = {
-                            ["url"] = "https://i.imgur.com/6RD5kZ0.png",
+                            ["url"] = "https://i.imgur.com/DFvurWD.png",
                         },
                         ["image"] = {
                         ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
@@ -789,11 +962,11 @@ function CustomAlodieBossRaid()
                             },
                             {
                                 ["name"] = "**Simple Job Id:**",
-                                ["value"] = "``` "..game.JobId.."' ```"
+                                ["value"] = " "..game.JobId.."' "
                             },
                             {
                                 ["name"] = "**Server Job Id:**",
-                                ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                                ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')"
                             },
                             {
                                 ["name"] = "**Join Server Instant:**",
@@ -852,11 +1025,11 @@ function CustomAlodieRareItem()
                                 },
                                 {
                                     ["name"] = "**Simple Job Id:**",
-                                    ["value"] = "```"..game.JobId.."```"
+                                    ["value"] = " "..game.JobId.." "
                                 },
                                 {
                                     ["name"] = "**Server Job Id:**",
-                                    ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                                    ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')"
                                 },
                                 {
                                     ["name"] = "**Join Server Instant:**",
@@ -911,11 +1084,11 @@ function CustomAlodieFruitFinder()
                             },
                             {
                                 ["name"] = "**Simple Job Id:**",
-                                ["value"] = "``` "..game.JobId.."' ```"
+                                ["value"] = " "..game.JobId.."' "
                             },
                             {
                                 ["name"] = "**Server Job Id:**",
-                                ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                                ["value"] = "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')"
                             },
                             {
                                 ["name"] = "**Join Server Instant:**",
@@ -951,6 +1124,10 @@ task.spawn(function()
             wb(linksX7, CustomAlodieRareItem())
             wait(0.2)
             wb(linksX8, CustomAlodieFruitFinder())
+            wait(0.2)
+            wb(linksX9, CustomAlodieKitsune())
+            wait(0.2)
+            wb(linksX10, CustomAlodieLowServer())
             wait(0.2) 
             wb(linksX1, CustomAlodieMirrage())
             wait(0.2) 
@@ -959,6 +1136,8 @@ task.spawn(function()
             wb(linksX3, CustomAlodieBossRaid())
             wait(0.2)
             wb(linksX5, CustomAlodieLegendHaki())
+            wait(0.2)
+            wb(linksX5, CustomAlodieNormalHaki())
             wait(120)
         end)
     end
