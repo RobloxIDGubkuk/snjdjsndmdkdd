@@ -1,4 +1,4 @@
--- new webhook
+-- new webhook 
 
 function wb(links, message)
     local request = http_request or request or HttpPost or syn.request
