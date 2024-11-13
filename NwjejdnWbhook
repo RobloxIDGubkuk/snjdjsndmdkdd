@@ -599,7 +599,7 @@ function CustomAlodieMirrage()
 end
 
 function CustomAlodieKitsune()
-    if game:GetService("Workspace").Map:FindFirstChild("Kitsune Island") then
+    if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Kitsune Island") then
         local AdminMessage = {
             ["embeds"] = {
                 {
