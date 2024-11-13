@@ -566,7 +566,7 @@ function CustomAlodieMirrage()
                         },
                         {
                             ["name"] = "**Players In Server:**",
-                            ["value"] = "``` ".. playerCount .."/12 ```",
+                            ["value"] = "``` ".. playerCount .."/12 ```"
                         },
                         {
                             ["name"] = "How To Use? Read Text Below!",
@@ -621,7 +621,7 @@ function CustomAlodieKitsune()
                         },
                         {
                             ["name"] = "**Players In Server:**",
-                            ["value"] = "``` ".. playerCount .."/12 ```",
+                            ["value"] = "``` ".. playerCount .."/12 ```"
                         },
                         {
                             ["name"] = "How To Use? Read Text Below!",
@@ -784,7 +784,7 @@ function CustomAlodieLegendHaki()
                         },
                         {
                             ["name"] = "**Located:**",
-                            ["value"] = locatedSea,
+                            ["value"] = locatedSea
                         },
                         {
                             ["name"] = "How To Use? Read Text Below!",
@@ -840,7 +840,7 @@ function CustomAlodieNormalHaki()
                         },
                         {
                             ["name"] = "**Located:**",
-                            ["value"] = locatedSea,
+                            ["value"] = locatedSea
                         },
                         {
                             ["name"] = "How To Use? Read Text Below!",
