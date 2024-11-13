@@ -727,7 +727,7 @@ function CustomAlodieLowServer()
                         },
                         {
                             ["name"] = "**Players In Server:**",
-                            ["value"] = "``` ".. playerCount .."/12 ```"
+                            ["value"] = "``` ".. playerCount .."/12 ```", 
                             ["inline"] = true
                         },
                         {
@@ -935,7 +935,7 @@ function CustomAlodieBossRaid()
                             ["url"] = "https://i.imgur.com/DFvurWD.png",
                         },
                         ["image"] = {
-                        ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
+                            ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
                         },
                         ["type"] = "rich",
                         ["color"] = 3447003,
@@ -1055,7 +1055,7 @@ function CustomAlodieFruitFinder()
                             ["url"] = "https://i.imgur.com/lX6qhTx.png",
                         },
                         ["image"] = {
-                        ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
+                            ["url"] = "https://i.imgur.com/2kAOSOt.gif"  -- GIF
                         },
                         ["type"] = "rich",
                         ["color"] = 3447003,
