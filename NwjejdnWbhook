@@ -896,7 +896,7 @@ function CustomAlodieLegendSword()
                         },
                         {
                             ["name"] = "**Players In Server:**",
-                            ["value"] = "``` ".. playerCount .."/12 ```",
+                            ["value"] = "``` ".. playerCount .."/12 ```"
                         },
                         {
                             ["name"] = "How To Use? Read Text Below!",
@@ -952,7 +952,7 @@ function CustomAlodieBossRaid()
                             },
                             {
                                 ["name"] = "**Players In Server:**",
-                                ["value"] = "``` ".. playerCount .."/12 ```",
+                                ["value"] = "``` ".. playerCount .."/12 ```"
                             },
                             {
                                 ["name"] = "How To Use? Read Text Below!",
@@ -1013,7 +1013,7 @@ function CustomAlodieRareItem()
                                 },
                                 {
                                     ["name"] = "**Players In Server:**",
-                                    ["value"] = "```".. playerCount .."/12```",
+                                    ["value"] = "```".. playerCount .."/12```"
                                 },
                                 {
                                     ["name"] = "How To Use? Read Text Below!",
@@ -1072,7 +1072,7 @@ function CustomAlodieFruitFinder()
                             },
                             {
                                 ["name"] = "**Players In Server:**",
-                                ["value"] = "``` ".. playerCount .."/12 ```",
+                                ["value"] = "``` ".. playerCount .."/12 ```"
                             },
                             {
                                 ["name"] = "How To Use? Read Text Below!",
