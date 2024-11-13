@@ -533,7 +533,6 @@ local linksX9 = {
     "https://discord.com/api/webhooks/1305917694562009231/nI6TdcCH4MdRSN0MyEea8--NUSFTPsjAXdSM5ALo_P4n10FKd6R-hyCZgYeMhe8tkp5P"
 }
 
-
 -- Link Low Player
 local linksX10 = {
     "https://discord.com/api/webhooks/1305918028646584502/WOR7FCeeyOiiIZzddtrdz28nZEyDbKGUBwnVl93nHLwf5pTziHzJcrH5iCMq_veVbuPW"
@@ -575,7 +574,7 @@ function CustomAlodieMirrage()
                         },
                         {
                             ["name"] = "**Simple Job Id:**",
-                            ["value"] = "``` "..game.JobId.."' ```"
+                            ["value"] = " "..game.JobId.."' "
                         },
                         {
                             ["name"] = "**Server Job Id:**",
@@ -704,9 +703,8 @@ function CustomAlodieMoon()
     end
 end
 
-local Players = game:GetService("Players")
 function CustomAlodieLowServer()
-    local playerCount = #Players:GetPlayers()
+    local playerCount = #game:GetService("Players"):GetPlayers()
     if playerCount < 5 then
         local AdminMessage = {
             ["embeds"] = {
@@ -794,7 +792,7 @@ function CustomAlodieLegendHaki()
                         },
                         {
                             ["name"] = "**Simple Job Id:**",
-                            ["value"] = " "..game.JobId.."' "
+                            ["value"] = " "..game.JobId.." "
                         },
                         {
                             ["name"] = "**Server Job Id:**",
@@ -850,7 +848,7 @@ function CustomAlodieNormalHaki()
                         },
                         {
                             ["name"] = "**Simple Job Id:**",
-                            ["value"] = " "..game.JobId.."' "
+                            ["value"] = " "..game.JobId.." "
                         },
                         {
                             ["name"] = "**Server Job Id:**",
@@ -906,7 +904,7 @@ function CustomAlodieLegendSword()
                         },
                         {
                             ["name"] = "**Simple Job Id:**",
-                            ["value"] = " "..game.JobId.."' "
+                            ["value"] = " "..game.JobId.." "
                         },
                         {
                             ["name"] = "**Server Job Id:**",
@@ -962,7 +960,7 @@ function CustomAlodieBossRaid()
                             },
                             {
                                 ["name"] = "**Simple Job Id:**",
-                                ["value"] = " "..game.JobId.."' "
+                                ["value"] = " "..game.JobId.." "
                             },
                             {
                                 ["name"] = "**Server Job Id:**",
@@ -1082,7 +1080,7 @@ function CustomAlodieFruitFinder()
                             },
                             {
                                 ["name"] = "**Simple Job Id:**",
-                                ["value"] = " "..game.JobId.."' "
+                                ["value"] = " "..game.JobId.." "
                             },
                             {
                                 ["name"] = "**Server Job Id:**",
