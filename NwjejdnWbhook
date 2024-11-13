@@ -987,8 +987,6 @@ local targetItems = {"God's Chalice", "Sweet Chalice", "Fist of Darkness"}
 function CustomAlodieRareItem()
     for _, player in pairs(game.Players:GetPlayers()) do
         local backpack = player.Backpack
-        
-        -- Check each item in the player's backpack
         for _, item in pairs(backpack:GetChildren()) do
             if table.find(targetItems, item.Name) then
                 local AdminMessage = {
@@ -1105,7 +1103,7 @@ function CustomAlodieFruitFinder()
 end
 
 task.spawn(function()
-    while true do
+    while task.wait() do
         pcall(function()
             wb(links6, Sword())
             wait(0.2) 
@@ -1138,7 +1136,7 @@ task.spawn(function()
             wb(linksX5, CustomAlodieLegendHaki())
             wait(0.2)
             wb(linksX5, CustomAlodieNormalHaki())
-            wait(120)
+            wait(200)
         end)
     end
 end)
