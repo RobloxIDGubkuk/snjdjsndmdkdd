@@ -538,6 +538,11 @@ local linksX10 = {
     "https://discord.com/api/webhooks/1305918028646584502/WOR7FCeeyOiiIZzddtrdz28nZEyDbKGUBwnVl93nHLwf5pTziHzJcrH5iCMq_veVbuPW"
 }
 
+-- Link Normal Haki
+local linksXY = {
+    "https://discord.com/api/webhooks/1305917075549847562/bjG1CNmGTdc2ItidyLSlvojXgYldAfhDvGwxnVsKqUkrCerUnz8IEB4P-gtVJg7oVaUe"
+}
+
 function CustomAlodieMirrage()
     if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
         local AdminMessage = {
@@ -1133,7 +1138,7 @@ task.spawn(function()
             wait(0.2)
             wb(linksX5, CustomAlodieLegendHaki())
             wait(0.2)
-            wb(linksX5, CustomAlodieNormalHaki())
+            wb(linksXY, CustomAlodieNormalHaki())
             wait(200)
         end)
     end
