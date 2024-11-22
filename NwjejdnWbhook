@@ -951,6 +951,11 @@ function CustomAlodieBossRaid()
                                 ["inline"] = true
                             },
                             {
+                                ["name"] = "**Boss Health:**",
+                                ["value"] = "``` Health : ".. game:GetService("ReplicatedStorage")[v.Name].Humanoid.Health .." / ".. game:GetService("ReplicatedStorage")[v.Name].Humanoid.MaxHealth .." ```",
+                                ["inline"] = true
+                            },
+                            {
                                 ["name"] = "**Located:**",
                                 ["value"] = locatedSea,
                                 ["inline"] = true
