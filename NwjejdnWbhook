@@ -74,12 +74,12 @@ task.spawn(function()
     while task.wait() do
         pcall(function()
             local TT = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1")
-            if game.PlaceId == 4442272183 and TT == "Wando" then
-                SwordX = "Wando"
-            elseif game.PlaceId == 4442272183 and TT == "Saddi" then
-                SwordX = "Saddi"
-            elseif game.PlaceId == 4442272183 and TT == "Shisui" then
-                SwordX = "Shisui"
+            if game.PlaceId == 4442272183 and TT == "Oroshi" then
+                SwordX = "Oroshi"
+            elseif game.PlaceId == 4442272183 and TT == "Saishi" then
+                SwordX = "Saishi"
+            elseif game.PlaceId == 4442272183 and TT == "Shizu" then
+                SwordX = "Shizu"
             end
         end)
     end
@@ -108,9 +108,9 @@ local LegendC = {
 }
 
 local SwordOcon = {
-    "Wando",
-    "Saddi",
-    "Shisui"
+    "Oroshi",
+    "Saishi",
+    "Shizu"
 }
 
 local bossNamesGroups = {
@@ -133,7 +133,6 @@ else
     locatedSea = "Unknown Sea"
 end
 
-wait(1)
 
 local playerCount = #game:GetService("Players"):GetPlayers()
 
@@ -149,7 +148,8 @@ local links1 = {
     "https://discord.com/api/webhooks/1282722133016842311/UotuNmIMYIr2yqlIueaf8Gdixf7pOWZg6tBe9lg2Bcu38HYpf0qkhGNUlep9NgTCuR74",
     "https://discord.com/api/webhooks/1297489920600047699/TJRvL6WyVRN1XjLQdngD0QOy975g2AfBTvY6lXQA8kZdCv2jE7sEz2nTtU9w8ihHnOAt",
     "https://discord.com/api/webhooks/1299703780341977140/9V7brnp7X26eX0q5lmnHFbHHsQ2dpKW9HGz6-Kl9KzXUciw8WxO7LOQXSBAMbhdzpEaV",
-    "https://discord.com/api/webhooks/1317084431411843092/_DrBw5bFfmuC04HcV2BMNUelTidW8NBt9RNPRJ3_LoBA-lFTxzyABZnK2cVTkfeoFpOK"
+    "https://discord.com/api/webhooks/1317084431411843092/_DrBw5bFfmuC04HcV2BMNUelTidW8NBt9RNPRJ3_LoBA-lFTxzyABZnK2cVTkfeoFpOK",
+    "https://discordapp.com/api/webhooks/1241221370113949726/qxgo3-jTBLRaGm4irC7pGS1L_hS_2CgJDBqOJKQY0NDNOCe41iAnZqn-emCF01HZ1-Qj" -- Ganteng Hub
 }
 
 -- Link Moon
@@ -157,7 +157,8 @@ local links2 = {
     "https://discord.com/api/webhooks/1145367251109822545/IQ7Njds_7UXMYFRxxtLE5DVVsA0kO3IWWvwQ5UrQAmyJbQH0XjgYQvbN_72xxtz_sKM1", -- isnah
     "https://discord.com/api/webhooks/1173086833052221511/6hn-SQpo3cUnvgmvimAyyx6EhEcGjB41z3ZSm7AqAC00g85xoGtIIK0oKHS8MB0zWnBw",
     "https://discord.com/api/webhooks/1139480676278747147/O_ZNgOlEgR8b4gA1-AlLYnu8HUFFK9Z_qBsWaubDepVF5P_7l4kmgQ_E8O7UblLIB3Wv", -- Sonic
-    "https://discord.com/api/webhooks/1299703791880507434/C7fE-yalJyQ--AZWQ8mEo0znkJxMAe7-3w8usd_crWpqp4Nvybq0NiCfu6PWoJKCilis"
+    "https://discord.com/api/webhooks/1299703791880507434/C7fE-yalJyQ--AZWQ8mEo0znkJxMAe7-3w8usd_crWpqp4Nvybq0NiCfu6PWoJKCilis",
+    "https://discordapp.com/api/webhooks/1241225765010538496/xET3ccKrvmABXD_b7NtNJka_3SlozAO0oKCyAEyXp8tDY3oaEsI-625Ek5QFqbdTZtQD" -- Ganteng Hub
 }
 
 -- Link Boss
@@ -165,14 +166,16 @@ local links3 = {
     "https://discord.com/api/webhooks/1179059848571273297/dVdJuEcXfKJiyMbXeKDGiS2RC-LLdKlCq7YXdKwwM83CFkrhyqupVmNiwdtMSt1d0dgt", -- isnah
     "https://discord.com/api/webhooks/1139481458185089094/30YbfrzONnbhpGgbzstQioEKt9Rlf9UHmKqlepH95DYSFo1hV3bVnmP6rdIlb78N8j22", -- Sonic
     "https://discord.com/api/webhooks/1175376916690243684/j6Ik9uPg61j2gy5UfxlrFtcXimklZJTRf799sbV8unZxADgy5B-BDRiyoyZkNBrSKDXx",
-    "https://discord.com/api/webhooks/1145977032992366602/HCSlHVUb-mBVtfDgZZPVLugPejt7QjQCVQDcaBBP18gzYrmrlSuQGhwqogIxXPZuqhjk"
+    "https://discord.com/api/webhooks/1145977032992366602/HCSlHVUb-mBVtfDgZZPVLugPejt7QjQCVQDcaBBP18gzYrmrlSuQGhwqogIxXPZuqhjk",
+    "https://discordapp.com/api/webhooks/1241219947074687046/jKXvzsfJZ32ttJljj2XDiw0wxt7fubA8CZyrVNhGx9m7nClfbTib-kaUz0TxG-FtzR_g" -- Ganteng Hub
 }
 
 -- Link haki Normal
 local links4 = {
     "https://discord.com/api/webhooks/1173087036140441600/LGRQKFdLyAuwjZ7GDWEILdUSIOG8kZixgEbfq1fZ1ZI7RqIBh-5N5482orprEFK2f8XR",
     "https://discord.com/api/webhooks/1233003086922907708/jLLWSSIXm8eoYl7TSzaZISqx1G9YwYInzm6O-naHe_qnF7UM1zAayMFRAv69QafvxiNw", -- isnah
-    "https://discord.com/api/webhooks/1139480690036068382/EiMtn6xxHpVyLiCJ_nqkjf199gIzXznwpInW_WWosGLILbvDJsKgTNtxOIDKQbS1J33k"  -- Sonic
+    "https://discord.com/api/webhooks/1139480690036068382/EiMtn6xxHpVyLiCJ_nqkjf199gIzXznwpInW_WWosGLILbvDJsKgTNtxOIDKQbS1J33k",  -- Sonic
+    "https://discordapp.com/api/webhooks/1321503259596292268/2sH56jYN3Rd1DDSh8Ark-7HNkf9GgEwVeXWWJd2uuQHXYaxGmev0LAjIRoX2U5ExXoxo" -- Ganteng Hub
 }
 
 -- Link haki Legend
@@ -180,14 +183,26 @@ local links5 = {
     "https://discord.com/api/webhooks/1173086933711327304/F9FXjdwN5Bsj6WAwp466HfakM_DdJDjNvZET8_bq55C99UVihG_BnH2kl4VbP4ZifpS0",
     "https://discord.com/api/webhooks/1159059355077984377/2T_s6r7SGPZj3Zmsaax8NPCdZahH6FDbLfGAhksiB1IFx_QcyIZDA7sbVp4Rs4RCRyNz",
     "https://discord.com/api/webhooks/1166034168736645120/5JCsQzIPgVEKFXWiBMN3JW5BkjndJl50SIY9omvwknV4sRYaxhE-O3U6O6ARt51VIHek", -- isnah
-    "https://discord.com/api/webhooks/1139480690036068382/EiMtn6xxHpVyLiCJ_nqkjf199gIzXznwpInW_WWosGLILbvDJsKgTNtxOIDKQbS1J33k" -- Sonic
+    "https://discord.com/api/webhooks/1139480690036068382/EiMtn6xxHpVyLiCJ_nqkjf199gIzXznwpInW_WWosGLILbvDJsKgTNtxOIDKQbS1J33k", -- Sonic
+    "https://discordapp.com/api/webhooks/1321503259596292268/2sH56jYN3Rd1DDSh8Ark-7HNkf9GgEwVeXWWJd2uuQHXYaxGmev0LAjIRoX2U5ExXoxo" -- Ganteng Hub
 }
 
 -- Link Legendary Sword
 local links6 = {
     "https://discord.com/api/webhooks/1173087162900680734/xp6Ux5yD7DzbOEXB3kyJIicMR0cUqXlh4M9ouROhzMHRqYGZOPvAVysvavrm4RCl6nF_",
     "https://discord.com/api/webhooks/1192120315694829578/kr5Tlyu4DCLUKZH07Yeqw7qy8ecstJlbkyIdL5zklhzedq8C19QR3AFpmHxruEu0HKoB", -- isnah
-    "https://discord.com/api/webhooks/1139480701096427571/xV70-Juobcsxh9qK45bi_PoOIOn8bpe0guIM94E6_tjGy4AJteiRKvsK3hi30pNb1Ya-" -- Sonic
+    "https://discord.com/api/webhooks/1139480701096427571/xV70-Juobcsxh9qK45bi_PoOIOn8bpe0guIM94E6_tjGy4AJteiRKvsK3hi30pNb1Ya-", -- Sonic
+    "https://discordapp.com/api/webhooks/1321503598928203786/C7njEqS3spBftUTdkWTDQX9hZdcfqx2QFAImPOmyV3vo3FstlgQUtSVBuIpQMVJELZ9n" -- Ganteng Hub
+}
+
+-- Link Fruit Finder
+local links7 = {
+    "https://discordapp.com/api/webhooks/1321501726569795604/PTOQ3gLhmK4p4V1HCpQh_zkuZ7y2KZwJkRjHAn-Alu7em2Jhmo9KFhYu5YCnsKScF1aS" -- Ganteng Hub
+}
+
+-- Link Kitsune Island
+local links8 = {
+    "https://discordapp.com/api/webhooks/1321504122758762619/x_Te3PCxrbWdUJ92IMuT-i3zhTKsKnFAhWjHCPzf06BiVnowCrUJfxsmnnXHN7tmP4_b" -- Ganteng Hub
 }
 
 -- https://i.imgur.com/6RD5kZ0.png boss
@@ -490,7 +505,105 @@ function Boss()
     end
 end
 
+function FruitFinder()
+    for _, v in next, workspace:GetChildren() do
+        if v.Name:find("Fruit") and (v:IsA("Model") or v:IsA("Tool")) then
+            local AdminMessage = {
+                ["embeds"] = {
+                    {
+                        ["title"] = "FRUIT FINDER | BLOX FRUIT",
+                        ["description"] = "NEW WEBHOOK !!",
+                        ["thumbnail"] = {
+                            ["url"] = "https://i.imgur.com/lX6qhTx.png",
+                        },
+                        ["type"] = "rich",
+                        ["color"] = 15844367,
+                        ["fields"] = {
+                            {
+                                ["name"] = "**[🍎] Fruit Name:**",
+                                ["value"] = "``` ".. v.Name .." ```",
+                                ["inline"] = true
+                            },
+                            {
+                                ["name"] = "**[📌] Located:**",
+                                ["value"] = locatedSea,
+                                ["inline"] = true
+                            },
+                            {
+                                ["name"] = "**[👥] Players In Server:**",
+                                ["value"] = "``` ".. playerCount .."/12 ```",
+                                ["inline"] = true
+                            },
+                            {
+                                ["name"] = "How To Use? Read Text Below!",
+                                ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                            },
+                            {
+                                ["name"] = "**[🔗] Server Job Id:**",
+                                ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                            },
+                            {
+                                ["name"] = "**[🔗] Join Server Instant:**",
+                                ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                            }
+                        },
+                        ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                    }
+                }
+            }
+            return AdminMessage
+        end
+    end
+end
 
+function KitsuneIsland()
+    if game:GetService("Workspace").Map:FindFirstChild("Kitsune Island") then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "KITSUNE FINDER | BLOX FRUIT",
+                    ["description"] = "NEW WEBHOOK !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/acSTumQ.png",
+                    },
+                    ["type"] = "rich",
+                    ["color"] = 15844367,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**[🏝️] Kitsune Status:**",
+                            ["value"] = "``` Spawn ✅ ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[🌑] Full Moon Status:**",
+                            ["value"] = "``` ".. moonINF .." ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[👥] Players In Server:**",
+                            ["value"] = "``` ".. playerCount .."/12 ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                        },
+                        {
+                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                        },
+                        {
+                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
+                    },
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
+            }
+        }
+        return AdminMessage
+    end
+end
 
 -- ARRA CUSTOM WEBHOOK --
 
@@ -1125,6 +1238,10 @@ task.spawn(function()
             wb(links4, HakiS())
             wait(0.2)
             wb(links5, LHaki())
+            wait(0.2)
+            wb(links7, FruitFinder())
+            wait(0.2) 
+            wb(links8, KitsuneIsland())
             wait(0.2) 
             wb(linksX6, CustomAlodieLegendSword())
             wait(0.2)
