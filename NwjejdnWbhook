@@ -197,7 +197,8 @@ local links6 = {
 
 -- Link Fruit Finder
 local links7 = {
-    "https://discordapp.com/api/webhooks/1321501726569795604/PTOQ3gLhmK4p4V1HCpQh_zkuZ7y2KZwJkRjHAn-Alu7em2Jhmo9KFhYu5YCnsKScF1aS" -- Ganteng Hub
+    "https://discordapp.com/api/webhooks/1321501726569795604/PTOQ3gLhmK4p4V1HCpQh_zkuZ7y2KZwJkRjHAn-Alu7em2Jhmo9KFhYu5YCnsKScF1aS", -- Ganteng Hub
+    "https://discord.com/api/webhooks/1183008172672307221/BTroINGq1CanKdgGIuZLnExuq6q9JFU-VZMozPNUYGOG7ue9zj9bZPbJAo4e2G3EET8F" -- isnahamzah
 }
 
 -- Link Kitsune Island
@@ -557,7 +558,7 @@ function FruitFinder()
 end
 
 function KitsuneIsland()
-    if game:GetService("Workspace").Map:FindFirstChild("Kitsune Island") then
+    if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Kitsune Island") then
         local AdminMessage = {
             ["embeds"] = {
                 {
@@ -1228,6 +1229,8 @@ task.spawn(function()
     while task.wait() do
         pcall(function()
             wb(links6, Sword())
+            wait(0.2)
+            wb(links8, KitsuneIsland())
             wait(0.2) 
             wb(links1, Mirrage())
             wait(0.2)
@@ -1240,8 +1243,6 @@ task.spawn(function()
             wb(links5, LHaki())
             wait(0.2)
             wb(links7, FruitFinder())
-            wait(0.2) 
-            wb(links8, KitsuneIsland())
             wait(0.2) 
             wb(linksX6, CustomAlodieLegendSword())
             wait(0.2)
