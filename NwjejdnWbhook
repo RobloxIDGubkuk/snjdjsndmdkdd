@@ -620,7 +620,7 @@ function PrehistoricIsland()
                     ["title"] = "VOLCANO FINDER | BLOX FRUIT",
                     ["description"] = "NEW WEBHOOK !!",
                     ["thumbnail"] = {
-                        ["url"] = "https://i.imgur.com/acSTumQ.png",
+                        ["url"] = "https://i.imgur.com/jAZVTBz.png",
                     },
                     ["type"] = "rich",
                     ["color"] = 15844367,
