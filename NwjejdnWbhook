@@ -212,6 +212,11 @@ local links9 = {
     "https://discordapp.com/api/webhooks/1323244071107563542/BJPwfkl4kcGH4LLwwa7WPWQ6Z7EsnJH4GtRx2RDcZp02k01rQ3tRNnhrqieaHeGL4vg-" -- Ganteng Hub
 }
 
+-- Link Freezing Hydra Island
+local links10 = {
+    "https://discordapp.com/api/webhooks/1323880416574439516/7Md9gNHfuW_rXRqir2jUfFyYAs-TvIUJIlWsoBGObOfwqimU7luMbzglfjB7L59L1z6v" -- Ganteng Hub
+}
+
 -- https://i.imgur.com/6RD5kZ0.png boss
 -- https://i.imgur.com/odfwxb3.png mirrage
 -- https://i.imgur.com/xeDy1OJ.png moon
@@ -627,6 +632,55 @@ function PrehistoricIsland()
                     ["fields"] = {
                         {
                             ["name"] = "**[🏝️] Prehistoric Status:**",
+                            ["value"] = "``` Spawn ✅ ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[🌑] Full Moon Status:**",
+                            ["value"] = "``` ".. moonINF .." ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "**[👥] Players In Server:**",
+                            ["value"] = "``` ".. playerCount .."/12 ```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] = "How To Use? Read Text Below!",
+                            ["value"] = "Copy Server Job Id And Paste it On Executor Then Click Execute Or Join instant Server"
+                        },
+                        {
+                            ["name"] = "**[🔗] Server Job Id:**",
+                            ["value"] = "```game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','"..game.JobId.."')```"
+                        },
+                        {
+                            ["name"] = "**[🔗] Join Server Instant:**",
+                            ["value"] = "[Click Here To Join Server](https://www.roblox.com/games/".. game.PlaceId .."?privateServerLinkCode=".. game.JobId ..")"
+                        }
+                    },
+                    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                }
+            }
+        }
+        return AdminMessage
+    end
+end
+
+function FreezingHydraIsland()
+    if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Freezing Hydra Island") then
+        local AdminMessage = {
+            ["embeds"] = {
+                {
+                    ["title"] = "FREEZING HYDRA FINDER | BLOX FRUIT",
+                    ["description"] = "NEW WEBHOOK !!",
+                    ["thumbnail"] = {
+                        ["url"] = "https://i.imgur.com/jAZVTBz.png",
+                    },
+                    ["type"] = "rich",
+                    ["color"] = 15844367,
+                    ["fields"] = {
+                        {
+                            ["name"] = "**[🏝️] Freezing Hydra Status:**",
                             ["value"] = "``` Spawn ✅ ```",
                             ["inline"] = true
                         },
@@ -1288,6 +1342,8 @@ task.spawn(function()
             wb(links8, KitsuneIsland())
             wait(0.2)
             wb(links9, PrehistoricIsland())
+            wait(0.2)
+            wb(links10, FreezingHydraIsland())
             wait(0.2) 
             wb(links1, Mirrage())
             wait(0.2)
