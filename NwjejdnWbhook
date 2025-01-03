@@ -209,19 +209,15 @@ local links8 = {
 
 -- Link Prehistoric Island
 local links9 = {
-    "https://discordapp.com/api/webhooks/1323244071107563542/BJPwfkl4kcGH4LLwwa7WPWQ6Z7EsnJH4GtRx2RDcZp02k01rQ3tRNnhrqieaHeGL4vg-" -- Ganteng Hub
+    "https://discordapp.com/api/webhooks/1323244071107563542/BJPwfkl4kcGH4LLwwa7WPWQ6Z7EsnJH4GtRx2RDcZp02k01rQ3tRNnhrqieaHeGL4vg-", -- Ganteng Hub
+    "https://discord.com/api/webhooks/1324682234271105045/225vE8BgeV6wupfET8Up2Pokpuq6ctSND-3er54JxUYRDEBIPQ2eNrfXo69w7Mb3FlVZ" -- isnahamzah
 }
 
 -- Link Freezing Hydra Island
 local links10 = {
-    "https://discordapp.com/api/webhooks/1323880416574439516/7Md9gNHfuW_rXRqir2jUfFyYAs-TvIUJIlWsoBGObOfwqimU7luMbzglfjB7L59L1z6v" -- Ganteng Hub
+    "https://discordapp.com/api/webhooks/1323880416574439516/7Md9gNHfuW_rXRqir2jUfFyYAs-TvIUJIlWsoBGObOfwqimU7luMbzglfjB7L59L1z6v", -- Ganteng Hub
+    "https://discord.com/api/webhooks/1324682322301157376/gUz3lEzeN0czA8wAlU4I9igIXrib-O-OmM3CKpRq4U4_hYElFNJQUyDBmfkAEeDjxWOG" -- Isnahamzah
 }
-
--- https://i.imgur.com/6RD5kZ0.png boss
--- https://i.imgur.com/odfwxb3.png mirrage
--- https://i.imgur.com/xeDy1OJ.png moon
--- https://i.imgur.com/VibJJDn.png Haki
--- https://i.imgur.com/sM64Vat.png Legend Sword
 
 function Mirrage()
     if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
