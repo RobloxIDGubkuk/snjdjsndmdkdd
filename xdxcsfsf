@@ -1411,7 +1411,7 @@ function Chloex:Window(GuiConfig)
 
             if AlwaysOpen == true then
                 OpenSection = true
-                local SectionSizeYWitdh = 38
+                local SectionSizeYWitdh = 30
                 for _, v in SectionAdd:GetChildren() do
                     if v.Name ~= "UIListLayout" and v.Name ~= "UICorner" then
                         SectionSizeYWitdh = SectionSizeYWitdh + v.Size.Y.Offset + 3
@@ -1419,7 +1419,7 @@ function Chloex:Window(GuiConfig)
                 end
                 FeatureFrame.Rotation = 90
                 Section.Size = UDim2.new(1, 1, 0, SectionSizeYWitdh)
-                SectionAdd.Size = UDim2.new(1, 0, 0, SectionSizeYWitdh - 38)
+                SectionAdd.Size = UDim2.new(1, 0, 0, SectionSizeYWitdh - 30)
                 SectionDecideFrame.Size = UDim2.new(1, 0, 0, 2)
                 UpdateSizeScroll()
             else
