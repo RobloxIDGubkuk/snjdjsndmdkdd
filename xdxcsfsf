@@ -1385,7 +1385,7 @@ function Chloex:Window(GuiConfig)
                 OpenSection = true
                 UpdateSizeSection()
             elseif AlwaysOpen == false then
-                OpenSection = false
+                OpenSection = true
                 UpdateSizeSection()
             else
                 OpenSection = false
@@ -1430,7 +1430,7 @@ function Chloex:Window(GuiConfig)
                         SectionSizeYWitdh = SectionSizeYWitdh + v.Size.Y.Offset + 3
                     end
                 end
-                FeatureFrame.Rotation = 90
+                FeatureFrame.Rotation = 0
                 Section.Size = UDim2.new(1, 1, 0, SectionSizeYWitdh)
                 SectionAdd.Size = UDim2.new(1, 0, 0, SectionSizeYWitdh - 38)
                 SectionDecideFrame.Size = UDim2.new(1, 0, 0, 2)
