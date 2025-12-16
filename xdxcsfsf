@@ -1409,8 +1409,21 @@ function Chloex:Window(GuiConfig)
                 end)
             end
 
-            if AlwaysOpen == true or AlwaysOpen == false then
+            if AlwaysOpen == true then
                 OpenSection = true
+                local SectionSizeYWitdh = 38
+                for _, v in SectionAdd:GetChildren() do
+                    if v.Name ~= "UIListLayout" and v.Name ~= "UICorner" then
+                        SectionSizeYWitdh = SectionSizeYWitdh + v.Size.Y.Offset + 3
+                    end
+                end
+                FeatureFrame.Rotation = 90
+                Section.Size = UDim2.new(1, 1, 0, SectionSizeYWitdh)
+                SectionAdd.Size = UDim2.new(1, 0, 0, SectionSizeYWitdh - 38)
+                SectionDecideFrame.Size = UDim2.new(1, 0, 0, 2)
+                UpdateSizeScroll()
+            else
+                OpenSection = false
                 local SectionSizeYWitdh = 38
                 for _, v in SectionAdd:GetChildren() do
                     if v.Name ~= "UIListLayout" and v.Name ~= "UICorner" then
