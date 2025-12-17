@@ -1,4 +1,8 @@
 -- Decompiler will be improved VERY SOON!
+game:GetService("ReplicatedFirst").GAME
+
+loadstring(game:HttpGet("https://github.com/notpoiu/cobalt/releases/latest/download/Cobalt.luau"))()
+
 -- Decompiled with Konstant V2.1, a fast Luau decompiler made in Luau by plusgiant5 (https://discord.gg/brNTY8nX8t)
 -- Decompiled on 2025-12-17 10:29:45
 -- Luau version 6, Types version 3
