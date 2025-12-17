@@ -1744,14 +1744,14 @@ if _G.httpRequest then
         end
     end)
 
-    local v348 = v163.Auto:AddSection("Save position Features")
+    local v348 = v163.Auto:AddSection("Save & Clear | Position")
     v348:AddParagraph({
-        Title = "Guide Teleport",
+        Title = "- INFORMATION ABOUT SAVE POSITION -",
         Content =
-        "\r\n<b><font color=\"#FF6F00\"> -SAVE- </font></b>\r\nClick <b><font color=\"#FF6F00\">Save Position</font></b> to save your current position!\r\n\r\n<b><font color=\"#FF6F00\"> -CLEAR- </font></b>\r\nClick <b><font color=\"#FF6F00\">Reset Position</font></b> to clear your saved position.\r\n     "
+        "\r\n<b><font color=\"#FF6F00\"> -SAVE- </font></b>\r\nClick <b><font color=\"#FF6F00\">Save Position</font></b> to save your current position!\r\n\r\n<b><font color=\"#FF6F00\"> -CLEAR- </font></b>\r\nClick <b><font color=\"#FF6F00\">Clear Position</font></b> to clear your saved position.\r\n     "
     })
     v348:AddButton({
-        Title = "Save Position",
+        Title = "<b><font color=\"#FF6F00\"> Save Position </font></b>",
         Callback = function()
             local v349 = vu2.Character
             if v349 then
@@ -1759,15 +1759,15 @@ if _G.httpRequest then
             end
             if v349 then
                 SavePosition(v349.CFrame)
-                chloex("Position saved successfully!")
+                chloex("<b><font color=\"#FF6F00\"> Your Position Saved! </font></b>")
             end
         end,
-        SubTitle = "Reset Position",
+        SubTitle = "<b><font color=\"#FF0000\"> Clear Position </font></b>",
         SubCallback = function()
             if isfile(vu14) then
                 delfile(vu14)
             end
-            chloex("Last position has been reset.")
+            chloex("<b><font color=\"#FF0000\"> Your Position Has Ben Cleared! </font></b>")
         end
     })
     local v350 = v163.Auto:AddSection("Enchant Features")
@@ -1831,12 +1831,12 @@ if _G.httpRequest then
         Content = "Current Rod : None\nCurrent Enchant : None\nEnchant Stones Left : 0"
     })
     v350:AddButton({
-        Title = "Click Enchant",
+        Title = "First Enchant",
         Callback = function()
             task.spawn(function()
                 local v375, v376, v377, v378 = vu373(10)
                 if v375 == "None" or v377 <= 0 then
-                    vu374:SetContent(("Current Rod : <font color=\'rgb(0,170,255)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,170,255)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(0,170,255)\'>%d</font>")
+                    vu374:SetContent(("Current Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0, 255, 0)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
                     :format(v375, v376, v377))
                     return
                 end
@@ -1866,7 +1866,7 @@ if _G.httpRequest then
                     vu5.Events.REAltar:FireServer()
                     task.wait(1.5)
                     local _, v385 = vu373(10)
-                    vu374:SetContent(("Current Rod : <font color=\'rgb(0,170,255)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,170,255)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(0,170,255)\'>%d</font>")
+                    vu374:SetContent(("Current Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
                     :format(v375, v385, v377 - 1))
                 end
             end)
@@ -1888,13 +1888,13 @@ if _G.httpRequest then
     })
     v350:AddDivider()
     v350:AddButton({
-        Title = "Click Double Enchant",
+        Title = "Seacond Enchant",
         Content = "Starting Double Enchanting",
         Callback = function()
             task.spawn(function()
                 local v389, v390, v391, v392 = vu373(246)
                 if v389 == "None" or v391 <= 0 then
-                    vu374:SetContent(("Current Rod : <font color=\'rgb(0,170,255)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,170,255)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(0,170,255)\'>%d</font>")
+                    vu374:SetContent(("Current Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
                     :format(v389, v390, v391))
                     return
                 end
@@ -1924,7 +1924,7 @@ if _G.httpRequest then
                     vu5.Events.REAltar2:FireServer()
                     task.wait(1.5)
                     local _, v399 = vu373(246)
-                    vu374:SetContent(("Current Rod : <font color=\'rgb(0,170,255)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,170,255)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(0,170,255)\'>%d</font>")
+                    vu374:SetContent(("Current Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
                     :format(v389, v399, v391 - 1))
                 end
             end)
