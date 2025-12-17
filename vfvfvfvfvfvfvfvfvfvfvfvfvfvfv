@@ -1346,7 +1346,7 @@ if _G.httpRequest then
 
     local v304 = v163.Shop:AddSection("Merchant")
     ShopParagraph = v304:AddParagraph({
-        Title = "<b><font color=\"#FF6F00\"> -[ Merchant Stock Today]- </font></b>",
+        Title = "-[ Merchant Stock Today ]-",
         Content = "Loading..."
     })
 
@@ -1634,7 +1634,7 @@ if _G.httpRequest then
     _G.InfoGG = false
     XAdm = v163.SeaE:AddSection("Lochness Event")
     countdownParagraph = XAdm:AddParagraph({
-        Title = "Event Countdown",
+        Title = "-[ EVENT INFO ]-",
         Content = "<font color=\'#ff4d4d\'><b>Brub....</b></font>"
     })
     vu7.FarmPosition = vu7.FarmPosition or nil
@@ -1746,12 +1746,12 @@ if _G.httpRequest then
 
     local v348 = v163.Auto:AddSection("Save & Clear | Position")
     v348:AddParagraph({
-        Title = "- INFORMATION ABOUT SAVE POSITION -",
+        Title = "-[ INFORMATION ABOUT SAVE POSITION ]-",
         Content =
-        "\r\n<b><font color=\"#FF6F00\"> -SAVE- </font></b>\r\nClick <b><font color=\"#FF6F00\">Save Position</font></b> to save your current position!\r\n\r\n<b><font color=\"#FF6F00\"> -CLEAR- </font></b>\r\nClick <b><font color=\"#FF6F00\">Clear Position</font></b> to clear your saved position.\r\n     "
+        "\r\n<b><font color=\"#FF6F00\"> -SAVE- </font></b>\r\nClick Button <b><font color=\"#FF6F00\">Save Position</font></b> to save your current position!\r\n\r\n<b><font color=\"#FF6F00\"> -CLEAR- </font></b>\r\nClick Button<b><font color=\"#FF6F00\">Clear Position</font></b> to clear your saved position.\r\n     "
     })
     v348:AddButton({
-        Title = "<b><font color=\"#FF6F00\"> Save Position </font></b>",
+        Title = "Save Position",
         Callback = function()
             local v349 = vu2.Character
             if v349 then
@@ -1759,18 +1759,18 @@ if _G.httpRequest then
             end
             if v349 then
                 SavePosition(v349.CFrame)
-                chloex("<b><font color=\"#FF6F00\"> Your Position Saved! </font></b>")
+                chloex("Your Position Saved!")
             end
         end,
-        SubTitle = "<b><font color=\"#FF0000\"> Clear Position </font></b>",
+        SubTitle = "Clear Position",
         SubCallback = function()
             if isfile(vu14) then
                 delfile(vu14)
             end
-            chloex("<b><font color=\"#FF0000\"> Your Position Has Ben Cleared! </font></b>")
+            chloex("Your Position Has Ben Cleared!")
         end
     })
-    local v350 = v163.Auto:AddSection("Enchant Features")
+    local v350 = v163.Auto:AddSection("Enchant Menu")
     local function vu373(p351)
         local v352 = vu6.Data:Get("EquippedItems") or {}
         local v353 = vu6.Data:Get({
@@ -1827,8 +1827,8 @@ if _G.httpRequest then
         return v359, v360, v357, v358
     end
     local vu374 = v350:AddParagraph({
-        Title = "Enchant Status",
-        Content = "Current Rod : None\nCurrent Enchant : None\nEnchant Stones Left : 0"
+        Title = "-[ ENCHANT INFO ]-",
+        Content = "Your Rod : None\nCurrent Enchant : None\nEnchant Stones : 0"
     })
     v350:AddButton({
         Title = "First Enchant",
@@ -1836,7 +1836,7 @@ if _G.httpRequest then
             task.spawn(function()
                 local v375, v376, v377, v378 = vu373(10)
                 if v375 == "None" or v377 <= 0 then
-                    vu374:SetContent(("Current Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0, 255, 0)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
+                    vu374:SetContent(("Your Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0, 255, 0)\'>%s</font>\nStone Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
                     :format(v375, v376, v377))
                     return
                 end
@@ -1866,14 +1866,14 @@ if _G.httpRequest then
                     vu5.Events.REAltar:FireServer()
                     task.wait(1.5)
                     local _, v385 = vu373(10)
-                    vu374:SetContent(("Current Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
+                    vu374:SetContent(("Your Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nStone Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
                     :format(v375, v385, v377 - 1))
                 end
             end)
         end
     })
     v350:AddButton({
-        Title = "Teleport Enchant Altar",
+        Title = "Teleport First Altar",
         Callback = function()
             local v386 = vu7.player.Character or vu7.player.CharacterAdded:Wait()
             local v387 = v386:FindFirstChild("HumanoidRootPart")
@@ -1894,7 +1894,7 @@ if _G.httpRequest then
             task.spawn(function()
                 local v389, v390, v391, v392 = vu373(246)
                 if v389 == "None" or v391 <= 0 then
-                    vu374:SetContent(("Current Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
+                    vu374:SetContent(("Your Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nStone Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
                     :format(v389, v390, v391))
                     return
                 end
@@ -1924,14 +1924,14 @@ if _G.httpRequest then
                     vu5.Events.REAltar2:FireServer()
                     task.wait(1.5)
                     local _, v399 = vu373(246)
-                    vu374:SetContent(("Current Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nEnchant Stones Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
+                    vu374:SetContent(("Your Rod : <font color=\'rgb(204, 0, 0)\'>%s</font>\nCurrent Enchant : <font color=\'rgb(0,255,0)\'>%s</font>\nStone Left : <font color=\'rgb(204, 0, 0)\'>%d</font>")
                     :format(v389, v399, v391 - 1))
                 end
             end)
         end
     })
     v350:AddButton({
-        Title = "Teleport Second Enchant Altar",
+        Title = "Teleport Second Altar",
         Callback = function()
             local v400 = vu7.player.Character or vu7.player.CharacterAdded:Wait()
             local v401 = v400:FindFirstChild("HumanoidRootPart")
@@ -1944,7 +1944,7 @@ if _G.httpRequest then
             end
         end
     })
-    local v403 = v163.Auto:AddSection("Totem Features")
+    local v403 = v163.Auto:AddSection("Totem Menu")
     TotemPanel = v403:AddParagraph({
         Title = "Panel Activated Totem",
         Content = "Scanning Totems..."
@@ -2151,8 +2151,8 @@ if _G.httpRequest then
         end
     })
     v403:AddToggle({
-        Title = "Auto Place Totem (Beta)",
-        Content = "Place Totem every 60 minutes automatically.",
+        Title = "Auto Place Totem",
+        Content = "",
         Default = false,
         Callback = function(p458)
             TotemActive = p458
@@ -2206,7 +2206,7 @@ if _G.httpRequest then
             end
         end
     })
-    Potion = v163.Auto:AddSection("Potions Features")
+    Potion = v163.Auto:AddSection("Potions Menu")
     PotionsFolder = vu1.RS:WaitForChild("Potions")
     vu7.Potions = vu7.Potions or {}
     vu7.PotionDisplayName = vu7.PotionDisplayName or {}
