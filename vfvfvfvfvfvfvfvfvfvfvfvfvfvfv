@@ -719,37 +719,37 @@ if _G.httpRequest then
         {
             Id = 1,
             Name = "Fluorescent Rod",
-            Price = 685000
+            Price = 685,000
         },
         {
             Id = 2,
             Name = "Hazmat Rod",
-            Price = 1380000
+            Price = 1,380,000
         },
         {
             Id = 3,
             Name = "Singularity Bait",
-            Price = 8200000
+            Price = 8,200,000
         },
         {
             Id = 4,
             Name = "Royal Bait",
-            Price = 425000
+            Price = 425,000
         },
         {
             Id = 5,
             Name = "Luck Totem",
-            Price = 650000
+            Price = 650,000
         },
         {
             Id = 7,
             Name = "Shiny Totem",
-            Price = 400000
+            Price = 400,000
         },
         {
             Id = 8,
             Name = "Mutation Totem",
-            Price = 800000
+            Price = 800,000
         }
     }
     locationNames = {}
@@ -841,7 +841,7 @@ if _G.httpRequest then
             Name = "Quest & Material",
             Icon = "scroll"
         }),
-        Auto = v162:AddTab({
+        Shop = v162:AddTab({
             Name = "Shop",
             Icon = "rbxassetid://140165584241571"
         }),
@@ -1344,10 +1344,9 @@ if _G.httpRequest then
     end)
 
 
-    local v304 = v163.Auto:AddSection("Merchant")
-
+    local v304 = v163.Shop:AddSection("Merchant")
     ShopParagraph = v304:AddParagraph({
-        Title = "List Stock Merchant",
+        Title = "<b><font color=\"#FF6F00\"> -[ Merchant Stock Today]- </font></b>",
         Content = "Loading..."
     })
 
@@ -1365,7 +1364,7 @@ if _G.httpRequest then
                 if v311 and v311:FindFirstChild("ItemName") then
                     local v312 = v311.ItemName.Text
                     if not string.find(v312, "Mystery") then
-                        table.insert(v309, "- " .. v312)
+                        table.insert(v309, "> " .. v312)
                     end
                 end
             end
@@ -1387,7 +1386,7 @@ if _G.httpRequest then
     local NameToId = {}
 
     for _, item in ipairs(MerchantItems) do
-        local label = string.format("%s (%s)", item.Name, item.Price)
+        local label = string.format("%s (%s)", item.Name, "$"..item.Price)
         table.insert(DropdownOptions, label)
         NameToId[label] = item.Id
     end
@@ -1408,7 +1407,7 @@ if _G.httpRequest then
     })
 
     v304:AddToggle({
-        Title = "Auto Buy Merchant",
+        Title = "Auto Buy Merchant Item",
         Default = false,
         Callback = function(state)
             AutoBuy = state
@@ -1427,7 +1426,7 @@ if _G.httpRequest then
         end
     })
 
-    local v304X = v163.Auto:AddSection("Rod")
+    local v304X = v163.Shop:AddSection("Rod")
     v304X:AddDropdown({
         Title = "Select Rod",
         Options = vu7.rodDisplayNames,
@@ -1457,7 +1456,7 @@ if _G.httpRequest then
         end
     })
 
-    local v304z = v163.Auto:AddSection("Baits")
+    local v304z = v163.Shop:AddSection("Baits")
     v304z:AddDropdown({
         Title = "Select Bait",
         Options = vu7.baitDisplayNames,
@@ -1487,17 +1486,17 @@ if _G.httpRequest then
         end
     })
 
-    local v304c = v163.Auto:AddSection("Weather Machine")
+    local v304c = v163.Shop:AddSection("Weather Machine")
     local vu327 = v304c:AddDropdown({
         Title = "Select Weather",
         Multi = true,
         Options = {
-            "Cloudy ($10000)",
-            "Wind ($10000)",
-            "Snow ($15000)",
-            "Storm ($35000)",
-            "Radiant ($50000)",
-            "Shark Hunt ($300000)"
+            "Cloudy ($10,000)",
+            "Wind ($10,000)",
+            "Snow ($15,000)",
+            "Storm ($35,000)",
+            "Radiant ($50,000)",
+            "Shark Hunt ($300,000)"
         },
         Callback = function(p321)
             vu7.selectedEvents = {}
@@ -1749,7 +1748,7 @@ if _G.httpRequest then
     v348:AddParagraph({
         Title = "Guide Teleport",
         Content =
-        "\r\n<b><font color=\"#FF6F00\"> -HOW TO SAVE- </font></b>\r\nClick <b><font color=\"#FF6F00\">Save Position</font></b> to save your current position!\r\n\r\n<b><font color=\"#FF6F00\">HOW TO RESET?</font></b>\r\nClick <b><font color=\"#FF6F00\">Reset Position</font></b> to clear your saved position.\r\n     "
+        "\r\n<b><font color=\"#FF6F00\"> -SAVE- </font></b>\r\nClick <b><font color=\"#FF6F00\">Save Position</font></b> to save your current position!\r\n\r\n<b><font color=\"#FF6F00\"> -CLEAR- </font></b>\r\nClick <b><font color=\"#FF6F00\">Reset Position</font></b> to clear your saved position.\r\n     "
     })
     v348:AddButton({
         Title = "Save Position",
