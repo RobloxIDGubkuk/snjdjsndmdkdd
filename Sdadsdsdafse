@@ -1,0 +1,151 @@
+-- Decompiler will be improved VERY SOON!
+-- Decompiled with Konstant V2.1, a fast Luau decompiler made in Luau by plusgiant5 (https://discord.gg/brNTY8nX8t)
+-- Decompiled on 2025-12-17 10:29:45
+-- Luau version 6, Types version 3
+-- Time taken: 0.010356 seconds
+
+local GuiService = game:GetService("GuiService")
+local ReplicatedStorage_upvr = game:GetService("ReplicatedStorage")
+local LocalPlayer_upvr = game:GetService("Players").LocalPlayer
+local Sound_upvr_2 = Instance.new("Sound")
+Sound_upvr_2.SoundId = "rbxassetid://113553177457255"
+Sound_upvr_2.Volume = 0.3
+Sound_upvr_2.SoundId = "rbxassetid://133533168475345"
+Sound_upvr_2.Volume = 0.1
+local RunService_upvr = game:GetService("RunService")
+local var7_upvw = 0
+local TweenService_upvr = game:GetService("TweenService")
+local Sound_upvr = Instance.new("Sound")
+GuiService:SetGameplayPausedNotificationEnabled(false)
+LocalPlayer_upvr:SetAttribute("Loading", true)
+local var42
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+	var42 = math.min(var42 + 0.05, 1)
+end
+if not LocalPlayer_upvr.Character then
+	LocalPlayer_upvr.CharacterAdded:Wait()
+	var42 = math.min(var42 + 0.05, 1)
+end
+require(script:WaitForChild("Runner")):Init()
+Sound_upvr_2:Play()
+if os.clock() - os.clock() < 4 + math.random() * 2 then
+end
+local module_upvr = require(ReplicatedStorage_upvr:WaitForChild("Modules"):WaitForChild("CoreCall"))
+;(function(arg1) -- Line 28, Named "Run"
+	--[[ Upvalues[6]:
+		[1]: RunService_upvr (readonly)
+		[2]: var7_upvw (read and write)
+		[3]: TweenService_upvr (readonly)
+		[4]: ReplicatedStorage_upvr (readonly)
+		[5]: Sound_upvr_2 (readonly)
+		[6]: Sound_upvr (readonly)
+	]]
+	local var11_upvw
+	local Loading_Screen_upvr = script:WaitForChild("Loading Screen")
+	local tbl_upvr = {}
+	for i = 1, 3 do
+		local SOME = Loading_Screen_upvr.Padded.Dots:FindFirstChild(tostring(i))
+		if SOME then
+			local UIScale = Instance.new("UIScale")
+			UIScale.Parent = SOME
+			table.insert(tbl_upvr, {
+				UIScale = UIScale;
+				Frame = SOME;
+			})
+		end
+	end
+	task.defer(function() -- Line 49
+		--[[ Upvalues[4]:
+			[1]: RunService_upvr (copied, readonly)
+			[2]: var7_upvw (copied, read and write)
+			[3]: tbl_upvr (readonly)
+			[4]: Loading_Screen_upvr (readonly)
+		]]
+		local function oscillateValues_upvr(arg1_2) -- Line 54, Named "oscillateValues"
+			return {math.sin(arg1_2 + 0) * 0.35 + 0.85, math.sin(arg1_2 + 1.0471975511965976) * 0.35 + 0.85, math.sin(arg1_2 + 2.0943951023931953) * 0.35 + 0.85}
+		end
+		RunService_upvr:BindToRenderStep("LoadingDots", Enum.RenderPriority.Camera.Value, function(arg1_3) -- Line 68
+			--[[ Upvalues[4]:
+				[1]: var7_upvw (copied, read and write)
+				[2]: oscillateValues_upvr (readonly)
+				[3]: tbl_upvr (copied, readonly)
+				[4]: Loading_Screen_upvr (copied, readonly)
+			]]
+			var7_upvw = math.min(var7_upvw + arg1_3 / 10, 1)
+			local oscillateValues_result1 = oscillateValues_upvr(os.clock() * 8)
+			local len = #oscillateValues_result1
+			for i_2 = 1, len do
+				tbl_upvr[(len) - (i_2 - 1)].UIScale.Scale = oscillateValues_result1[i_2]
+			end
+			local LoadingGradient = Loading_Screen_upvr.Main.Fish.Loading.LoadingGradient
+			LoadingGradient.Offset = LoadingGradient.Offset:Lerp(Vector2.new(0, -var7_upvw), arg1_3)
+		end)
+	end)
+	task.defer(function() -- Line 88
+		--[[ Upvalues[4]:
+			[1]: Loading_Screen_upvr (readonly)
+			[2]: var11_upvw (read and write)
+			[3]: TweenService_upvr (copied, readonly)
+			[4]: arg1 (readonly)
+		]]
+		Loading_Screen_upvr.Main.Underlay.Below.Position = UDim2.new(0, 0, 1, -6)
+		var11_upvw = TweenService_upvr:Create(Loading_Screen_upvr.Main.Underlay.Below, TweenInfo.new(2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true), {
+			Position = UDim2.new(0, 0, 1, 6);
+		})
+		var11_upvw:Play()
+		Loading_Screen_upvr.Parent = arg1
+	end)
+	return function() -- Line 99
+		--[[ Upvalues[7]:
+			[1]: ReplicatedStorage_upvr (copied, readonly)
+			[2]: RunService_upvr (copied, readonly)
+			[3]: Sound_upvr_2 (copied, readonly)
+			[4]: Sound_upvr (copied, readonly)
+			[5]: tbl_upvr (readonly)
+			[6]: Loading_Screen_upvr (readonly)
+			[7]: var11_upvw (read and write)
+		]]
+		local module = require(ReplicatedStorage_upvr:WaitForChild("Packages"):WaitForChild("spr"))
+		RunService_upvr:UnbindFromRenderStep("LoadingDots")
+		Sound_upvr_2:Stop()
+		Sound_upvr:Play()
+		for _, v in ipairs(tbl_upvr) do
+			module.target(v.Frame, 1, 3, {
+				BackgroundTransparency = 1;
+			})
+		end
+		module.target(Loading_Screen_upvr.Main, 1, 3, {
+			BackgroundTransparency = 1;
+		})
+		module.target(Loading_Screen_upvr.Main.Fish, 1, 3, {
+			ImageTransparency = 1;
+		})
+		module.target(Loading_Screen_upvr.Main.Underlay.BG, 1, 3, {
+			ImageTransparency = 1;
+		})
+		module.target(Loading_Screen_upvr.Main.Underlay.Below, 1, 3, {
+			ImageTransparency = 1;
+		})
+		module.target(Loading_Screen_upvr.Main.Fish.Loading, 1, 3, {
+			TextTransparency = 1;
+		})
+		if var11_upvw then
+			var11_upvw:Destroy()
+		end
+		task.wait(2)
+		Loading_Screen_upvr:Destroy()
+	end
+end)(LocalPlayer_upvr.PlayerGui)()
+task.delay(2, function() -- Line 180
+	--[[ Upvalues[2]:
+		[1]: LocalPlayer_upvr (readonly)
+		[2]: module_upvr (readonly)
+	]]
+	LocalPlayer_upvr:SetAttribute("Loading", false)
+	module_upvr("SetCoreGuiEnabled", Enum.CoreGuiType.Chat, true)
+	module_upvr("SetCoreGuiEnabled", Enum.CoreGuiType.PlayerList, true)
+end)
+module_upvr("SetCoreGuiEnabled", Enum.CoreGuiType.Chat, true)
+module_upvr("SetCoreGuiEnabled", Enum.CoreGuiType.PlayerList, true)
+GuiService:SetGameplayPausedNotificationEnabled(false)
