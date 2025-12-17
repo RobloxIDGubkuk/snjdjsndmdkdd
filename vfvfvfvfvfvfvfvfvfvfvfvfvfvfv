@@ -426,7 +426,7 @@ if _G.httpRequest then
             if v78 then
                 task.wait(2)
                 v77.CFrame = v78
-                chloex("Teleported to your last position...")
+                chloex("Teleport To Your Saved Pos!")
             end
         end)
     end
@@ -1686,7 +1686,7 @@ if _G.httpRequest then
                         end)
                         if vu697 == "" then
                             countdownParagraph:SetContent(
-                            "<font color=\'#ff4d4d\'><b>-[ Brubbb..... Wait! ]-</b></font>")
+                            "<font color=\'#ff4d4d\'><b>-[ Waiting... ]-</b></font>")
                         else
                             _G.InfoGG = true
                             countdownParagraph:SetContent(string.format(
@@ -1700,12 +1700,12 @@ if _G.httpRequest then
                                 local v704 = tonumber(v701)
                                 if v702 == 3 and (v703 == 59 and (v704 == 59 and not v696)) then
                                     countdownParagraph:SetContent(
-                                        "<font color=\'#FF6F00\'><b>Event started! Teleporting...</b></font>")
+                                        "<font color=\'#00ff99\'><b>Event started | Teleporting...</b></font>")
                                     vu691(v698)
                                     v696 = true
                                 elseif v702 == 3 and (v703 == 49 and (v704 == 59 and v696)) then
                                     countdownParagraph:SetContent(
-                                    "<font color=\'#ffaa00\'><b>Event ended! Returning...</b></font>")
+                                        "<font color=\'#ff4d4d\'><b>Event ended | Wait A Seacond...</b></font>")
                                     vu693(v698)
                                     v696 = false
                                 end
@@ -1736,7 +1736,7 @@ if _G.httpRequest then
     })
 
     task.spawn(function()
-        while task.wait(2) do
+        while task.wait() do
             if _G.InfoGG == false then
                 wait(2)
                 countdownParagraph:SetContent("<font color=\'#FF6F00\'><b>-[ Start Auto Lochness First ]-</b></font>")
@@ -1828,7 +1828,7 @@ if _G.httpRequest then
     end
     local vu374 = v350:AddParagraph({
         Title = "-[ ENCHANT INFO ]-",
-        Content = "Your Rod : None\nCurrent Enchant : None\nEnchant Stones : 0"
+        Content = "Your Rod : \nCurrent Enchant : \nStone Left : "
     })
     v350:AddButton({
         Title = "First Enchant",
