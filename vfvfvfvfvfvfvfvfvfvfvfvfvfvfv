@@ -1075,7 +1075,7 @@ if _G.httpRequest then
                             end)
                             if v257 and typeof(vu258) == "number" then
                                 local vu259 = -1
-                                local vu260 = 0.0999
+                                local vu260 = 0.085
                                 task.wait(0.3)
                                 pcall(function()
                                     vu5.Functions.StartMini:InvokeServer(vu259, vu260, vu258)
