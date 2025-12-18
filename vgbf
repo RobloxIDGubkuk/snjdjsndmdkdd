@@ -1,3 +1,4 @@
+-- lul
 local HttpService = game:GetService("HttpService")
 
 if not isfolder("Rc Hub") then
@@ -464,7 +465,7 @@ function rcchub(msg, delay, color, title, desc)
         Title = title or "Rc Hub",
         Description = desc or "Notification",
         Content = msg or "Content",
-        Color = color or Color3.fromRGB(0, 208, 255),
+        Color = color or Color3.fromRGB(204, 0, 0),
         Delay = delay or 4
     })
 end
