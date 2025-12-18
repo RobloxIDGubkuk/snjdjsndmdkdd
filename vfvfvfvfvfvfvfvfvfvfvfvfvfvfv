@@ -830,7 +830,7 @@ if _G.httpRequest then
             Icon = "rbxassetid://97167558235554"
         }),
         SeaE = v162:AddTab({
-            Name = "Sea Event",
+            Name = "Automation",
             Icon = "rbxassetid://140165584241571"
         }),
         Auto = v162:AddTab({
@@ -845,12 +845,16 @@ if _G.httpRequest then
             Name = "Shop",
             Icon = "rbxassetid://140165584241571"
         }),
+        Trade = v162:AddTab({
+            Name = "Trading",
+            Icon = "rbxassetid://114581487428395"
+        }),
         Tele = v162:AddTab({
             Name = "Teleport",
             Icon = "rbxassetid://18648122722"
         }),
         Webhook = v162:AddTab({
-            Name = ".",
+            Name = "Webhook",
             Icon = "rbxassetid://137601480983962"
         }),
         Misc = v162:AddTab({
@@ -1064,11 +1068,13 @@ if _G.httpRequest then
         Default = false,
         Callback = function(p256)
             vu7.autoInstant = p256
+            vu5.Functions.AutoEnabled:InvokeServer(p256)
             if p256 then
                 _G.Celestial.InstantCount = getFishCount()
                 task.spawn(function()
                     while vu7.autoInstant do
                         if vu7.canFish then
+                            vu2:SetAttribute("Loading", nil)
                             vu7.canFish = false
                             local v257, _, vu258 = pcall(function()
                                 return vu5.Functions.ChargeRod:InvokeServer(workspace:GetServerTimeNow())
@@ -1102,6 +1108,8 @@ if _G.httpRequest then
                         task.wait()
                     end
                 end)
+            else
+                vu2:SetAttribute("Loading", false)
             end
         end
     })
@@ -1630,6 +1638,235 @@ if _G.httpRequest then
             end
         end
     })
+
+    CoinSec = v163.SeaE:AddSection("Coin Features")
+    CoinParagraph = CoinSec:AddParagraph({
+        Title = "-[ PANEL INFO ]-",
+        Content = "\r\nCurrent : 0\r\nTarget : 0\r\nProgress : 0%\r\n"
+    })
+    CoinBase = 0
+    CoinTarget = 0
+    CoinSpotOptions = {
+        ["Kohana Volcano"] = Vector3.new(-552, 19, 183),
+        ["Tropical Grove"] = Vector3.new(-2084, 3, 3700)
+    }
+    CoinSec:AddDropdown({
+        Title = "Coin Location",
+        Options = {
+            "Kohana Volcano",
+            "Tropical Grove"
+        },
+        Multi = false,
+        Callback = function(p648)
+            SelectedCoinSpot = CoinSpotOptions[p648]
+        end
+    })
+    CoinSec:AddInput({
+        Title = "Target Coin",
+        Placeholder = "Enter coin target...",
+        Callback = function(p649)
+            local v650 = tonumber(p649)
+            if v650 then
+                CoinTarget = v650
+            end
+        end
+    })
+    CoinSec:AddToggle({
+        Title = "Enable Coin Farm",
+        Default = false,
+        Callback = function(p651)
+            _G.CoinFarm = p651
+            if p651 then
+                repeat
+                    task.wait()
+                until vu6.Data
+                CoinBase = vu6.Data:Get({
+                    "Coins"
+                }) or 0
+            end
+        end
+    })
+    EnchantSec = v163.SeaE:AddSection("Enchant Stone Features")
+    vu374 = EnchantSec:AddParagraph({
+        Title = "-[ PANEL INFO ]-",
+        Content = "\r\nCurrent : 0\r\nTarget : 0\r\nProgress : 0%\r\n"
+    })
+    EnchantBase = 0
+    EnchantTarget = 0
+    EnchantSpotOptions = {
+        ["Tropical Grove"] = Vector3.new(-2084, 3, 3700),
+        ["Esoteric Depths"] = Vector3.new(3272, -1302, 1404)
+    }
+    EnchantSec:AddDropdown({
+        Title = "Enchant Stone Location",
+        Options = {
+            "Tropical Grove",
+            "Esoteric Depths"
+        },
+        Multi = false,
+        Callback = function(p652)
+            SelectedEnchantSpot = EnchantSpotOptions[p652]
+        end
+    })
+    EnchantSec:AddInput({
+        Title = "Target Enchant Stone",
+        Placeholder = "Enter enchant stone target...",
+        Callback = function(p653)
+            local v654 = tonumber(p653)
+            if v654 then
+                EnchantTarget = v654
+            end
+        end
+    })
+    EnchantSec:AddToggle({
+        Title = "Enable Enchant Farm",
+        Default = false,
+        Callback = function(p655)
+            _G.EnchantFarm = p655
+            if p655 then
+                local v656 = vu6.Data:Get({
+                    "Inventory",
+                    "Items"
+                }) or {}
+                local v657, v658, v659 = ipairs(v656)
+                local v660 = 0
+                while true do
+                    local v661
+                    v659, v661 = v657(v658, v659)
+                    if v659 == nil then
+                        break
+                    end
+                    if v661.Id == 10 then
+                        v660 = v660 + v661.Amount
+                        if not v660 then
+                            v660 = 1
+                        end
+                    end
+                end
+                EnchantBase = v660
+            end
+        end
+    })
+    task.spawn(function()
+        local v662 = nil
+        local v663 = 0
+        local v664 = false
+        while task.wait(1) do
+            local vu665 = vu6.Data
+            if vu665 then
+                local vu666 = vu1.Players.LocalPlayer.Character
+                if vu666 then
+                    vu666 = vu666:FindFirstChild("HumanoidRootPart")
+                end
+                if vu666 and not v662 then
+                    v662 = vu666.CFrame
+                end
+                if _G.ThresholdFarm then
+                    local vu667 = (vu665:Get({
+                        "Statistics"
+                    }) or {}).FishCaught or 0
+                    if v663 == 0 then
+                        v663 = ThresholdBase
+                    end
+                    local v668 = vu667 - ThresholdBase
+                    local v669 = ThresholdTarget <= 0 and 0 or (math.min(v668 / ThresholdTarget * 100, 100) or 0)
+                    ThresholdParagraph:SetContent(string.format("Current : %s\nTarget : %s\nProgress : %.1f%%", v668,
+                        ThresholdTarget, v669))
+                    if vu666 and (ThresholdPos1 ~= "" and (ThresholdPos2 ~= "" and not v664)) then
+                        local vu670 = true
+                        task.spawn(function()
+                            local v671 = Vector3.new(unpack(string.split(ThresholdPos1, ",")))
+                            local v672 = Vector3.new(unpack(string.split(ThresholdPos2, ",")))
+                            local v673 = vu667 + ThresholdTarget
+                            while _G.ThresholdFarm do
+                                repeat
+                                    task.wait(1)
+                                    vu667 = (vu665:Get({
+                                        "Statistics"
+                                    }) or {}).FishCaught or 0
+                                until v673 <= vu667 or not _G.ThresholdFarm
+                                if not _G.ThresholdFarm then
+                                    break
+                                end
+                                vu666.CFrame = CFrame.new(v672 + Vector3.new(0, 3, 0))
+                                ThresholdBase = vu667
+                                local v674 = vu667 + ThresholdTarget
+                                repeat
+                                    task.wait(1)
+                                    vu667 = (vu665:Get({
+                                        "Statistics"
+                                    }) or {}).FishCaught or 0
+                                until v674 <= vu667 or not _G.ThresholdFarm
+                                if not _G.ThresholdFarm then
+                                    break
+                                end
+                                vu666.CFrame = CFrame.new(v671 + Vector3.new(0, 3, 0))
+                                ThresholdBase = vu667
+                                v673 = vu667 + ThresholdTarget
+                            end
+                            vu670 = false
+                        end)
+                        v664 = vu670
+                    end
+                end
+                if _G.CoinFarm then
+                    local v675 = (vu665:Get({
+                        "Coins"
+                    }) or 0) - CoinBase
+                    local v676 = CoinTarget <= 0 and 0 or (math.min(v675 / CoinTarget * 100, 100) or 0)
+                    CoinParagraph:SetContent(string.format("Current : %s\nTarget : %s\nProgress : %.1f%%", v675,
+                        CoinTarget, v676))
+                    if SelectedCoinSpot and vu666 then
+                        if v675 >= CoinTarget then
+                            if v662 then
+                                vu666.CFrame = v662
+                            end
+                            _G.CoinFarm = false
+                        elseif (vu666.Position - SelectedCoinSpot).Magnitude > 10 then
+                            vu666.CFrame = CFrame.new(SelectedCoinSpot + Vector3.new(0, 3, 0))
+                        end
+                    end
+                end
+                if _G.EnchantFarm then
+                    local v677 = vu665:Get({
+                        "Inventory",
+                        "Items"
+                    }) or {}
+                    local v678, v679, v680 = ipairs(v677)
+                    local v681 = 0
+                    while true do
+                        local v682
+                        v680, v682 = v678(v679, v680)
+                        if v680 == nil then
+                            break
+                        end
+                        if v682.Id == 10 then
+                            v681 = v681 + v682.Amount
+                            if not v681 then
+                                v681 = 1
+                            end
+                        end
+                    end
+                    local v683 = v681 - EnchantBase
+                    local v684 = EnchantTarget <= 0 and 0 or (math.min(v683 / EnchantTarget * 100, 100) or 0)
+                    vu374:SetContent(string.format("Current : %s\nTarget : %s\nProgress : %.1f%%", v683, EnchantTarget,
+                        v684))
+                    if SelectedEnchantSpot and vu666 then
+                        if v683 >= EnchantTarget then
+                            if v662 then
+                                vu666.CFrame = v662
+                            end
+                            _G.EnchantFarm = false
+                        elseif (vu666.Position - SelectedEnchantSpot).Magnitude > 10 then
+                            vu666.CFrame = CFrame.new(SelectedEnchantSpot + Vector3.new(0, 3, 0))
+                        end
+                    end
+                end
+            else
+                task.wait(1)
+            end
+        end
+    end)
 
     _G.InfoGG = false
     XAdm = v163.SeaE:AddSection("Lochness Event")
@@ -2285,6 +2522,2177 @@ if _G.httpRequest then
                     end
                 end
             end)
+        end
+    })
+
+    local v889 = v163.Quest:AddSection("Artifact Lever Quest")
+    local vu890 = workspace:WaitForChild("JUNGLE INTERACTIONS")
+    local vu891 = 1
+    local vu892 = false
+    local vu893 = nil
+    local vu894 = "0,255,0"
+    local vu895 = "255,0,0"
+    _G.artifactPositions = {
+        ["Arrow Artifact"] = CFrame.new(875, 3, -368) * CFrame.Angles(0, math.rad(90), 0),
+        ["Crescent Artifact"] = CFrame.new(1403, 3, 123) * CFrame.Angles(0, math.rad(180), 0),
+        ["Hourglass Diamond Artifact"] = CFrame.new(1487, 3, -842) * CFrame.Angles(0, math.rad(180), 0),
+        ["Diamond Artifact"] = CFrame.new(1844, 3, -287) * CFrame.Angles(0, math.rad(-90), 0)
+    }
+    local vu896 = {
+        "Arrow Artifact",
+        "Crescent Artifact",
+        "Hourglass Diamond Artifact",
+        "Diamond Artifact"
+    }
+    local function vu903()
+        local v897 = vu890
+        local v898, v899, v900 = ipairs(v897:GetDescendants())
+        local v901 = {}
+        while true do
+            local v902
+            v900, v902 = v898(v899, v900)
+            if v900 == nil then
+                break
+            end
+            if v902:IsA("Model") and v902.Name == "TempleLever" then
+                v901[v902:GetAttribute("Type")] = not v902:FindFirstChild("RootPart") and true or
+                not v902.RootPart:FindFirstChildWhichIsA("ProximityPrompt")
+            end
+        end
+        return v901
+    end
+    local function vu908(p904)
+        local function v907(p905, p906)
+            return ("%s : <b><font color=\"rgb(%s)\">%s</font></b>"):format(
+            p905 == "Hourglass Diamond Artifact" and "Hourglass Diamond" or
+            (p905 == "Arrow Artifact" and "Arrow" or (p905 == "Crescent Artifact" and "Crescent" or "Diamond")),
+                p906 and vu894 or vu895, p906 and "ACTIVE" or "DISABLE")
+        end
+        ArtifactParagraph:SetContent(table.concat({
+            v907("Arrow Artifact", p904["Arrow Artifact"]),
+            v907("Crescent Artifact", p904["Crescent Artifact"]),
+            v907("Hourglass Diamond Artifact", p904["Hourglass Diamond Artifact"]),
+            v907("Diamond Artifact", p904["Diamond Artifact"])
+        }, "\n"))
+    end
+    local function vu916(p909)
+        local v910 = vu890
+        local v911, v912, v913 = ipairs(v910:GetDescendants())
+        while true do
+            local v914
+            v913, v914 = v911(v912, v913)
+            if v913 == nil then
+                break
+            end
+            if v914:IsA("Model") and (v914.Name == "TempleLever" and v914:GetAttribute("Type") == p909) then
+                local v915 = v914:FindFirstChild("RootPart")
+                if v915 then
+                    v915 = v914.RootPart:FindFirstChildWhichIsA("ProximityPrompt")
+                end
+                if v915 then
+                    fireproximityprompt(v915)
+                end
+                break
+            end
+        end
+    end
+    ArtifactParagraph = v889:AddParagraph({
+        Title = "Panel Progress Artifact",
+        Content =
+        "\r\nArrow : <b><font color=\"rgb(255,0,0)\">DISABLE</font></b>\r\nCrescent : <b><font color=\"rgb(255,0,0)\">DISABLE</font></b>\r\nHourglass Diamond : <b><font color=\"rgb(255,0,0)\">DISABLE</font></b>\r\nDiamond : <b><font color=\"rgb(255,0,0)\">DISABLE</font></b>\r\n"
+    })
+    vu5.Events.REFishGot.OnClientEvent:Connect(function(p917)
+        if vu892 and vu893 then
+            local v918 = string.split(vu893, " ")[1]
+            if v918 and string.find(p917, v918, 1, true) then
+                task.wait(0)
+                vu916(vu893)
+                vu893 = nil
+            end
+        end
+    end)
+    v889:AddToggle({
+        Title = "Artifact Progress",
+        Default = false,
+        Callback = function(p919)
+            vu892 = p919
+            if p919 then
+                task.spawn(function()
+                    while vu892 do
+                        local v920 = vu903()
+                        local v921, v922, v923 = pairs(v920)
+                        local v924 = true
+                        while true do
+                            local v925
+                            v923, v925 = v921(v922, v923)
+                            if v923 == nil then
+                                break
+                            end
+                            if not v925 then
+                                v924 = false
+                                break
+                            end
+                        end
+                        vu908(v920)
+                        if v924 then
+                            vu892 = false
+                        end
+                        local v926, v927, v928 = ipairs(vu896)
+                        while true do
+                            local v929
+                            v928, v929 = v926(v927, v928)
+                            if v928 == nil then
+                                break
+                            end
+                            if not v920[v929] then
+                                vu893 = v929
+                                local v930 = (vu706.Character or vu706.CharacterAdded:Wait()):WaitForChild(
+                                "HumanoidRootPart")
+                                if v930 and _G.artifactPositions[v929] then
+                                    v930.CFrame = _G.artifactPositions[v929]
+                                end
+                                repeat
+                                    task.wait(vu891)
+                                until not (vu893 and vu892)
+                                break
+                            end
+                        end
+                        task.wait(vu891)
+                    end
+                end)
+            end
+        end
+    })
+    task.spawn(function()
+        while task.wait(vu891) do
+            vu908(vu903())
+        end
+    end)
+    v889:AddButton({
+        Title = "Arrow",
+        Callback = function()
+            local v931 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v931 then
+                v931.CFrame = _G.artifactPositions["Arrow Artifact"]
+            end
+        end,
+        SubTitle = "Hourglass Diamond",
+        SubCallback = function()
+            local v932 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v932 then
+                v932.CFrame = _G.artifactPositions["Hourglass Diamond Artifact"]
+            end
+        end
+    })
+    v889:AddButton({
+        Title = "Crescent",
+        Callback = function()
+            local v933 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v933 then
+                v933.CFrame = _G.artifactPositions["Crescent Artifact"]
+            end
+        end,
+        SubTitle = "Diamond",
+        SubCallback = function()
+            local v934 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v934 then
+                v934.CFrame = _G.artifactPositions["Diamond Artifact"]
+            end
+        end
+    })
+    local v935 = v163.Quest:AddSection("Ghostfinn Rod Quest")
+    local vu936 = v935:AddParagraph({
+        Title = "Deep Sea Panel",
+        Content = ""
+    })
+    v935:AddDivider()
+    v935:AddToggle({
+        Title = "Auto Deep Sea Quest",
+        Content = "Automatically complete Deep Sea Quest!",
+        Default = false,
+        Callback = function(p937)
+            vu7.autoDeepSea = p937
+            task.spawn(function()
+                while true do
+                    if true then
+                        if not vu7.autoDeepSea then
+                            return
+                        end
+                        local v938 = workspace:FindFirstChild("!!! MENU RINGS")
+                        if v938 then
+                            v938 = v938:FindFirstChild("Deep Sea Tracker")
+                        end
+                        if not v938 then
+                        end
+                    end
+                    local v939 = v938:FindFirstChild("Board") and v938.Board:FindFirstChild("Gui")
+                    if v939 then
+                        v939 = v938.Board.Gui:FindFirstChild("Content")
+                    end
+                    if v939 then
+                        local v940, v941, v942 = ipairs(v939:GetChildren())
+                        local v943 = nil
+                        while true do
+                            local v944
+                            v942, v944 = v940(v941, v942)
+                            if v942 == nil then
+                                v944 = v943
+                            end
+                            if v944:IsA("TextLabel") and v944.Name ~= "Header" then
+                                break
+                            end
+                        end
+                        if v944 then
+                            local v945 = string.lower(v944.Text)
+                            local v946 = vu7.player.Character
+                            if v946 then
+                                v946 = vu7.player.Character:FindFirstChild("HumanoidRootPart")
+                            end
+                            if v946 then
+                                if string.find(v945, "100%%") then
+                                    v946.CFrame = CFrame.new(-3763, -135, -995) * CFrame.Angles(0, math.rad(180), 0)
+                                else
+                                    v946.CFrame = CFrame.new(-3599, -276, -1641)
+                                end
+                            end
+                        end
+                    end
+                    task.wait(1)
+                end
+            end)
+        end
+    })
+    v935:AddButton({
+        Title = "Treasure Room",
+        Callback = function()
+            local v947 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v947 then
+                v947.CFrame = CFrame.new(-3601, -283, -1611)
+            end
+        end,
+        SubTitle = "Sisyphus Statue",
+        SubCallback = function()
+            local v948 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v948 then
+                v948.CFrame = CFrame.new(-3698, -135, -1008)
+            end
+        end
+    })
+    local v949 = v163.Quest:AddSection("Element Rod Quest")
+    local vu950 = v949:AddParagraph({
+        Title = "Element Panel",
+        Content = ""
+    })
+    v949:AddDivider()
+    v949:AddToggle({
+        Title = "Auto Element Quest",
+        Content = "Automatically teleport through Element quest stages.",
+        Default = false,
+        Callback = function(p951)
+            vu7.autoElement = p951
+            task.spawn(function()
+                while vu7.autoElement do
+                    local v952 = vu7.player.Character
+                    if v952 then
+                        v952 = vu7.player.Character:FindFirstChild("HumanoidRootPart")
+                    end
+                    local v953 = workspace:FindFirstChild("!!! MENU RINGS")
+                    if v953 then
+                        v953 = v953:FindFirstChild("Element Tracker")
+                    end
+                    if v952 and v953 then
+                        local v954 = v953:FindFirstChild("Board")
+                        if v954 then
+                            v954 = v954:FindFirstChild("Gui")
+                        end
+                        if v954 then
+                            v954 = v954:FindFirstChild("Content")
+                        end
+                        if v954 then
+                            local v955, v956, v957 = ipairs(v954:GetChildren())
+                            local v958 = {}
+                            while true do
+                                local v959
+                                v957, v959 = v955(v956, v957)
+                                if v957 == nil then
+                                    break
+                                end
+                                if v959:IsA("TextLabel") and v959.Name ~= "Header" then
+                                    table.insert(v958, string.lower(v959.Text))
+                                end
+                            end
+                            if # v958 >= 4 then
+                                local v960 = v958[2]
+                                local v961 = v958[4]
+                                if string.find(v961, "100%%") then
+                                    if string.find(v961, "100%%") and not string.find(v960, "100%%") then
+                                        local v962 = CFrame.new(1453, -22, -636)
+                                        v952.CFrame = v962
+                                        autoReturn(v952, v962, 100)
+                                    elseif string.find(v960, "100%%") then
+                                        local v963 = CFrame.new(1480, 128, -593)
+                                        v952.CFrame = v963
+                                        autoReturn(v952, v963, 100)
+                                        vu7.autoElement = false
+                                        vu950:SetContent("Element Quest Completed!")
+                                        break
+                                    end
+                                else
+                                    local v964 = CFrame.new(1484, 3, -336) * CFrame.Angles(0, math.rad(180), 0)
+                                    v952.CFrame = v964
+                                    autoReturn(v952, v964, 100)
+                                end
+                            end
+                        end
+                    end
+                    task.wait(1)
+                end
+            end)
+        end
+    })
+    v949:AddButton({
+        Title = "Secred Temple",
+        Callback = function()
+            local v965 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v965 then
+                v965.CFrame = CFrame.new(1453, -22, -636)
+            end
+        end,
+        SubTitle = "Underground Cellar",
+        SubCallback = function()
+            local v966 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v966 then
+                v966.CFrame = CFrame.new(2136, -91, -701)
+            end
+        end
+    })
+    v949:AddButton({
+        Title = "Transcended Stones",
+        Callback = function()
+            local v967 = (vu7.player.Character or vu7.player.CharacterAdded:Wait()):FindFirstChild("HumanoidRootPart")
+            if v967 then
+                v967.CFrame = CFrame.new(1480, 128, -593)
+            end
+        end
+    })
+    local function vu977(p968)
+        local v969 = workspace["!!! MENU RINGS"]:FindFirstChild(p968)
+        if not v969 then
+            return ""
+        end
+        local v970 = v969:FindFirstChild("Board") and v969.Board:FindFirstChild("Gui")
+        if v970 then
+            v970 = v969.Board.Gui:FindFirstChild("Content")
+        end
+        if not v970 then
+            return ""
+        end
+        local v971, v972, v973 = ipairs(v970:GetChildren())
+        local v974 = {}
+        local v975 = 1
+        while true do
+            local v976
+            v973, v976 = v971(v972, v973)
+            if v973 == nil then
+                break
+            end
+            if v976:IsA("TextLabel") and v976.Name ~= "Header" then
+                table.insert(v974, v975 .. ". " .. v976.Text)
+                v975 = v975 + 1
+            end
+        end
+        return table.concat(v974, "\n")
+    end
+    task.spawn(function()
+        while task.wait(2) do
+            vu950:SetContent(vu977("Element Tracker"))
+            vu936:SetContent(vu977("Deep Sea Tracker"))
+        end
+    end)
+    QuestSec = v163.Quest:AddSection("Auto Progress Quest")
+    QuestProgress = QuestSec:AddParagraph({
+        Title = "Progress Quest Panel",
+        Content = "Waiting for start..."
+    })
+    QuestSec:AddToggle({
+        Title = "Auto Teleport Quest",
+        Default = false,
+        Callback = function(p978)
+            vu7.autoQuestFlow = p978
+            task.spawn(function()
+                function updateParagraph(p979)
+                    if QuestProgress and QuestProgress.SetContent then
+                        QuestProgress:SetContent(p979)
+                    end
+                end
+
+                local v980 = false
+                local v981 = false
+                local v982 = false
+                local v983 = {
+                    Deep = false,
+                    Lever = false,
+                    Element = false
+                }
+                while true do
+                    if not vu7.autoQuestFlow or v980 and (v981 and v982) then
+                        return
+                    end
+                    if not v980 then
+                        local v984 = workspace:FindFirstChild("!!! MENU RINGS")
+                        if v984 then
+                            v984 = v984:FindFirstChild("Deep Sea Tracker")
+                        end
+                        local v985 = v984 and v984:FindFirstChild("Board") and v984.Board:FindFirstChild("Gui")
+                        if v985 then
+                            v985 = v984.Board.Gui:FindFirstChild("Content")
+                        end
+                        local v986 = true
+                        local v987 = 0
+                        local v988 = 0
+                        if v985 then
+                            local v989, v990, v991 = ipairs(v985:GetChildren())
+                            while true do
+                                local v992
+                                v991, v992 = v989(v990, v991)
+                                if v991 == nil then
+                                    break
+                                end
+                                if v992:IsA("TextLabel") and v992.Name ~= "Header" then
+                                    v988 = v988 + 1
+                                    if string.find(v992.Text, "100%%") then
+                                        v987 = v987 + 1
+                                    else
+                                        v986 = false
+                                    end
+                                end
+                            end
+                        end
+                        local v993 = 0 < v988 and math.floor(v987 / v988 * 100) or 0
+                        updateParagraph(string.format("Doing objective on Deep Sea Quest...\nProgress now %d%%.", v993))
+                        if v986 or v983.Deep then
+                            if v986 then
+                                updateParagraph("Deep Sea Quest Completed!\nProceeding to Artifact Lever...")
+                                v980 = true
+                            end
+                        else
+                            local v994 = vu706.Character
+                            if v994 then
+                                v994 = vu706.Character:FindFirstChild("HumanoidRootPart")
+                            end
+                            if v994 then
+                                v994.CFrame = CFrame.new(-3599, -276, -1641)
+                                v983.Deep = true
+                            end
+                        end
+                        task.wait(1)
+                    end
+                    if v980 and (not v981 and vu7.autoQuestFlow) then
+                        workspace:FindFirstChild("JUNGLE INTERACTIONS")
+                        local v995 = vu903()
+                        local v996, v997, v998 = pairs(v995)
+                        local v999 = true
+                        while true do
+                            local v1000
+                            v998, v1000 = v996(v997, v998)
+                            if v998 == nil then
+                                break
+                            end
+                            if not v1000 then
+                                v999 = false
+                                break
+                            end
+                        end
+                        if v999 or v983.Lever then
+                            if v999 then
+                                updateParagraph("Artifact Lever Completed!\nProceeding to Element Quest...")
+                                v981 = true
+                            end
+                        else
+                            local v1001 = vu706.Character
+                            if v1001 then
+                                v1001 = vu706.Character:FindFirstChild("HumanoidRootPart")
+                            end
+                            if v1001 and _G.artifactPositions["Arrow Artifact"] then
+                                v1001.CFrame = _G.artifactPositions["Arrow Artifact"]
+                                v983.Lever = true
+                            end
+                            updateParagraph("Doing objective on Artifact Lever...\nProgress now 75%.")
+                        end
+                        task.wait(1)
+                    end
+                    if v980 and (v981 and (not v982 and vu7.autoQuestFlow)) then
+                        local v1002 = workspace:FindFirstChild("!!! MENU RINGS")
+                        if v1002 then
+                            v1002 = v1002:FindFirstChild("Element Tracker")
+                        end
+                        local v1003 = v1002 and v1002:FindFirstChild("Board") and v1002.Board:FindFirstChild("Gui")
+                        if v1003 then
+                            v1003 = v1002.Board.Gui:FindFirstChild("Content")
+                        end
+                        if v1003 then
+                            local v1004, v1005, v1006 = ipairs(v1003:GetChildren())
+                            local v1007 = {}
+                            while true do
+                                local v1008
+                                v1006, v1008 = v1004(v1005, v1006)
+                                if v1006 == nil then
+                                    break
+                                end
+                                if v1008:IsA("TextLabel") and v1008.Name ~= "Header" then
+                                    table.insert(v1007, v1008.Text)
+                                end
+                            end
+                            local v1009 = v1007[2] and (string.lower(v1007[2]) or "") or ""
+                            local v1010 = v1007[4] and string.lower(v1007[4]) or ""
+                            local v1011 = vu706.Character
+                            if v1011 then
+                                v1011 = vu706.Character:FindFirstChild("HumanoidRootPart")
+                            end
+                            if string.find(v1009, "100%%") and string.find(v1010, "100%%") then
+                                updateParagraph("All Quest Completed Successfully! :3")
+                                vu7.autoQuestFlow = false
+                                v982 = true
+                            else
+                                if not v983.Element and v1011 then
+                                    v1011.CFrame = CFrame.new(1484, 3, -336) * CFrame.Angles(0, math.rad(180), 0)
+                                    v983.Element = true
+                                end
+                                if string.find(v1010, "100%%") then
+                                    if string.find(v1010, "100%%") and not string.find(v1009, "100%%") then
+                                        v1011.CFrame = CFrame.new(1453, -22, -636)
+                                        updateParagraph("Doing objective on Element Quest...\nProgress now 75%.")
+                                    end
+                                else
+                                    updateParagraph("Doing objective on Element Quest...\nProgress now 50%.")
+                                end
+                            end
+                        end
+                        task.wait(1)
+                    end
+                end
+            end)
+        end
+    })
+    local v1012 = v163.Quest:AddSection("Crystalline Pessage Quest")
+    local vu1013 = workspace:FindFirstChild("ANCIENT RUIN DOOR")
+    local vu1014 = {
+        "Rare",
+        "Epic",
+        "Legendary",
+        "Mythic"
+    }
+    FishTargetIDs = {
+        Rare = 284,
+        Epic = 270,
+        Legendary = 283,
+        Mythic = 263
+    }
+    PromptParagraph = v1012:AddParagraph({
+        Title = "Panel Ancient Ruin",
+        Content = "Checking..."
+    })
+    task.spawn(function()
+        while task.wait(1) do
+            if vu1013 and vu1013:FindFirstChild("PressurePlates") then
+                local v1015 = vu1013.PressurePlates
+                local v1016 = v1015:FindFirstChild("Rare")
+                if v1016 then
+                    v1016 = v1015.Rare.Part:FindFirstChild("ProximityPrompt")
+                end
+                local v1017 = v1015:FindFirstChild("Epic")
+                if v1017 then
+                    v1017 = v1015.Epic.Part:FindFirstChild("ProximityPrompt")
+                end
+                local v1018 = v1015:FindFirstChild("Legendary")
+                if v1018 then
+                    v1018 = v1015.Legendary.Part:FindFirstChild("ProximityPrompt")
+                end
+                local v1019 = v1015:FindFirstChild("Mythic")
+                if v1019 then
+                    v1019 = v1015.Mythic.Part:FindFirstChild("ProximityPrompt")
+                end
+                PromptParagraph:SetContent(string.format("Rare : %s\nEpic : %s\nLegendary : %s\nMythic : %s",
+                    v1016 and "<b>Disable</b>" or "<b>Active</b>", v1017 and "<b>Disable</b>" or "<b>Active</b>",
+                    v1018 and "<b>Disable</b>" or "<b>Active</b>", v1019 and "<b>Disable</b>" or "<b>Active</b>"))
+            else
+                PromptParagraph:SetContent("<font color=\'rgb(255,69,0)\'>PressurePlates folder not found!</font>")
+            end
+        end
+    end)
+    v1012:AddToggle({
+        Title = "Auto Ancient Ruin",
+        Default = false,
+        Callback = function(p1020)
+            vu7.triggerRuin = p1020
+            task.spawn(function()
+                while true do
+                    if not vu7.triggerRuin then
+                        return
+                    end
+                    local v1021 = vu6.Data:GetExpect({
+                        "Inventory",
+                        "Items"
+                    })
+                    if vu1013 and vu1013:FindFirstChild("PressurePlates") then
+                        local v1022 = vu1013.PressurePlates
+                        local v1023, v1024, v1025 = ipairs(vu1014)
+                        while true do
+                            local v1026
+                            v1025, v1026 = v1023(v1024, v1025)
+                            if v1025 == nil then
+                                break
+                            end
+                            local v1027 = FishTargetIDs[v1026]
+                            local v1028, v1029, v1030 = ipairs(v1021)
+                            local v1031 = false
+                            while true do
+                                local v1032
+                                v1030, v1032 = v1028(v1029, v1030)
+                                if v1030 == nil then
+                                    break
+                                end
+                                if v1032.Id == v1027 then
+                                    v1031 = true
+                                    break
+                                end
+                            end
+                            if v1031 then
+                                local v1033 = v1022:FindFirstChild(v1026)
+                                if v1033 then
+                                    v1033 = v1033:FindFirstChild("Part")
+                                end
+                                if v1033 then
+                                    v1033 = v1033:FindFirstChild("ProximityPrompt")
+                                end
+                                if v1033 then
+                                    fireproximityprompt(v1033)
+                                end
+                            end
+                        end
+                    end
+                    task.wait(1)
+                end
+            end)
+        end
+    })
+
+    function getGroupedByType(p495)
+        local v496 = vu6.Data:GetExpect({
+            "Inventory",
+            "Items"
+        })
+        local v497, v498, v499 = ipairs(v496)
+        local v500 = {}
+        local v501 = {}
+        while true do
+            local v502
+            v499, v502 = v497(v498, v499)
+            if v499 == nil then
+                break
+            end
+            local v503 = vu4.ItemUtility.GetItemDataFromItemType("Items", v502.Id)
+            if v503 and (v503.Data.Type == p495 and not v502.Favorited) then
+                local v504 = v503.Data.Name
+                v500[v504] = v500[v504] or {
+                    count = 0,
+                    uuids = {}
+                }
+                v500[v504].count = v500[v504].count + (v502.Quantity or 1)
+                table.insert(v500[v504].uuids, v502.UUID)
+            end
+        end
+        local v505, v506, v507 = pairs(v500)
+        while true do
+            local v508
+            v507, v508 = v505(v506, v507)
+            if v507 == nil then
+                break
+            end
+            table.insert(v501, ("%s x%d"):format(v507, v508.count))
+        end
+        return v500, v501
+    end
+
+    local v509 = v163.Trade:AddSection("Trading Fish Features")
+    local v510 = v163.Trade:AddSection("Trading Coin Features")
+    local vu511 = v509:AddParagraph({
+        Title = "Panel Name Trading",
+        Content = "\r\nPlayer : ???\r\nItem   : ???\r\nAmount : 0\r\nStatus : Idle\r\nSuccess: 0 / 0\r\n"
+    })
+    local vu512 = v510:AddParagraph({
+        Title = "Panel Coin Trading",
+        Content =
+        "\r\nPlayer   : ???\r\nTarget   : 0\r\nProgress : 0 / 0\r\nStatus   : Idle\r\nResult   : Success : 0 | Received : 0\r\n"
+    })
+    local vu513 = {}
+    function _G.safeSetContent(p514, p515)
+        if p514 then
+            vu513[p514] = p515
+        end
+    end
+
+    vu1.RunService.Heartbeat:Connect(function()
+        local v516, v517, v518 = pairs(vu513)
+        while true do
+            local v519
+            v518, v519 = v516(v517, v518)
+            if v518 == nil then
+                break
+            end
+            v518:SetContent(v519)
+            vu513[v518] = nil
+        end
+    end)
+    local function vu524(p520)
+        local v521 = vu7.trade
+        local v522 = "200,200,200"
+        if p520 and p520:lower():find("send") then
+            v522 = "51,153,255"
+        elseif p520 and p520:lower():find("complete") then
+            v522 = "0,204,102"
+        elseif p520 then
+            v522 = p520:lower():find("time") and "255,69,0" or v522
+        end
+        local v523 = string.format(
+        "\r\n<font color=\'rgb(173,216,230)\'>Player : %s</font>\r\n<font color=\'rgb(173,216,230)\'>Item   : %s</font>\r\n<font color=\'rgb(173,216,230)\'>Amount : %d</font>\r\n<font color=\'rgb(%s)\'>Status : %s</font>\r\n<font color=\'rgb(173,216,230)\'>Success: %d / %d</font>\r\n",
+            v521.selectedPlayer or "???", v521.selectedItem or "???", v521.tradeAmount or 0, v522, p520 or "Idle",
+            v521.successCount or 0, v521.totalToTrade or 0)
+        _G.safeSetContent(vu511, v523)
+    end
+    local function vu529(p525)
+        local v526 = vu7.trade
+        local v527 = "200,200,200"
+        if p525 and p525:lower():find("send") then
+            v527 = "51,153,255"
+        elseif p525 and p525:lower():find("progress") then
+            v527 = "255,215,0"
+        elseif p525 and p525:lower():find("complete") then
+            v527 = "0,204,102"
+        elseif p525 then
+            v527 = p525:lower():find("time") and "255,69,0" or v527
+        end
+        local v528 = string.format(
+        "\r\n<font color=\'rgb(173,216,230)\'>Player   : %s</font>\r\n<font color=\'rgb(173,216,230)\'>Target   : %d</font>\r\n<font color=\'rgb(173,216,230)\'>Progress : %d / %d</font>\r\n<font color=\'rgb(%s)\'>Status   : %s</font>\r\n<font color=\'rgb(173,216,230)\'>Result   : Success : %d | Received : %d</font>\r\n",
+            v526.selectedPlayer or "???", v526.targetCoins or 0, v526.successCoins or 0, v526.targetCoins or 0, v527,
+            p525 or "Idle", v526.successCoins or 0, v526.totalReceived or 0)
+        _G.safeSetContent(vu512, v528)
+    end
+    local function vu535(p530)
+        local v531, v532, v533 = ipairs(vu6.Data:GetExpect({
+            "Inventory",
+            "Items"
+        }))
+        while true do
+            local v534
+            v533, v534 = v531(v532, v533)
+            if v533 == nil then
+                break
+            end
+            if v534.UUID == p530 then
+                return true
+            end
+        end
+        return false
+    end
+    local function vu544(p536, pu537, p538, p539)
+        local v540 = vu7.trade
+        v540.lastResult = nil
+        v540.awaiting = true
+        local v541 = false
+        local vu542 = vu1.Players:FindFirstChild(p536)
+        if not vu542 then
+            v540.trading = false
+            vu524("<font color=\'#ff3333\'>Player not found</font>")
+            vu529("<font color=\'#ff3333\'>Player not found</font>")
+            return false
+        end
+        if p538 then
+            vu524("Sending")
+            chloex("Sending " .. p538)
+        else
+            vu529("Sending")
+            chloex("Sending fish for coins")
+        end
+        if not pcall(function()
+                vu5.Functions.Trade:InvokeServer(vu542.UserId, pu537)
+            end) then
+            return false
+        end
+        local v543 = tick()
+        while v540.trading and not v541 do
+            if vu535(pu537) then
+                if tick() - v543 > 10 then
+                    return false
+                end
+            else
+                v541 = true
+                if p538 then
+                    v540.successCount = v540.successCount + 1
+                    vu524("Completed")
+                else
+                    v540.successCoins = v540.successCoins + (p539 or 0)
+                    v540.totalReceived = v540.successCoins
+                    vu529("Progress")
+                end
+            end
+            task.wait(0.2)
+        end
+        return v541
+    end
+    local function vu551(p545, p546, p547, p548)
+        local v549 = vu7.trade
+        local v550 = 0
+        while v550 < 3 and v549.trading do
+            if vu544(p545, p546, p547, p548) then
+                task.wait(2.5)
+                return true
+            end
+            v550 = v550 + 1
+            task.wait(1)
+        end
+        return false
+    end
+    function startTradeByName()
+        local v552 = vu7.trade
+        if not v552.trading then
+            if not (v552.selectedPlayer and v552.selectedItem) then
+                return chloex("Select player & item first!")
+            end
+            v552.trading = true
+            v552.successCount = 0
+            chloex("Starting trade with " .. v552.selectedPlayer)
+            local v553 = v552.currentGrouped[v552.selectedItem]
+            if not v553 then
+                v552.trading = false
+                vu524("<font color=\'#ff3333\'>Item not found</font>")
+                return chloex("Item not found")
+            end
+            v552.totalToTrade = math.min(v552.tradeAmount, # v553.uuids)
+            local v554 = 1
+            while v552.trading and v552.successCount < v552.totalToTrade do
+                vu551(v552.selectedPlayer, v553.uuids[v554], v552.selectedItem)
+                local v555 = v554 + 1
+                v554 = # v553.uuids < v555 and 1 or v555
+                task.wait(2)
+            end
+            v552.trading = false
+            vu524("<font color=\'#66ccff\'>All trades finished</font>")
+            chloex("All trades finished")
+        end
+    end
+
+    function chooseFishesByRange(p556, p557)
+        table.sort(p556, function(p558, p559)
+            return p558.Price > p559.Price
+        end)
+        local v560, v561, v562 = ipairs(p556)
+        local v563 = 0
+        local v564 = {}
+        while true do
+            local v565
+            v562, v565 = v560(v561, v562)
+            if v562 == nil then
+                break
+            end
+            if v563 + v565.Price <= p557 then
+                table.insert(v564, v565)
+                v563 = v563 + v565.Price
+            end
+            if p557 <= v563 then
+                break
+            end
+        end
+        if v563 < p557 and # p556 > 0 then
+            table.insert(v564, p556[# p556])
+        end
+        return v564, v563
+    end
+
+    function startTradeByCoin()
+        local v566 = vu7.trade
+        if v566.trading then
+            return
+        elseif v566.selectedPlayer and v566.targetCoins > 0 then
+            v566.trading = true
+            v566.totalReceived = 0
+            v566.successCoins = 0
+            v566.sentCoins = 0
+            vu529("<font color=\'#ffaa00\'>Starting...</font>")
+            chloex("Starting coin trade with " .. v566.selectedPlayer)
+            local v567 = vu1.Players.LocalPlayer
+            local v568 = vu4.PlayerStatsUtility:GetPlayerModifiers(v567)
+            local v569 = vu6.Data:GetExpect({
+                "Inventory",
+                "Items"
+            })
+            local v570, v571, v572 = ipairs(v569)
+            local v573 = {}
+            while true do
+                local v574
+                v572, v574 = v570(v571, v572)
+                if v572 == nil then
+                    break
+                end
+                if not v574.Favorited then
+                    local v575 = vu4.ItemUtility:GetItemData(v574.Id)
+                    if v575 and (v575.Data and v575.Data.Type == "Fish") then
+                        local v576 = vu4.VendorUtility:GetSellPrice(v574) or (v575.SellPrice or 0)
+                        local v577 = math.ceil(v576 * (v568 and (v568.CoinMultiplier or 1) or 1))
+                        if v577 > 0 then
+                            table.insert(v573, {
+                                UUID = v574.UUID,
+                                Name = v575.Data.Name or "Unknown",
+                                Price = v577
+                            })
+                        end
+                    end
+                end
+            end
+            if # v573 ~= 0 then
+                local v578, v579 = chooseFishesByRange(v573, v566.targetCoins)
+                if # v578 ~= 0 then
+                    v566.totalToTrade = # v578
+                    v566.targetCoins = v579
+                    if vu1.Players:FindFirstChild(v566.selectedPlayer) then
+                        local v580, v581, v582 = ipairs(v578)
+                        while true do
+                            local v583
+                            v582, v583 = v580(v581, v582)
+                            if v582 == nil or not v566.trading then
+                                break
+                            end
+                            v566.sentCoins = v566.sentCoins + v583.Price
+                            vu529(string.format("<font color=\'#ffaa00\'>Progress : %d / %d</font>", v566.sentCoins,
+                                v566.targetCoins))
+                            vu551(v566.selectedPlayer, v583.UUID, nil, v583.Price)
+                            v566.successCoins = v566.sentCoins
+                            task.wait(2)
+                        end
+                        v566.trading = false
+                        vu529(string.format(
+                        "<font color=\'#66ccff\'>Coin trade finished (Target: %d, Received: %d)</font>", v566
+                        .targetCoins, v566.successCoins))
+                        chloex(string.format("Coin trade finished (Target: %d, Received: %d)", v566.targetCoins,
+                            v566.successCoins))
+                    else
+                        v566.trading = false
+                        vu529("<font color=\'#ff3333\'>Player not found</font>")
+                    end
+                else
+                    v566.trading = false
+                    vu529("<font color=\'#ff3333\'>No valid fishes for target</font>")
+                    return
+                end
+            else
+                v566.trading = false
+                vu529("<font color=\'#ff3333\'>No fishes found</font>")
+                chloex("\226\154\160 No fishes found in inventory")
+                return
+            end
+        else
+            return chloex("\226\154\160 Select player & coin target first!")
+        end
+    end
+
+    local vu586 = v509:AddDropdown({
+        Options = {},
+        Multi = false,
+        Title = "Select Item",
+        Callback = function(p584)
+            local v585 = vu7.trade
+            if p584 then
+                p584 = p584:match("^(.-) x") or p584
+            end
+            v585.selectedItem = p584
+            vu524()
+        end
+    })
+    v509:AddButton({
+        Title = "Refresh Fish",
+        Callback = function()
+            local v587, v588 = getGroupedByType("Fish")
+            vu7.trade.currentGrouped = v587
+            vu586:SetValues(v588 or {})
+        end,
+        SubTitle = "Refresh Stone",
+        SubCallback = function()
+            local v589, v590 = getGroupedByType("Enchant Stones")
+            vu7.trade.currentGrouped = v589
+            vu586:SetValues(v590 or {})
+        end
+    })
+    v509:AddInput({
+        Title = "Amount to Trade",
+        Default = "1",
+        Callback = function(p591)
+            vu7.trade.tradeAmount = tonumber(p591) or 1
+            vu524()
+        end
+    })
+    local vu593 = v509:AddDropdown({
+        Options = {},
+        Multi = false,
+        Title = "Select Player",
+        Callback = function(p592)
+            vu7.trade.selectedPlayer = p592
+            vu524()
+        end
+    })
+    v509:AddButton({
+        Title = "Refresh Player",
+        Callback = function()
+            local v594, v595, v596 = ipairs(vu1.Players:GetPlayers())
+            local v597 = {}
+            while true do
+                local v598
+                v596, v598 = v594(v595, v596)
+                if v596 == nil then
+                    break
+                end
+                if v598 ~= vu7.player then
+                    table.insert(v597, v598.Name)
+                end
+            end
+            vu593:SetValues(v597 or {})
+        end
+    })
+    v509:AddToggle({
+        Title = "Start By Name",
+        Default = false,
+        Callback = function(p599)
+            if p599 then
+                task.spawn(startTradeByName)
+            else
+                vu7.trade.trading = false
+                vu524()
+            end
+        end
+    })
+    local vu601 = v510:AddDropdown({
+        Options = {},
+        Multi = false,
+        Title = "Select Player",
+        Callback = function(p600)
+            vu7.trade.selectedPlayer = p600
+            vu529()
+        end
+    })
+    v510:AddButton({
+        Title = "Refresh Player",
+        Callback = function()
+            local v602, v603, v604 = ipairs(vu1.Players:GetPlayers())
+            local v605 = {}
+            while true do
+                local v606
+                v604, v606 = v602(v603, v604)
+                if v604 == nil then
+                    break
+                end
+                if v606 ~= vu7.player then
+                    table.insert(v605, v606.Name)
+                end
+            end
+            vu601:SetValues(v605 or {})
+        end
+    })
+    v510:AddInput({
+        Title = "Target Coin",
+        Default = "0",
+        Callback = function(p607)
+            vu7.trade.targetCoins = tonumber(p607) or 0
+            vu529()
+        end
+    })
+    v510:AddToggle({
+        Title = "Start By Coin",
+        Default = false,
+        Callback = function(p608)
+            if p608 then
+                task.spawn(startTradeByCoin)
+            else
+                vu7.trade.trading = false
+            end
+        end
+    })
+    TradeByRarity = v163.Trade:AddSection("Trading Rarity Features")
+    Rarity_Monitor = TradeByRarity:AddParagraph({
+        Title = "Panel Rarity Trading",
+        Content = "\r\nPlayer  : ???\r\nRarity  : ???\r\nCount   : 0\r\nStatus  : Idle\r\nSuccess : 0 / 0\r\n"
+    })
+    local function vu613(p609)
+        local v610 = vu7.trade
+        local v611 = "200,200,200"
+        if p609 and p609:lower():find("send") then
+            v611 = "51,153,255"
+        elseif p609 and p609:lower():find("complete") then
+            v611 = "0,204,102"
+        elseif p609 then
+            v611 = p609:lower():find("time") and "255,69,0" or v611
+        end
+        local v612 = string.format(
+        "\r\n<font color=\'rgb(173,216,230)\'>Player  : %s</font>\r\n<font color=\'rgb(173,216,230)\'>Rarity  : %s</font>\r\n<font color=\'rgb(173,216,230)\'>Count   : %d</font>\r\n<font color=\'rgb(%s)\'>Status  : %s</font>\r\n<font color=\'rgb(173,216,230)\'>Success : %d / %d</font>\r\n",
+            v610.selectedPlayer or "???", v610.selectedRarity or "???", v610.totalToTrade or 0, v611, p609 or "Idle",
+            v610.successCount or 0, v610.totalToTrade or 0)
+        _G.safeSetContent(Rarity_Monitor, v612)
+    end
+    TradeByRarity:AddDropdown({
+        Options = {
+            "Common",
+            "Uncommon",
+            "Rare",
+            "Epic",
+            "Legendary",
+            "Mythic",
+            "Secret"
+        },
+        Multi = false,
+        Title = "Select Rarity",
+        Callback = function(p614)
+            vu7.trade.selectedRarity = p614
+            vu613("Selected rarity: " .. (p614 or "???"))
+        end
+    })
+    rarityPlayerDropdown = TradeByRarity:AddDropdown({
+        Options = {},
+        Multi = false,
+        Title = "Select Player",
+        Callback = function(p615)
+            vu7.trade.selectedPlayer = p615
+            vu613()
+        end
+    })
+    TradeByRarity:AddButton({
+        Title = "Refresh Player",
+        Callback = function()
+            local v616, v617, v618 = ipairs(vu1.Players:GetPlayers())
+            local v619 = {}
+            while true do
+                local v620
+                v618, v620 = v616(v617, v618)
+                if v618 == nil then
+                    break
+                end
+                if v620 ~= vu7.player then
+                    table.insert(v619, v620.Name)
+                end
+            end
+            rarityPlayerDropdown:SetValues(v619 or {})
+        end
+    })
+    TradeByRarity:AddInput({
+        Title = "Amount to Trade",
+        Default = "1",
+        Callback = function(p621)
+            vu7.trade.rarityAmount = tonumber(p621) or 1
+            vu613("Set amount: " .. tostring(vu7.trade.rarityAmount))
+        end
+    })
+    function startTradeByRarity()
+        local v622 = vu7.trade
+        if not v622.trading then
+            if not (v622.selectedPlayer and v622.selectedRarity) then
+                return chloex("\226\154\160 Select player & rarity first!")
+            end
+            v622.trading = true
+            v622.successCount = 0
+            chloex("Starting rarity trade (" .. v622.selectedRarity .. ") with " .. v622.selectedPlayer)
+            vu613("<font color=\'#ffaa00\'>Scanning " .. v622.selectedRarity .. " fishes...</font>")
+            local v623, v624, v625 = ipairs(vu6.Data:GetExpect({
+                "Inventory",
+                "Items"
+            }))
+            local v626 = {}
+            while true do
+                local v627
+                v625, v627 = v623(v624, v625)
+                if v625 == nil then
+                    break
+                end
+                if not v627.Favorited then
+                    local v628 = vu4.ItemUtility.GetItemDataFromItemType("Items", v627.Id)
+                    if v628 and (v628.Data.Type == "Fish" and _G.TierFish[v628.Data.Tier] == v622.selectedRarity) then
+                        table.insert(v626, {
+                            UUID = v627.UUID,
+                            Name = v628.Data.Name
+                        })
+                    end
+                end
+            end
+            if # v626 == 0 then
+                v622.trading = false
+                vu613("<font color=\'#ff3333\'>No " .. v622.selectedRarity .. " fishes found</font>")
+                return chloex("No " .. v622.selectedRarity .. " fishes found")
+            end
+            v622.totalToTrade = math.min(# v626, v622.rarityAmount or # v626)
+            vu613(string.format("Sending %d %s fishes...", v622.totalToTrade, v622.selectedRarity))
+            local v629 = 1
+            while v622.trading and v629 <= v622.totalToTrade do
+                local v630 = v626[v629]
+                if vu551(v622.selectedPlayer, v630.UUID, v630.Name) then
+                    v622.successCount = v622.successCount + 1
+                    vu613(string.format("Progress: %d / %d (%s)", v622.successCount, v622.totalToTrade,
+                        v622.selectedRarity))
+                end
+                v629 = v629 + 1
+                task.wait(2.5)
+            end
+            v622.trading = false
+            vu613("<font color=\'#66ccff\'>Rarity trade finished</font>")
+            chloex("Rarity trade finished (" .. v622.selectedRarity .. ")")
+        end
+    end
+
+    TradeByRarity:AddToggle({
+        Title = "Start By Rarity",
+        Default = false,
+        Callback = function(p631)
+            if p631 then
+                task.spawn(startTradeByRarity)
+            else
+                vu7.trade.trading = false
+                vu613("Idle")
+            end
+        end
+    })
+    AcceptTrade = v163.Trade:AddSection("Auto Accept Features")
+    AcceptTrade:AddToggle({
+        Title = "Auto Accept Trade",
+        Default = _G.AutoAccept,
+        Callback = function(p632)
+            _G.AutoAccept = p632
+        end
+    })
+    spawn(function()
+        while true do
+            repeat
+                task.wait(1)
+            until _G.AutoAccept
+            pcall(function()
+                local v633 = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("Prompt")
+                if v633 and v633:FindFirstChild("Blackout") then
+                    local v634 = v633.Blackout
+                    local v635 = v634:FindFirstChild("Options") and v634.Options:FindFirstChild("Yes")
+                    if v635 then
+                        local v636 = game:GetService("VirtualInputManager")
+                        local v637 = v635.AbsolutePosition
+                        local v638 = v635.AbsoluteSize
+                        local v639 = v637.X + v638.X / 2
+                        local v640 = v637.Y + v638.Y / 2 + 50
+                        v636:SendMouseButtonEvent(v639, v640, 0, true, game, 1)
+                        task.wait(0.03)
+                        v636:SendMouseButtonEvent(v639, v640, 0, false, game, 1)
+                    end
+                end
+            end)
+        end
+    end)
+
+    _G.WebhookFlags = {
+        FishCaught = {
+            Enabled = false,
+            URL =
+            "https://discord.com/api/webhooks/1432777124607164418/0aGoA5XSsDCpO82T0bR8UYt1vFDv74qXst6AJQLcl-RSN-ujAp4GmIV7QIzrM3yfoGVV"
+        },
+        Stats = {
+            Enabled = false,
+            URL = "",
+            Delay = 5
+        },
+        Disconnect = {
+            Enabled = false,
+            URL =
+            "https://discord.com/api/webhooks/1428340333510398013/1L4UNrQmJXLgiNjO8PvZVc2TSxX60Xvg8BFpGyz8VANNL95DRfwKBPzyx9-mgZYLKw6_"
+        }
+    }
+    _G.WebhookURLs = _G.WebhookURLs or {}
+    local vu1135 = {}
+    function buildFishDatabase()
+        local v1136 = vu6.Items
+        if v1136 then
+            local v1137, v1138, v1139 = ipairs(v1136:GetChildren())
+            while true do
+                local v1140
+                v1139, v1140 = v1137(v1138, v1139)
+                if v1139 == nil then
+                    break
+                end
+                local v1141, v1142 = pcall(require, v1140)
+                if v1141 and (type(v1142) == "table" and (v1142.Data and v1142.Data.Type == "Fish")) then
+                    local v1143 = v1142.Data
+                    if v1143.Id and v1143.Name then
+                        vu1135[v1143.Id] = {
+                            Name = v1143.Name,
+                            Tier = v1143.Tier,
+                            Icon = v1143.Icon,
+                            SellPrice = v1142.SellPrice
+                        }
+                    end
+                end
+            end
+        end
+    end
+
+    function getThumbnailURL(p1144)
+        local v1145 = p1144:match("rbxassetid://(%d+)")
+        if not v1145 then
+            return nil
+        end
+        local vu1146 = string.format(
+        "https://thumbnails.roblox.com/v1/assets?assetIds=%s&type=Asset&size=420x420&format=Png", v1145)
+        local v1147, v1148 = pcall(function()
+            return vu1.HttpService:JSONDecode(game:HttpGet(vu1146))
+        end)
+        local v1149 = v1147 and (v1148 and (v1148.data and v1148.data[1]))
+        if v1149 then
+            v1149 = v1148.data[1].imageUrl
+        end
+        return v1149
+    end
+
+    function sendWebhook(pu1150, pu1151)
+        if _G.httpRequest and (pu1150 and pu1150 ~= "") then
+            if not (_G._WebhookLock and _G._WebhookLock[pu1150]) then
+                _G._WebhookLock = _G._WebhookLock or {}
+                _G._WebhookLock[pu1150] = true
+                task.delay(0.25, function()
+                    _G._WebhookLock[pu1150] = nil
+                end)
+                pcall(function()
+                    local v1152 = _G.httpRequest
+                    local v1153 = {
+                        Url = pu1150,
+                        Method = "POST",
+                        Headers = {
+                            ["Content-Type"] = "application/json"
+                        },
+                        Body = vu1.HttpService:JSONEncode(pu1151)
+                    }
+                    v1152(v1153)
+                end)
+            end
+        else
+            return
+        end
+    end
+
+    function sendNewFishWebhook(p1154)
+        if _G.WebhookFlags.FishCaught.Enabled then
+            local v1155 = _G.WebhookFlags.FishCaught.URL
+            if v1155 and v1155:match("discord.com/api/webhooks") then
+                local v1156 = vu1135[p1154.Id]
+                if v1156 then
+                    local v1157 = _G.TierFish and (_G.TierFish[v1156.Tier] or "Unknown") or "Unknown"
+                    if _G.WebhookRarities and (# _G.WebhookRarities > 0 and not table.find(_G.WebhookRarities, v1157)) then
+                        return
+                    elseif not _G.WebhookNames or (# _G.WebhookNames <= 0 or table.find(_G.WebhookNames, v1156.Name)) then
+                        local v1158 = p1154.Metadata and p1154.Metadata.Weight and
+                        (string.format("%.2f Kg", p1154.Metadata.Weight) or "N/A") or "N/A"
+                        local v1159 = p1154.Metadata and
+                        (p1154.Metadata.VariantId and tostring(p1154.Metadata.VariantId)) or "None"
+                        local v1160 = v1156.SellPrice and
+                        ("$" .. string.format("%d", v1156.SellPrice):reverse():gsub("(%d%d%d)", "%1,"):reverse():gsub("^,", "") or "N/A") or
+                        "N/A"
+                        local v1161 = {
+                            content = DISCORD_ID2,
+                            embeds = {
+                                {
+                                    title = "Chloe X Webhook | Fish Caught",
+                                    url = "https://discord.gg/PaPvGUE8UC",
+                                    description = string.format(
+                                    "Congratulations!! **%s** You have obtained a new **%s** fish!",
+                                        _G.WebhookCustomName ~= "" and _G.WebhookCustomName or
+                                        game.Players.LocalPlayer.Name, v1157),
+                                    color = 52221,
+                                    fields = {
+                                        {
+                                            name = "\227\128\162Fish Name :",
+                                            value = "```\226\157\175 " .. v1156.Name .. "```"
+                                        },
+                                        {
+                                            name = "\227\128\162Fish Tier :",
+                                            value = "```\226\157\175 " .. v1157 .. "```"
+                                        },
+                                        {
+                                            name = "\227\128\162Weight :",
+                                            value = "```\226\157\175 " .. v1158 .. "```"
+                                        },
+                                        {
+                                            name = "\227\128\162Mutation :",
+                                            value = "```\226\157\175 " .. v1159 .. "```"
+                                        },
+                                        {
+                                            name = "\227\128\162Sell Price :",
+                                            value = "```\226\157\175 " .. v1160 .. "```"
+                                        }
+                                    },
+                                    image = {
+                                        url = getThumbnailURL(v1156.Icon) or "https://i.imgur.com/WltO8IG.png"
+                                    },
+                                    footer = {
+                                        text = "Chloe X Webhook",
+                                        icon_url = "https://i.imgur.com/WltO8IG.png"
+                                    },
+                                    timestamp = os.date("!%Y-%m-%dT%H:%M:%S.000Z")
+                                }
+                            },
+                            username = "Chloe X Notification!",
+                            avatar_url = "https://i.imgur.com/9afHGRy.jpeg"
+                        }
+                        sendWebhook(v1155, v1161)
+                    end
+                else
+                    return
+                end
+            else
+                return
+            end
+        else
+            return
+        end
+    end
+
+    buildFishDatabase()
+    local v1162, v1163, v1164 = pairs(vu1135)
+    local v1165 = {}
+    while true do
+        local v1166
+        v1164, v1166 = v1162(v1163, v1164)
+        if v1164 == nil then
+            break
+        end
+        table.insert(v1165, v1166.Name)
+    end
+    table.sort(v1165)
+    task.spawn(function()
+        repeat
+            REObtainedNewFishNotification = vu4.Net["RE/ObtainedNewFishNotification"]
+            task.wait(1)
+        until REObtainedNewFishNotification
+        if not _G.FishWebhookConnected then
+            _G.FishWebhookConnected = true
+            REObtainedNewFishNotification.OnClientEvent:Connect(function(p1167, p1168)
+                if vu7.autoWebhook then
+                    local v1169 = {
+                        Id = p1167
+                    }
+                    local v1170 = {}
+                    local v1171
+                    if p1168 then
+                        v1171 = p1168.Weight
+                    else
+                        v1171 = p1168
+                    end
+                    v1170.Weight = v1171
+                    if p1168 then
+                        p1168 = p1168.VariantId
+                    end
+                    v1170.VariantId = p1168
+                    v1169.Metadata = v1170
+                    sendNewFishWebhook(v1169)
+                end
+            end)
+        end
+    end)
+    webhook = v163.Webhook:AddSection("Webhook Fish Caught")
+    webhook:AddInput({
+        Title = "Input Discord ID",
+        Default = "",
+        Callback = function(p1172)
+            if p1172 and p1172 ~= "" then
+                DISCORD_ID2 = "<@" .. p1172:gsub("%D", "") .. ">"
+            else
+                DISCORD_ID2 = ""
+            end
+            SaveConfig()
+        end
+    })
+    webhook:AddInput({
+        Title = "Webhook URL",
+        Default = "",
+        Callback = function(p1173)
+            _G.WebhookURLs = _G.WebhookURLs or {}
+            _G.WebhookURLs.FishCaught = p1173
+            if _G.WebhookFlags and _G.WebhookFlags.FishCaught then
+                _G.WebhookFlags.FishCaught.URL = p1173
+            end
+            if p1173 and p1173:match("discord.com/api/webhooks") then
+                SaveConfig()
+            end
+        end
+    })
+    webhook:AddDropdown({
+        Title = "Tier Filter",
+        Multi = true,
+        Options = {
+            "Common",
+            "Uncommon",
+            "Rare",
+            "Epic",
+            "Legendary",
+            "Mythic",
+            "Secret"
+        },
+        Default = {
+            "Mythic",
+            "Secret"
+        },
+        Callback = function(p1174)
+            _G.WebhookRarities = p1174
+            SaveConfig()
+        end
+    })
+    webhook:AddDropdown({
+        Title = "Name Filter",
+        Multi = true,
+        Options = v1165,
+        Default = {},
+        Callback = function(p1175)
+            _G.WebhookNames = p1175
+            SaveConfig()
+        end
+    })
+    webhook:AddInput({
+        Title = "Hide Identity",
+        Content = "Protect your name for sending webhook to discord",
+        Default = _G.WebhookCustomName or "",
+        Callback = function(p1176)
+            _G.WebhookCustomName = p1176
+            SaveConfig()
+        end
+    })
+    webhook:AddToggle({
+        Title = "Send Fish Webhook",
+        Default = _G.WebhookFlags.FishCaught.Enabled,
+        Callback = function(p1177)
+            _G.WebhookFlags.FishCaught.Enabled = p1177
+            vu7.autoWebhook = p1177
+            SaveConfig()
+        end
+    })
+    webhook:AddButton({
+        Title = "Test Webhook Connection",
+        Callback = function()
+            local vu1178 = _G.WebhookFlags.FishCaught.URL
+            if vu1178 and vu1178:match("discord.com/api/webhooks") then
+                local vu1179 = {
+                    content = nil,
+                    embeds = {
+                        {
+                            color = 44543,
+                            author = {
+                                name = "Ding dongggg! Webhook is connected :3"
+                            },
+                            image = {
+                                url = "https://media.tenor.com/KJDqZ0H6Gb4AAAAC/gawr-gura-gura.gif"
+                            }
+                        }
+                    },
+                    username = "Chloe X Notification!",
+                    avatar_url = "https://i.imgur.com/9afHGRy.jpeg",
+                    attachments = {}
+                }
+                task.spawn(function()
+                    local v1182, v1183 = pcall(function()
+                        local v1180 = _G.httpRequest
+                        local v1181 = {
+                            Url = vu1178,
+                            Method = "POST",
+                            Headers = {
+                                ["Content-Type"] = "application/json"
+                            },
+                            Body = vu1.HttpService:JSONEncode(vu1179)
+                        }
+                        return v1180(v1181)
+                    end)
+                    if v1182 then
+                        chloex("Successfully sent test message!")
+                    else
+                        chloex("Failed to send webhook:", v1183)
+                    end
+                end)
+            else
+                warn("[Webhook Test] \226\157\140 Invalid or missing webhook URL.")
+            end
+        end
+    })
+    local v1184 = v163.Webhook:AddSection("Webhook Statistic Player")
+    v1184:AddInput({
+        Title = "Statistic Webhook URL",
+        Default = _G.WebhookFlags.Stats.URL,
+        Placeholder = "Paste your stats webhook here...",
+        Callback = function(p1185)
+            if p1185 and p1185:match("discord.com/api/webhooks") then
+                _G.WebhookFlags.Stats.URL = p1185
+                SaveConfig()
+            end
+        end
+    })
+    v1184:AddInput({
+        Title = "Delay (Minutes)",
+        Default = tostring(_G.WebhookFlags.Stats.Delay),
+        Placeholder = "Delay between data sends...",
+        Numeric = true,
+        Callback = function(p1186)
+            local v1187 = tonumber(p1186)
+            if v1187 and 1 <= v1187 then
+                _G.WebhookFlags.Stats.Delay = v1187
+                SaveConfig()
+            end
+        end
+    })
+    v1184:AddToggle({
+        Title = "Send Webhook Statistic",
+        Content = "Automatically send player stats, inventory, utility, and quest info to Discord.",
+        Default = _G.WebhookFlags.Stats.Enabled or false,
+        Callback = function(p1188)
+            vu7.autoWebhookStats = p1188
+            _G.WebhookFlags.Stats.Enabled = p1188
+            SaveConfig()
+            if p1188 then
+                task.spawn(function()
+                    local v1189 = vu1.RS
+                    local vu1190 = vu1.HttpService
+                    local vu1191 = vu6.Data
+                    local v1192 = v1189:WaitForChild("Items")
+                    local v1193 = v1189:WaitForChild("Baits")
+                    local v1194 = v1189:WaitForChild("Totems")
+                    local vu1195 = {}
+                    local vu1196 = {
+                        Fish = {
+                            folders = {
+                                v1192
+                            },
+                            expectType = "Fish"
+                        },
+                        ["Fishing Rods"] = {
+                            folders = {
+                                v1192
+                            },
+                            expectType = "Fishing Rods"
+                        },
+                        Baits = {
+                            folders = {
+                                v1193
+                            },
+                            expectType = "Baits"
+                        },
+                        Totems = {
+                            folders = {
+                                v1194
+                            },
+                            expectType = "Totems"
+                        },
+                        Items = {
+                            folders = {
+                                v1192
+                            },
+                            expectType = nil
+                        }
+                    }
+                    local function vu1200(p1197)
+                        local v1198, v1199 = pcall(require, p1197)
+                        if v1198 and (type(v1199) == "table" and v1199.Data) then
+                            return v1199
+                        end
+                    end
+                    local function vu1216(p1201, p1202)
+                        local v1203 = (p1202.expectType or "ANY") .. ":" .. tostring(p1201)
+                        if vu1195[v1203] ~= nil then
+                            return vu1195[v1203]
+                        end
+                        local v1204, v1205, v1206 = ipairs(p1202.folders)
+                        while true do
+                            local v1207
+                            v1206, v1207 = v1204(v1205, v1206)
+                            if v1206 == nil then
+                                break
+                            end
+                            local v1208, v1209, v1210 = ipairs(v1207:GetDescendants())
+                            while true do
+                                local v1211
+                                v1210, v1211 = v1208(v1209, v1210)
+                                if v1210 == nil then
+                                    break
+                                end
+                                if v1211:IsA("ModuleScript") then
+                                    local v1212 = vu1200(v1211)
+                                    if v1212 and (v1212.Data and (v1212.Data.Id == p1201 and (not p1202.expectType or v1212.Data.Type == p1202.expectType))) then
+                                        vu1195[v1203] = v1212
+                                        return v1212
+                                    end
+                                else
+                                    local v1213 = v1211.GetAttribute
+                                    if v1213 then
+                                        v1213 = v1211:GetAttribute("Id")
+                                    end
+                                    if v1213 == p1201 then
+                                        local v1214 = v1211.GetAttribute
+                                        if v1214 then
+                                            v1214 = v1211:GetAttribute("Type")
+                                        end
+                                        if not p1202.expectType or v1214 == p1202.expectType then
+                                            local v1215 = {
+                                                Data = {
+                                                    Id = v1213,
+                                                    Type = v1214,
+                                                    Name = v1211:GetAttribute("Name"),
+                                                    Tier = v1211:GetAttribute("Rarity")
+                                                }
+                                            }
+                                            vu1195[v1203] = v1215
+                                            return v1215
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        vu1195[v1203] = false
+                        return nil
+                    end
+                    local function vu1218(p1217)
+                        if p1217 >= 1000000000 then
+                            return string.format("%.1fB", p1217 / 1000000000)
+                        elseif p1217 >= 1000000 then
+                            return string.format("%.1fM", p1217 / 1000000)
+                        elseif p1217 >= 1000 then
+                            return string.format("%.1fk", p1217 / 1000)
+                        else
+                            return tostring(p1217)
+                        end
+                    end
+                    local function vu1221(p1219)
+                        local v1220 = p1219 and p1219.Data
+                        if v1220 then
+                            v1220 = p1219.Data.Tier
+                        end
+                        return _G.TierFish[v1220] or v1220 and tostring(v1220) or "Unknown"
+                    end
+                    local function vu1238(p1222, p1223, p1224)
+                        local v1225 = {}
+                        if typeof(p1222) == "table" then
+                            local v1226, v1227, v1228 = ipairs(p1222)
+                            while true do
+                                local v1229
+                                v1228, v1229 = v1226(v1227, v1228)
+                                if v1228 == nil then
+                                    break
+                                end
+                                local v1230 = vu1216(v1229.Id, vu1196[p1223] or vu1196.Items)
+                                local v1231 = v1230 and (v1230.Data and v1230.Data.Name) or "Unknown"
+                                v1225[v1231] = (v1225[v1231] or 0) + (v1229.Amount or 1)
+                            end
+                        end
+                        local v1232, v1233, v1234 = pairs(v1225)
+                        local v1235 = {}
+                        local v1236 = 1
+                        while true do
+                            local v1237
+                            v1234, v1237 = v1232(v1233, v1234)
+                            if v1234 == nil then
+                                break
+                            end
+                            if p1224 then
+                                table.insert(v1235, string.format("%d. %s | x%s", v1236, v1234, v1237))
+                            else
+                                table.insert(v1235, string.format("%d. %s", v1236, v1234))
+                            end
+                            v1236 = v1236 + 1
+                        end
+                        return table.concat(v1235, "\n")
+                    end
+                    local function vu1252()
+                        local v1239 = {
+                            DeepSea = {},
+                            Element = {}
+                        }
+                        local v1240 = workspace:FindFirstChild("!!! MENU RINGS")
+                        if not v1240 then
+                            return v1239
+                        end
+                        local v1241 = {
+                            DeepSea = v1240:FindFirstChild("Deep Sea Tracker"),
+                            Element = v1240:FindFirstChild("Element Tracker")
+                        }
+                        local v1242, v1243, v1244 = pairs(v1241)
+                        while true do
+                            local v1245
+                            v1244, v1245 = v1242(v1243, v1244)
+                            if v1244 == nil then
+                                break
+                            end
+                            local v1246 = v1245 and v1245:FindFirstChild("Board")
+                            if v1246 then
+                                v1246 = v1245.Board:FindFirstChild("Gui")
+                            end
+                            if v1246 then
+                                v1246 = v1246:FindFirstChild("Content")
+                            end
+                            if v1246 then
+                                local v1247, v1248, v1249 = ipairs(v1246:GetChildren())
+                                local v1250 = v1244
+                                while true do
+                                    local v1251
+                                    v1249, v1251 = v1247(v1248, v1249)
+                                    if v1249 == nil then
+                                        break
+                                    end
+                                    if v1251:IsA("TextLabel") and v1251.Name:match("Label") then
+                                        table.insert(v1239[v1250],
+                                            string.format("%d. %s", # v1239[v1250] + 1, v1251.Text))
+                                    end
+                                end
+                            end
+                        end
+                        return v1239
+                    end
+                    local function v1254()
+                        local v1253 = vu1191:Get({
+                            "Statistics"
+                        }) or {}
+                        return {
+                            Coins = vu1191:Get({
+                                "Coins"
+                            }) or 0,
+                            FishCaught = v1253.FishCaught or 0,
+                            XP = vu1191:Get({
+                                "XP"
+                            }) or 0
+                        }
+                    end
+                    local function v1303(p1255, p1256)
+                        local vu1257 = _G.WebhookFlags and _G.WebhookFlags.Stats.URL or ""
+                        if vu1257 == "" then
+                            warn("[Webhook Stats] \226\157\140 Please set your Webhook URL first!")
+                        else
+                            local v1258 = game.Players.LocalPlayer
+                            local v1259 = v1258 and v1258.Name or "Unknown"
+                            local v1260 = vu1238(p1256["Fishing Rods"], "Fishing Rods", false)
+                            local v1261 = vu1238(p1256.Baits, "Baits", false)
+                            local v1262 = vu1238(p1256.Totems, "Totems", true)
+                            local v1263, v1264, v1265 = ipairs(p1256.Items or {})
+                            local v1266 = {}
+                            while true do
+                                local v1267
+                                v1265, v1267 = v1263(v1264, v1265)
+                                if v1265 == nil then
+                                    break
+                                end
+                                if v1267.Id ~= 10 then
+                                    if v1267.Id ~= 125 then
+                                        if v1267.Id == 246 then
+                                            v1266["Transcended Stone"] = (v1266["Transcended Stone"] or 0) +
+                                            (v1267.Amount or 1)
+                                        end
+                                    else
+                                        v1266["Super Enchant Stone"] = (v1266["Super Enchant Stone"] or 0) +
+                                        (v1267.Amount or 1)
+                                    end
+                                else
+                                    v1266["Enchant Stone"] = (v1266["Enchant Stone"] or 0) + (v1267.Amount or 1)
+                                end
+                            end
+                            local v1268, v1269, v1270 = pairs(v1266)
+                            local v1271 = {}
+                            local v1272 = 1
+                            while true do
+                                local v1273
+                                v1270, v1273 = v1268(v1269, v1270)
+                                if v1270 == nil then
+                                    break
+                                end
+                                table.insert(v1271, string.format("%d. %s | x%s", v1272, v1270, v1273))
+                                v1272 = v1272 + 1
+                            end
+                            local v1274 = next(v1266) and table.concat(v1271, "\n") or "(None)"
+                            local v1275 = vu1252()
+                            local v1276 = # v1275.DeepSea <= 0 and "(No Deep Sea Quest Found)" or
+                            (table.concat(v1275.DeepSea, "\n") or "(No Deep Sea Quest Found)")
+                            local v1277 = # v1275.Element > 0 and table.concat(v1275.Element, "\n") or
+                            "(No Element Quest Found)"
+                            local v1278 = p1256.Items or {}
+                            local v1279, v1280, v1281 = ipairs(v1278)
+                            local v1282 = {}
+                            while true do
+                                local v1283, v1284 = v1279(v1280, v1281)
+                                if v1283 == nil then
+                                    break
+                                end
+                                v1281 = v1283
+                                local v1285 = vu1216(v1284.Id, vu1196.Fish)
+                                if v1285 and (v1285.Data and v1285.Data.Type == "Fish") then
+                                    local v1286 = vu1221(v1285)
+                                    local v1287 = v1285.Data.Name or "Unknown"
+                                    v1282[v1286] = v1282[v1286] or {}
+                                    v1282[v1286][v1287] = (v1282[v1286][v1287] or 0) + (v1284.Amount or 1)
+                                end
+                            end
+                            local v1288, v1289, v1290 = ipairs({
+                                "Uncommon",
+                                "Common",
+                                "Rare",
+                                "Epic",
+                                "Legendary",
+                                "Mythic",
+                                "Secret"
+                            })
+                            local v1291 = {}
+                            while true do
+                                local v1292
+                                v1290, v1292 = v1288(v1289, v1290)
+                                if v1290 == nil then
+                                    break
+                                end
+                                local v1293 = v1282[v1292]
+                                if v1293 then
+                                    table.insert(v1291, string.format("\227\128\162**%s :**", v1292))
+                                    local v1294, v1295, v1296 = pairs(v1293)
+                                    local v1297 = 1
+                                    while true do
+                                        local v1298
+                                        v1296, v1298 = v1294(v1295, v1296)
+                                        if v1296 == nil then
+                                            break
+                                        end
+                                        table.insert(v1291, string.format("%d. %s | x%s", v1297, v1296, v1298))
+                                        v1297 = v1297 + 1
+                                    end
+                                end
+                            end
+                            local v1299 = # v1291 > 0 and table.concat(v1291, "\n") or "(No Fishes Found)"
+                            local vu1300 = {
+                                username = "Chloe X Notification!",
+                                avatar_url = "https://i.imgur.com/9afHGRy.jpeg",
+                                embeds = {
+                                    {
+                                        title = "\227\128\162Chloe X Webhook | Player Info",
+                                        color = 52479,
+                                        fields = {
+                                            {
+                                                name = "\227\128\162Player Data",
+                                                value = string.format(
+                                                "**\226\157\175 NAME:** %s\n**\226\157\175 COINS:** $%s\n**\226\157\175 FISH CAUGHT:** %s",
+                                                    v1259, vu1218(p1255.Coins), p1255.FishCaught)
+                                            },
+                                            {
+                                                name = "\227\128\162Inventory",
+                                                value = string.format("**Totems:**\n%s\n**Rods:**\n%s\n**Baits:**\n%s",
+                                                    v1262, v1260, v1261)
+                                            }
+                                        }
+                                    },
+                                    {
+                                        title = "Utility & Quest Data",
+                                        color = 26367,
+                                        fields = {
+                                            {
+                                                name = "\227\128\162Utility Data",
+                                                value = string.format(
+                                                "**\226\157\175 Fishes:**\n%s\n**\226\157\175 Enchant Stones:**\n%s",
+                                                    v1299, v1274)
+                                            },
+                                            {
+                                                name = "\227\128\162Quest Data",
+                                                value = string.format(
+                                                "**\226\157\175 Deep Sea Quest:**\n%s\n**\226\157\175 Element Quest:**\n%s",
+                                                    v1276, v1277)
+                                            }
+                                        },
+                                        footer = {
+                                            text = string.format("Chloe X Auto Sync | Every %dm",
+                                                _G.WebhookFlags.Stats.Delay or 5),
+                                            icon_url = "https://i.imgur.com/WltO8IG.png"
+                                        },
+                                        timestamp = os.date("!%Y-%m-%dT%H:%M:%S.000Z")
+                                    }
+                                }
+                            }
+                            task.spawn(function()
+                                pcall(function()
+                                    local v1301 = _G.httpRequest
+                                    local v1302 = {
+                                        Url = vu1257,
+                                        Method = "POST",
+                                        Headers = {
+                                            ["Content-Type"] = "application/json"
+                                        },
+                                        Body = vu1190:JSONEncode(vu1300)
+                                    }
+                                    v1301(v1302)
+                                end)
+                            end)
+                        end
+                    end
+                    local v1304 = vu1191
+                    while vu7.autoWebhookStats do
+                        v1303(v1254(), v1304:Get({
+                            "Inventory"
+                        }) or {})
+                        task.wait((_G.WebhookFlags.Stats.Delay or 5) * 60)
+                    end
+                end)
+            end
+        end
+    })
+    local vu1305 = ""
+    local vu1306 = false
+    local vu1307 = false
+    function SendDisconnectWebhook(p1308)
+        if vu1306 then
+            local vu1309 = _G.WebhookURLs.Disconnect or (_G.WebhookFlags and _G.WebhookFlags.Disconnect.URL or "")
+            if vu1309 ~= "" and vu1309:match("discord") then
+                local v1310 = game.Players.LocalPlayer
+                local v1311 = "Unknown"
+                if _G.DisconnectCustomName and _G.DisconnectCustomName ~= "" then
+                    v1311 = _G.DisconnectCustomName
+                elseif v1310 and v1310.Name then
+                    v1311 = v1310.Name
+                end
+                local v1312 = os.date("*t")
+                local v1313 = v1312.hour > 12 and v1312.hour - 12 or v1312.hour
+                local v1314 = v1312.hour >= 12 and "PM" or "AM"
+                local v1315 = string.format("%02d/%02d/%04d %02d.%02d %s", v1312.day, v1312.month, v1312.year, v1313,
+                    v1312.min, v1314)
+                local v1316 = vu1305 ~= "" and vu1305 or "Anonymous"
+                local v1317 = (not p1308 or (p1308 == "" or not p1308)) and "Disconnected from server" or p1308
+                local vu1318 = {
+                    content = "Ding Dongg Ding Dongggg, Hello! " ..
+                    v1316 .. " your account got disconnected from server!",
+                    embeds = {
+                        {
+                            title = "DETAIL ACCOUNT",
+                            color = 36863,
+                            fields = {
+                                {
+                                    name = "\227\128\162Username :",
+                                    value = "> " .. v1311
+                                },
+                                {
+                                    name = "\227\128\162Time got disconnected :",
+                                    value = "> " .. v1315
+                                },
+                                {
+                                    name = "\227\128\162Reason :",
+                                    value = "> " .. v1317
+                                }
+                            },
+                            thumbnail = {
+                                url = "https://media.tenor.com/rx88bhLtmyUAAAAC/gawr-gura.gif"
+                            }
+                        }
+                    },
+                    username = "Rc Hub - Information",
+                    avatar_url = "https://i.imgur.com/9afHGRy.jpeg"
+                }
+                task.spawn(function()
+                    pcall(function()
+                        local v1319 = _G.httpRequest
+                        local v1320 = {
+                            Url = vu1309,
+                            Method = "POST",
+                            Headers = {
+                                ["Content-Type"] = "application/json"
+                            },
+                            Body = vu1.HttpService:JSONEncode(vu1318)
+                        }
+                        v1319(v1320)
+                    end)
+                end)
+            end
+        else
+            return
+        end
+    end
+
+    local v1321 = v163.Webhook:AddSection("Webhook Alert")
+    v1321:AddInput({
+        Title = "Disconnect Alert Webhook URL",
+        Default = "",
+        Callback = function(p1322)
+            _G.WebhookURLs = _G.WebhookURLs or {}
+            _G.WebhookURLs.Disconnect = p1322
+            if _G.WebhookFlags and _G.WebhookFlags.Disconnect then
+                _G.WebhookFlags.Disconnect.URL = p1322
+            end
+        end
+    })
+    v1321:AddInput({
+        Title = "Discord ID",
+        Default = "",
+        Callback = function(p1323)
+            if p1323 and p1323 ~= "" then
+                vu1305 = "<@" .. p1323:gsub("%D", "") .. ">"
+            else
+                vu1305 = ""
+            end
+            SaveConfig()
+        end
+    })
+    v1321:AddInput({
+        Title = "Custom Name",
+        Placeholder = "Enter custom name (leave blank for default)",
+        Default = _G.DisconnectCustomName or "",
+        Callback = function(p1324)
+            _G.DisconnectCustomName = p1324
+            SaveConfig()
+        end
+    })
+    v1321:AddToggle({
+        Title = "Send Webhook On Disconnect",
+        Content = "Notify your Discord when account disconnected and auto rejoin.",
+        Default = _G.WebhookFlags.Disconnect.Enabled or false,
+        Callback = function(p1325)
+            if p1325 and (not _G.DisconnectCustomName or _G.DisconnectCustomName == "") then
+                chloex("Invalid! Input Hide Identity first.")
+                if _G.WebhookFlags and _G.WebhookFlags.Disconnect then
+                    _G.WebhookFlags.Disconnect.Enabled = false
+                end
+                vu1306 = false
+            else
+                vu1306 = p1325
+                if _G.WebhookFlags and _G.WebhookFlags.Disconnect then
+                    _G.WebhookFlags.Disconnect.Enabled = p1325
+                end
+                SaveConfig()
+                if p1325 then
+                    vu1307 = false
+                    local function vu1329(p1326)
+                        if not vu1307 and vu1306 then
+                            vu1307 = true
+                            SendDisconnectWebhook(p1326 or "Disconnected from server")
+                            task.wait(2)
+                            local v1327 = game:GetService("TeleportService")
+                            local v1328 = game:GetService("Players").LocalPlayer
+                            v1327:Teleport(game.PlaceId, v1328)
+                        end
+                    end
+                    vu1.GuiService.ErrorMessageChanged:Connect(function(p1330)
+                        if p1330 and p1330 ~= "" then
+                            vu1329(p1330)
+                        end
+                    end)
+                    game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(p1331)
+                        if p1331.Name == "ErrorPrompt" then
+                            task.wait(1)
+                            local v1332 = p1331:FindFirstChildWhichIsA("TextLabel", true)
+                            vu1329(v1332 and v1332.Text or "Disconnected")
+                        end
+                    end)
+                end
+            end
+        end
+    })
+    v1321:AddButton({
+        Title = "Test Disconnected Player",
+        Content = "Kick yourself, send webhook, and auto rejoin.",
+        Callback = function()
+            chloex("Kicking player...")
+            task.wait(1)
+            SendDisconnectWebhook("Test Successfully :3")
+            task.wait(2)
+            local v1333 = game:GetService("TeleportService")
+            local v1334 = game:GetService("Players").LocalPlayer
+            v1333:Teleport(game.PlaceId, v1334)
         end
     })
 
