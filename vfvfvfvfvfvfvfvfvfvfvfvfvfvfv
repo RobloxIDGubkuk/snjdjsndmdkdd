@@ -1075,7 +1075,7 @@ if _G.httpRequest then
                             end)
                             if v257 and typeof(vu258) == "number" then
                                 local vu259 = -1
-                                local vu260 = 0.999
+                                local vu260 = 0.0999
                                 task.wait(0.3)
                                 pcall(function()
                                     vu5.Functions.StartMini:InvokeServer(vu259, vu260, vu258)
@@ -1126,7 +1126,7 @@ if _G.httpRequest then
                 vu5.Functions.ChargeRod:InvokeServer(vu266)
             end)
             pcall(function()
-                vu5.Functions.StartMini:InvokeServer(-1, 0.0999)
+                vu5.Functions.StartMini:InvokeServer(-1, 0.999)
             end)
             task.wait(_G.FishingDelay)
             pcall(function()
