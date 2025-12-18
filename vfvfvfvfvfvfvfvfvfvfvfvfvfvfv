@@ -35,15 +35,15 @@ if _G.httpRequest then
         if response == "UPDATE" then
             if not CheckData.kicked then
                 CheckData.kicked = true
-                LocalPlayer:Kick("OGhub Update Available!.")
+                LocalPlayer:Kick("-[Rc Hub]- \nNew Update Detected Get New Version!!")
             end
         elseif response == "LATEST" then
             if not CheckData.notified then
                 CheckData.notified = true
-                warn("[OGhub] Status: Beta Version")
+                warn("-[Rc Hub]- Status: Beta Version")
             end
         else
-            warn("[OGhub] Status unknown:", response)
+            warn("-[Rc Hub]- Status unknown:", response)
         end
     end
 
@@ -214,7 +214,7 @@ if _G.httpRequest then
 
     local v10, v11, v12 = ipairs(vu6.Items:GetChildren())
     local v13 = {}
-    local vu14 = "Chloe X/FishIt/Position.json"
+    local vu14 = "Rc-Hub/FishIt/Position.json"
     while true do
         local v15, v16 = v10(v11, v12)
         if v15 == nil then
@@ -810,7 +810,7 @@ if _G.httpRequest then
 
     local v162 = loadstring(game:HttpGet("https://raw.githubusercontent.com/TesterX14/XXXX/refs/heads/main/Library"))()
     :Window({
-        Title = "Rc Hub |",
+        Title = "Rc Hub -",
         Footer = "Version [Beta]",
         Image = "132435516080103",
         Color = Color3.fromRGB(204,0,0),
@@ -818,7 +818,7 @@ if _G.httpRequest then
         Version = 4
     })
     if v162 then
-        chloex("Window loaded!")
+        --chloex("Window loaded!")
     end
     local v163 = {
         Info = v162:AddTab({
@@ -838,7 +838,7 @@ if _G.httpRequest then
             Icon = "rbxassetid://114581487428395"
         }),
         Quest = v162:AddTab({
-            Name = "Quest & Material",
+            Name = "Quest",
             Icon = "scroll"
         }),
         Shop = v162:AddTab({
@@ -1075,7 +1075,7 @@ if _G.httpRequest then
                             end)
                             if v257 and typeof(vu258) == "number" then
                                 local vu259 = -1
-                                local vu260 = 0.999
+                                local vu260 = 0.1000
                                 task.wait(0.3)
                                 pcall(function()
                                     vu5.Functions.StartMini:InvokeServer(vu259, vu260, vu258)
@@ -1115,7 +1115,7 @@ if _G.httpRequest then
             end
         end)
     end
-    Fish2 = v163.Main:AddSection("Custom Fishing")
+    Fish2 = v163.Main:AddSection("Blatant Fishing")
     function Fastest()
         task.spawn(function()
             pcall(function()
@@ -1126,7 +1126,7 @@ if _G.httpRequest then
                 vu5.Functions.ChargeRod:InvokeServer(vu266)
             end)
             pcall(function()
-                vu5.Functions.StartMini:InvokeServer(-1, 0.999)
+                vu5.Functions.StartMini:InvokeServer(-1, 0.1000)
             end)
             task.wait(_G.FishingDelay)
             pcall(function()
@@ -2109,7 +2109,7 @@ if _G.httpRequest then
                 vu5.Events.Totem:FireServer(pu445)
             end)
             if not v446 then
-                warn("[Chloe X] Totem spawn failed:", tostring(v447))
+                warn("[Rc Hub] Totem spawn failed:", tostring(v447))
             end
         end
     end
