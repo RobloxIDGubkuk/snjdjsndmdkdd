@@ -813,9 +813,9 @@ if _G.httpRequest then
     :Window({
         Title = "Rc Hub -",
         Footer = "Version [Beta]",
-        Image = "132435516080103",
+        Image = "124526064259356",
         Color = Color3.fromRGB(204,0,0),
-        Theme = 6015897843,
+        Theme = 9542022979,
         Version = 4
     })
     if v162 then
