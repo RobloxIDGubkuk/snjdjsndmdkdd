@@ -459,7 +459,7 @@ function RcHub:MakeNotify(NotifyConfig)
     return NotifyFunction
 end
 
-function RcHub(msg, delay, color, title, desc)
+function rcchub(msg, delay, color, title, desc)
     return RcHub:MakeNotify({
         Title = title or "Rc Hub",
         Description = desc or "Notification",
