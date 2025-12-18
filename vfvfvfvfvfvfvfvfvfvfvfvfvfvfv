@@ -815,11 +815,11 @@ if _G.httpRequest then
         Footer = "Version [Beta]",
         Image = "132435516080103",
         Color = Color3.fromRGB(204,0,0),
-        Theme = 124526064259356,
+        Theme = 6015897843,
         Version = 4
     })
     if v162 then
-        --rcchub("Window loaded!")
+        rcchub("Heelo <3")
     end
     local v163 = {
         Info = v162:AddTab({
