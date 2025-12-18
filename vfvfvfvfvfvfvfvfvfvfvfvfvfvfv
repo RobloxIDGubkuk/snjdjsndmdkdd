@@ -426,7 +426,7 @@ if _G.httpRequest then
             if v78 then
                 task.wait(2)
                 v77.CFrame = v78
-                RcHub("Teleport To Your Saved Pos!")
+                rcchub("Teleport To Your Saved Pos!")
             end
         end)
     end
@@ -584,7 +584,7 @@ if _G.httpRequest then
     end
     local function vu126(p125)
         if vu7.lastState ~= p125 then
-            RcHub(p125)
+            rcchub(p125)
             vu7.lastState = p125
         end
     end
@@ -669,11 +669,11 @@ if _G.httpRequest then
                         pu137:PivotTo(vu7.curCF)
                         vu87(pu137, v138, true)
                         task.wait(0.5)
-                        RcHub("Respawn \226\134\146 Back")
+                        rcchub("Respawn \226\134\146 Back")
                     elseif vu7.origCF then
                         pu137:PivotTo(vu7.origCF)
                         vu87(pu137, v138, true)
-                        RcHub("Back to farm")
+                        rcchub("Back to farm")
                     end
                 end
             end)
@@ -819,7 +819,7 @@ if _G.httpRequest then
         Version = 4
     })
     if v162 then
-        --RcHub("Window loaded!")
+        --rcchub("Window loaded!")
     end
     local v163 = {
         Info = v162:AddTab({
@@ -1198,7 +1198,7 @@ if _G.httpRequest then
                 v272:SetAttribute("Loading", nil)
                 task.wait(0.05)
                 v272:SetAttribute("Loading", false)
-                RcHub("Recovery Successfully!")
+                rcchub("Recovery Successfully!")
             end)
         end
     })
@@ -1997,7 +1997,7 @@ if _G.httpRequest then
             end
             if v349 then
                 SavePosition(v349.CFrame)
-                RcHub("Your Position Saved!")
+                rcchub("Your Position Saved!")
             end
         end,
         SubTitle = "Clear Position",
@@ -2005,7 +2005,7 @@ if _G.httpRequest then
             if isfile(vu14) then
                 delfile(vu14)
             end
-            RcHub("Your Position Has Ben Cleared!")
+            rcchub("Your Position Has Ben Cleared!")
         end
     })
     local v350 = v163.Auto:AddSection("Enchant Menu")
@@ -3310,10 +3310,10 @@ if _G.httpRequest then
         end
         if p538 then
             vu524("Sending")
-            RcHub("Sending " .. p538)
+            rcchub("Sending " .. p538)
         else
             vu529("Sending")
-            RcHub("Sending fish for coins")
+            rcchub("Sending fish for coins")
         end
         if not pcall(function()
                 vu5.Functions.Trade:InvokeServer(vu542.UserId, pu537)
@@ -3358,16 +3358,16 @@ if _G.httpRequest then
         local v552 = vu7.trade
         if not v552.trading then
             if not (v552.selectedPlayer and v552.selectedItem) then
-                return RcHub("Select player & item first!")
+                return rcchub("Select player & item first!")
             end
             v552.trading = true
             v552.successCount = 0
-            RcHub("Starting trade with " .. v552.selectedPlayer)
+            rcchub("Starting trade with " .. v552.selectedPlayer)
             local v553 = v552.currentGrouped[v552.selectedItem]
             if not v553 then
                 v552.trading = false
                 vu524("<font color=\'#ff3333\'>Item not found</font>")
-                return RcHub("Item not found")
+                return rcchub("Item not found")
             end
             v552.totalToTrade = math.min(v552.tradeAmount, # v553.uuids)
             local v554 = 1
@@ -3379,7 +3379,7 @@ if _G.httpRequest then
             end
             v552.trading = false
             vu524("<font color=\'#66ccff\'>All trades finished</font>")
-            RcHub("All trades finished")
+            rcchub("All trades finished")
         end
     end
 
@@ -3420,7 +3420,7 @@ if _G.httpRequest then
             v566.successCoins = 0
             v566.sentCoins = 0
             vu529("<font color=\'#ffaa00\'>Starting...</font>")
-            RcHub("Starting coin trade with " .. v566.selectedPlayer)
+            rcchub("Starting coin trade with " .. v566.selectedPlayer)
             local v567 = vu1.Players.LocalPlayer
             local v568 = vu4.PlayerStatsUtility:GetPlayerModifiers(v567)
             local v569 = vu6.Data:GetExpect({
@@ -3474,7 +3474,7 @@ if _G.httpRequest then
                         vu529(string.format(
                         "<font color=\'#66ccff\'>Coin trade finished (Target: %d, Received: %d)</font>", v566
                         .targetCoins, v566.successCoins))
-                        RcHub(string.format("Coin trade finished (Target: %d, Received: %d)", v566.targetCoins,
+                        rcchub(string.format("Coin trade finished (Target: %d, Received: %d)", v566.targetCoins,
                             v566.successCoins))
                     else
                         v566.trading = false
@@ -3488,11 +3488,11 @@ if _G.httpRequest then
             else
                 v566.trading = false
                 vu529("<font color=\'#ff3333\'>No fishes found</font>")
-                RcHub("\226\154\160 No fishes found in inventory")
+                rcchub("\226\154\160 No fishes found in inventory")
                 return
             end
         else
-            return RcHub("\226\154\160 Select player & coin target first!")
+            return rcchub("\226\154\160 Select player & coin target first!")
         end
     end
 
@@ -3693,11 +3693,11 @@ if _G.httpRequest then
         local v622 = vu7.trade
         if not v622.trading then
             if not (v622.selectedPlayer and v622.selectedRarity) then
-                return RcHub("\226\154\160 Select player & rarity first!")
+                return rcchub("\226\154\160 Select player & rarity first!")
             end
             v622.trading = true
             v622.successCount = 0
-            RcHub("Starting rarity trade (" .. v622.selectedRarity .. ") with " .. v622.selectedPlayer)
+            rcchub("Starting rarity trade (" .. v622.selectedRarity .. ") with " .. v622.selectedPlayer)
             vu613("<font color=\'#ffaa00\'>Scanning " .. v622.selectedRarity .. " fishes...</font>")
             local v623, v624, v625 = ipairs(vu6.Data:GetExpect({
                 "Inventory",
@@ -3723,7 +3723,7 @@ if _G.httpRequest then
             if # v626 == 0 then
                 v622.trading = false
                 vu613("<font color=\'#ff3333\'>No " .. v622.selectedRarity .. " fishes found</font>")
-                return RcHub("No " .. v622.selectedRarity .. " fishes found")
+                return rcchub("No " .. v622.selectedRarity .. " fishes found")
             end
             v622.totalToTrade = math.min(# v626, v622.rarityAmount or # v626)
             vu613(string.format("Sending %d %s fishes...", v622.totalToTrade, v622.selectedRarity))
@@ -3740,7 +3740,7 @@ if _G.httpRequest then
             end
             v622.trading = false
             vu613("<font color=\'#66ccff\'>Rarity trade finished</font>")
-            RcHub("Rarity trade finished (" .. v622.selectedRarity .. ")")
+            rcchub("Rarity trade finished (" .. v622.selectedRarity .. ")")
         end
     end
 
@@ -4107,9 +4107,9 @@ if _G.httpRequest then
                         return v1180(v1181)
                     end)
                     if v1182 then
-                        RcHub("Successfully sent test message!")
+                        rcchub("Successfully sent test message!")
                     else
-                        RcHub("Failed to send webhook:", v1183)
+                        rcchub("Failed to send webhook:", v1183)
                     end
                 end)
             else
@@ -4644,7 +4644,7 @@ if _G.httpRequest then
         Default = _G.WebhookFlags.Disconnect.Enabled or false,
         Callback = function(p1325)
             if p1325 and (not _G.DisconnectCustomName or _G.DisconnectCustomName == "") then
-                RcHub("Invalid! Input Hide Identity first.")
+                rcchub("Invalid! Input Hide Identity first.")
                 if _G.WebhookFlags and _G.WebhookFlags.Disconnect then
                     _G.WebhookFlags.Disconnect.Enabled = false
                 end
@@ -4687,7 +4687,7 @@ if _G.httpRequest then
         Title = "Test Disconnected Player",
         Content = "Kick yourself, send webhook, and auto rejoin.",
         Callback = function()
-            RcHub("Kicking player...")
+            rcchub("Kicking player...")
             task.wait(1)
             SendDisconnectWebhook("Test Successfully :3")
             task.wait(2)
